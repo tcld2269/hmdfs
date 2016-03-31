@@ -1,0 +1,15 @@
+E:\apps\upsxj\upsxj\Model\bin\Debug\hm.Model.dll
+E:\apps\upsxj\upsxj\Model\bin\Debug\hm.Model.pdb
+E:\apps\upsxj\upsxj\Model\obj\Debug\ResolveAssemblyReference.cache
+E:\apps\upsxj\upsxj\Model\obj\Debug\hm.Model.dll
+E:\apps\upsxj\upsxj\Model\obj\Debug\hm.Model.pdb
+E:\projects\english\code\Model\bin\Debug\hm.Model.dll
+E:\projects\english\code\Model\bin\Debug\hm.Model.pdb
+E:\projects\english\code\Model\obj\Debug\ResolveAssemblyReference.cache
+E:\projects\english\code\Model\obj\Debug\hm.Model.dll
+E:\projects\english\code\Model\obj\Debug\hm.Model.pdb
+E:\后台框架\后台框架1.0\后台框架1.0\Model\bin\Debug\hm.Model.dll
+E:\后台框架\后台框架1.0\后台框架1.0\Model\bin\Debug\hm.Model.pdb
+E:\后台框架\后台框架1.0\后台框架1.0\Model\obj\Debug\ResolveAssemblyReference.cache
+E:\后台框架\后台框架1.0\后台框架1.0\Model\obj\Debug\hm.Model.dll
+E:\后台框架\后台框架1.0\后台框架1.0\Model\obj\Debug\hm.Model.pdb
