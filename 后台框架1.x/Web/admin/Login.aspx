@@ -1,151 +1,49 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="hm.Web.Login" %>
-
+Ôªø<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="hm.Web.admin.Login" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>∆ΩÃ®µ«¬º</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<style type="text/css">
-<!--
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	background-color: #1D3647;
-}
--->
-</style>
-<script language="JavaScript">
-    function correctPNG() {
-        var arVersion = navigator.appVersion.split("MSIE")
-        var version = parseFloat(arVersion[1])
-        if ((version >= 5.5) && (document.body.filters)) {
-            for (var j = 0; j < document.images.length; j++) {
-                var img = document.images[j]
-                var imgName = img.src.toUpperCase()
-                if (imgName.substring(imgName.length - 3, imgName.length) == "PNG") {
-                    var imgID = (img.id) ? "id='" + img.id + "' " : ""
-                    var imgClass = (img.className) ? "class='" + img.className + "' " : ""
-                    var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
-                    var imgStyle = "display:inline-block;" + img.style.cssText
-                    if (img.align == "left") imgStyle = "float:left;" + imgStyle
-                    if (img.align == "right") imgStyle = "float:right;" + imgStyle
-                    if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle
-                    var strNewHTML = "<span " + imgID + imgClass + imgTitle
-             + " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";"
-             + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
-             + "(src=\'" + img.src + "\', sizingMethod='scale');\"></span>"
-                    img.outerHTML = strNewHTML
-                    j = j - 1
-                }
-            }
-        }
-    }
-    window.attachEvent("onload", correctPNG);
-</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÂêéÂè∞ÁÆ°ÁêÜÁôªÂΩï</title>
+    <meta name="keywords" content="ÂêéÂè∞ÁÆ°ÁêÜÁôªÂΩï">
+    <meta name="description" content="ÂêéÂè∞ÁÆ°ÁêÜÁôªÂΩï">
 
+    <link rel="shortcut icon" href="favicon.ico"> 
+    <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
 
-<link href="images/skin.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
 </head>
-<body style="margin:0px;padding:0px;background-image:url(images/login_bg.jpg)">
-<form runat="server">
-<table width="100%" height="166" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td height="42" valign="top"><table width="100%" height="42" border="0" cellpadding="0" cellspacing="0" class="login_top_bg">
-      <tr>
-        <td width="1%" height="21">&nbsp;</td>
-        <td height="42">&nbsp;</td>
-        <td width="17%">&nbsp;</td>
-      </tr>
-    </table></td>
-  </tr>
-  <tr>
-    <td valign="top"><table width="100%" height="532" border="0" cellpadding="0" cellspacing="0" class="login_bg">
-      <tr>
-        <td width="49%" align="right"><table width="91%" height="532" border="0" cellpadding="0" cellspacing="0" class="login_bg2">
-            <tr>
-              <td height="138" valign="top"><table width="89%" height="427" border="0" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td height="149">&nbsp;</td>
-                </tr>
-                <tr>
-                  <td height="80" align="right" valign="top"><img src="images/logo.png" width="279" height="68"></td>
-                </tr>
-                <tr>
-                  <td height="auto" align="right" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align:right">
-                    <tr>
-                      <td width="35%">&nbsp;</td>
-                      <td height="25" colspan="2" class="left_txt" style="text-align:right">1- œ»Ω¯µƒ…Ëº∆¿ÌƒÓ£¨¬˙◊„∆Û“µ∂‡—˘ªØ“™«Û...</td>
-                    </tr>
-                    <tr>
-                      <td>&nbsp;</td>
-                      <td height="25" colspan="2" class="left_txt" style="text-align:right">2- “ª’æ Ωµƒπ‹¿Ì∑Ω Ω£¨∂‡”√ªßÕ¨ ± π”√...</td>
-                    </tr>
-                    <tr>
-                      <td>&nbsp;</td>
-                      <td height="25" colspan="2" class="left_txt" style="text-align:right">3- «ø¥Ûµƒ»®œﬁ°¢»’÷æπ‹¿Ì£¨≤È‘ƒ“◊»Á∑¥’∆...</td>
-                    </tr>
-                    <tr>
-                      <td>&nbsp;</td>
-                      <td width="65%" height="40" colspan="2"><span style="font-size:14px; font-family:Œ¢»Ì—≈∫⁄;color:#666"></span></td>
-                      
-                    </tr>
-                  </table></td>
-                </tr>
-              </table></td>
-            </tr>
-            
-        </table></td>
-        <td width="1%" >&nbsp;</td>
-        <td width="50%" valign="bottom"><table width="100%" height="59" border="0" align="center" cellpadding="0" cellspacing="0">
-            <tr>
-              <td width="4%">&nbsp;</td>
-              <td width="96%" height="38"><span class="login_txt_bt">µ«¬Ω∫ÛÃ®π‹¿ÌœµÕ≥</span></td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td height="21"><table cellSpacing="0" cellPadding="0" width="100%" border="0" id="table211" height="328">
-                  <tr>
-                    <td height="164" colspan="2" align="middle">
-                        <table cellSpacing="0" cellPadding="0" width="100%" border="0" height="143" id="table212">
-                          <tr>
-                            <td width="13%" height="38" class="top_hui_text"><span class="login_txt"> ’À ∫≈£∫&nbsp;&nbsp; </span></td>
-                            <td height="38" colspan="2" class="top_hui_text"><asp:TextBox ID="txtUserName" runat="server"></asp:TextBox> </td>
-                          </tr>
-                          <tr>
-                            <td width="13%" height="35" class="top_hui_text"><span class="login_txt"> √‹ ¬Î£∫ &nbsp;&nbsp; </span></td>
-                            <td height="35" colspan="2" class="top_hui_text"><asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
-                              <img src="images/luck.gif" width="19" height="18"> </td>
-                          </tr>
-                          <tr>
-                            <td height="35" >&nbsp;</td>
-                            <td width="20%" height="35" ><asp:Button ID="btnLogin" runat="server" Text="µ« ¬Ω" onclick="btnLogin_Click"></asp:Button>  </td>
-                            <td width="67%" class="top_hui_text"><asp:Button ID="btnCancel" runat="server" CssClass="button" Text="÷ÿ ÷√" onclick="btnCancel_Click"></asp:Button></td>
-                          </tr>
-                        </table>
-                        <br>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width="433" height="164" align="right" valign="bottom"><img src="images/login-wel.gif" width="242" height="138"></td>
-                    <td width="57" align="right" valign="bottom">&nbsp;</td>
-                  </tr>
-              </table></td>
-            </tr>
-          </table>
-          </td>
-      </tr>
-    </table></td>
-  </tr>
-  <tr>
-    <td height="20"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="login-buttom-bg">
-      <tr>
-        <td align="center"><span class="login-buttom-txt">Copyright &copy; 2013-2014 “⁄≈∑»Ìº˛ www.jneou.com</span></td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
-</form>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name"><asp:Literal ID="litLogo" runat="server"></asp:Literal></h1>
+
+            </div>
+            <h3>Ê¨¢Ëøé‰ΩøÁî® <asp:Literal ID="litName" runat="server"></asp:Literal>ÂêéÂè∞ÁÆ°ÁêÜ</h3>
+
+            <form id="formLogin" runat="server" class="m-t" >
+                <div class="form-group">
+                    <asp:TextBox ID="txtUserName" runat="server" CssClass="form-control" placeholder="Áî®Êà∑Âêç"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control" placeholder="ÂØÜÁ†Å"></asp:TextBox>
+                </div>
+                <asp:Button ID="btnLogin" runat="server" Text="Áôª ÂΩï" onclick="btnLogin_Click" CssClass="btn btn-primary block full-width m-b"></asp:Button>
+
+                <p class="text-muted text-center hidden"> <a href="login.html#"><small>ÂøòËÆ∞ÂØÜÁ†Å‰∫ÜÔºü</small></a> | <a href="register.html">Ê≥®ÂÜå‰∏Ä‰∏™Êñ∞Ë¥¶Âè∑</a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
 </body>
 </html>

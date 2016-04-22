@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using Maticsoft.Common;
+using System.Data;
 using Maticsoft.Common.DEncrypt;
 
-namespace hm.Web
+namespace hm.Web.admin
 {
     public partial class Login : System.Web.UI.Page
     {
@@ -16,10 +16,14 @@ namespace hm.Web
         {
             if (!IsPostBack)
             {
-
+                Model.siteConfig model = new BLL.siteConfig().GetModelList("")[0];
+                if (model != null)
+                {
+                    litName.Text = model.name;
+                    litLogo.Text = "<img src=\"" + model.logo + "\" />";
+                }
             }
         }
-
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             BLL.users userService = new BLL.users();
@@ -38,14 +42,14 @@ namespace hm.Web
                 //写入Cookie 
                 try
                 {
-                    Common.Cookie.SetObject("userName", 2, txtUserName.Text.Trim());
-                    Common.Cookie.SetObject("roleId", 2, userList.Rows[0]["roleId"].ToString());
-                    Common.Cookie.SetObject("roleName", 2, DESEncrypt.Encrypt(userList.Rows[0]["roleName"].ToString()));
-                    Common.Cookie.SetObject("userId", 2, userList.Rows[0]["userId"].ToString());
-                    Common.Cookie.SetObject("deptId", 2, userList.Rows[0]["deptId"].ToString());
-                    Common.Cookie.SetObject("trueName", 2, DESEncrypt.Encrypt(userList.Rows[0]["trueName"].ToString()));
-                    Common.Cookie.SetObject("isAdmin", 2, userList.Rows[0]["isAdmin"].ToString());
-                    Common.Cookie.SetObject("lastLoginTime", 2, DateTime.Parse(userList.Rows[0]["lastLoginTime"].ToString()).ToString("yyyy-MM-dd HH:mm:ss"));
+                    Common.Cookie.SetObject(StatusHelpercs.Cookie_Admin_UserId, 2, userList.Rows[0]["userId"].ToString());
+                    Common.Cookie.SetObject(StatusHelpercs.Cookie_Admin_UserName, 2, txtUserName.Text.Trim());
+                    Common.Cookie.SetObject(StatusHelpercs.Cookie_Admin_TrueName, 2, DESEncrypt.Encrypt(userList.Rows[0]["trueName"].ToString()));
+                    Common.Cookie.SetObject(StatusHelpercs.Cookie_Admin_RoleId, 2, userList.Rows[0]["roleId"].ToString());
+                    Common.Cookie.SetObject(StatusHelpercs.Cookie_Admin_RoleName, 2, DESEncrypt.Encrypt(userList.Rows[0]["roleName"].ToString()));
+                    Common.Cookie.SetObject(StatusHelpercs.Cookie_Admin_DeptId, 2, userList.Rows[0]["deptId"].ToString());
+                    Common.Cookie.SetObject(StatusHelpercs.Cookie_Admin_IsAdmin, 2, userList.Rows[0]["isAdmin"].ToString());
+                    Common.Cookie.SetObject(StatusHelpercs.Cookie_Admin_LastLoginTime, 2, DateTime.Parse(userList.Rows[0]["lastLoginTime"].ToString()).ToString("yyyy-MM-dd HH:mm:ss"));
                 }
                 catch
                 {
@@ -58,7 +62,7 @@ namespace hm.Web
                 userModel.lastLoginTime = DateTime.Now;
                 userService.Update(userModel);
 
-                Response.Redirect("index.html");
+                Response.Redirect("index.aspx");
                 //MessageBox.ShowAndRedirect(this, "登录成功！", "index.html");
             }
             else
@@ -66,13 +70,5 @@ namespace hm.Web
                 MessageBox.Show(this, "用户名或密码错误！");
             }
         }
-
-        protected void btnCancel_Click(object sender, EventArgs e)
-        {
-            txtUserName.Text = "";
-            txtPassword.Text = "";
-        }
-
-
     }
 }

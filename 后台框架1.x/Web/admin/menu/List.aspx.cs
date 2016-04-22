@@ -1,162 +1,110 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Text;
-using System.Data;
 using Maticsoft.Common;
-using System.Drawing;
-using LTP.Accounts.Bus;
-namespace hm.Web.menu
-{
-    public partial class List : Page
-    {
-		hm.BLL.menu bll = new hm.BLL.menu();
+using System.Data;
+using System.Text;
 
+namespace hm.Web.admin.menu
+{
+    public partial class List : AdminPage
+    {
+        hm.BLL.menu bll = new hm.BLL.menu();
+        public string menuhtml = "", addhtml = "", edithtml = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+            if (!IsPostBack)
             {
-                bindParentMenuAdd();
-                BindData();
+                bindMenuTree();
             }
+
+            if (RequsetAjax("edit"))
+            {
+                int menuId = int.Parse(Request.Form["menuid"].ToString());
+                Model.menu model = bll.GetModel(menuId);
+
+                Response.Write("{\"status\":1,\"msg\":\"修改成功！\",\"menuId\":\"" + model.menuId + "\",\"menuName\":\"" + model.menuName + "\",\"parentId\":\"" + model.parentId + "\",\"orders\":\"" + model.orders + "\",\"url\":\"" + model.url + "\"}");
+                Response.End();
+            }
+            if (RequsetAjax("editsubmit"))
+            {
+                //编辑
+                int menuId = int.Parse(Request.Form["menuid"].ToString());
+                string menuName = Request.Form["menuname"].ToString();
+                string menuOrder = Request.Form["menuorder"].ToString();
+                string menuUrl = Request.Form["menuurl"].ToString();
+                string parentId = Request.Form["parentId"].ToString();
+
+                Model.menu model = bll.GetModel(menuId);
+                model.parentId = int.Parse(parentId);
+                model.menuName = menuName;
+                model.orders = int.Parse(menuOrder);
+                model.url = menuUrl;
+                bll.Update(model);
+
+                Response.Write("{\"status\":1,\"msg\":\"修改成功！\"}");
+                Response.End();
+            }
+            if (RequsetAjax("add"))
+            {
+                //添加
+                string menuName = Request.Form["menuname"].ToString();
+                string menuOrder = Request.Form["menuorder"].ToString();
+                string menuUrl = Request.Form["menuurl"].ToString();
+                string parentId = Request.Form["parentId"].ToString();
+
+                Model.menu model = new Model.menu();
+                model.parentId = int.Parse(parentId);
+                model.menuName = menuName;
+                model.orders = int.Parse(menuOrder);
+                model.url = menuUrl;
+                bll.Add(model);
+
+                Response.Write("{\"status\":1,\"msg\":\"添加成功！\"}");
+                Response.End();
+            }
+            if (RequsetAjax("del"))
+            {
+                //添加
+                int menuId = int.Parse(Request.Form["menuid"].ToString());
+                bll.Delete(menuId);
+
+                Response.Write("{\"status\":1,\"msg\":\"添加成功！\"}");
+                Response.End();
+            }
+            
         }
 
-        public void BindData()
+        private void bindMenuTree()
         {
-            DataSet ds = new DataSet();
-
-            ds = bll.GetList("1=1 order by orders asc");
-
-            string[] arr = { "parentId", "menuName", "menuId" };
-            Common.CommonHelper.AddTopTreeViewNodes(TreeView1, ds.Tables[0], arr);
-        }
-
-        protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
-        {
-            TreeNode t = this.TreeView1.SelectedNode;
-            int deptId = int.Parse(t.Value);
-            Model.menu model = bll.GetModel(deptId);
-
-            bindParentMenu();
-            lblpId.Text = model.menuId.ToString();
-            ddrParent.SelectedValue = model.parentId.ToString();
-            txtMenuName.Text = model.menuName;
-            txtOrder.Text=model.orders.ToString();
-            txtUrl.Text=model.url;
-
-        }
-
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            string strErr = "";
-            if (this.txtMenuNameAdd.Text.Trim().Length == 0)
+            StringBuilder sbMenu = new StringBuilder();
+            StringBuilder sbEdit = new StringBuilder();
+            DataTable dt0 = bll.GetList("parentId=0 order by orders asc").Tables[0];
+            foreach (DataRow dr0 in dt0.Rows)
             {
-                strErr += "名称不能为空！\\n";
-            }
-            if (!PageValidate.IsNumber(txtOrderAdd.Text))
-            {
-                strErr += "排序格式错误！\\n";
-            }
+                sbMenu.Append("{ text: \"" + dr0["menuName"].ToString() + "\", href: \"#parent1\", tags: [\"" + dr0["menuId"].ToString() + "\"]");
+                DataTable dt1 = bll.GetList("parentId=" + dr0["menuId"].ToString() + " order by orders asc").Tables[0];
+                if (dt1.Rows.Count > 0)
+                {
+                    sbMenu.Append(",nodes:[");
+                    foreach (DataRow dr1 in dt1.Rows)
+                    {
+                        sbMenu.Append("{ text: \"" + dr1["menuName"].ToString() + "\", href: \"#parent1\", tags: [\"" + dr1["menuId"].ToString() + "\"] },");
+                    }
+                    sbMenu.Remove(sbMenu.Length - 1, 1);
+                    sbMenu.Append("]");
+                }
+                
+                sbMenu.Append("},");
 
-            if (strErr != "")
-            {
-                MessageBox.Show(this, strErr);
-                return;
+                sbEdit.AppendFormat("<option value=\"{0}\" hassubinfo=\"true\">{1}</option>", dr0["menuId"].ToString(), dr0["menuName"].ToString());
             }
-            string placeName = this.txtMenuNameAdd.Text;
-            int parentId = int.Parse(this.ddrMenuAdd.SelectedValue);
-            int orders = int.Parse(txtOrderAdd.Text);
-            string url=txtUrlAdd.Text;
-
-            hm.Model.menu model = new hm.Model.menu();
-            model.menuName = placeName;
-            model.parentId = parentId;
-            model.orders=orders;
-            model.url=url;
-
-            bll.Add(model);
-            bindParentMenuAdd();
-            BindData();
-        }
-
-        protected void btnMod_Click(object sender, EventArgs e)
-        {
-            string id = lblpId.Text;
-            if (string.IsNullOrEmpty(id))
-            {
-                MessageBox.Show(this, "请选择修改的菜单！");
-                return;
-            }
-            string strErr = "";
-            if (this.txtMenuName.Text.Trim().Length == 0)
-            {
-                strErr += "名称不能为空！\\n";
-            }
-            if (!PageValidate.IsNumber(txtOrderAdd.Text))
-            {
-                strErr += "排序格式错误！\\n";
-            }
-            if (strErr != "")
-            {
-                MessageBox.Show(this, strErr);
-                return;
-            }
-            string placeName = this.txtMenuName.Text;
-            int parentId = int.Parse(this.ddrParent.SelectedValue);
-            int orders = int.Parse(txtOrder.Text);
-            string url = txtUrl.Text;
-
-            hm.Model.menu model = bll.GetModel(int.Parse(lblpId.Text));
-            model.menuName = placeName;
-            model.parentId = parentId;
-            model.orders = orders;
-            model.url = url;
-            bll.Update(model);
-            bindParentMenuAdd();
-            BindData();
-        }
-
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
-            string id = lblpId.Text;
-            if (string.IsNullOrEmpty(id))
-            {
-                MessageBox.Show(this, "请选择要删除的菜单！");
-                return;
-            }
-            bll.Delete(int.Parse(id));
-            lblpId.Text = "";
-            txtMenuName.Text = "";
-            ddrParent.SelectedValue = "0";
-            txtOrder.Text = "";
-            txtUrl.Text = "";
-            bindParentMenuAdd();
-            BindData();
-        }
-
-        private void bindParentMenuAdd()
-        {
-            ddrMenuAdd.Items.Clear();
-            BLL.menu deptBll = new BLL.menu();
-            DataTable dt = deptBll.GetList("parentId=0   order by orders asc").Tables[0];
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                ddrMenuAdd.Items.Add(new ListItem(dt.Rows[i]["menuName"].ToString(), dt.Rows[i]["menuId"].ToString()));
-            }
-            ddrMenuAdd.Items.Insert(0, new ListItem("根菜单", "0"));
-        }
-        private void bindParentMenu()
-        {
-            ddrParent.Items.Clear();
-            BLL.menu deptBll = new BLL.menu();
-            DataTable dt = deptBll.GetList("parentId=0 order by orders asc").Tables[0];
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                ddrParent.Items.Add(new ListItem(dt.Rows[i]["menuName"].ToString(), dt.Rows[i]["menuId"].ToString()));
-            }
-            ddrParent.Items.Insert(0, new ListItem("根菜单", "0"));
+            sbMenu.Remove(sbMenu.Length - 1, 1);
+            menuhtml = sbMenu.ToString();
+            edithtml = sbEdit.ToString();
         }
     }
 }

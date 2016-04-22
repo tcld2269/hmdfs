@@ -1,117 +1,81 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Text;
 using System.Data;
-using Maticsoft.Common;
-using System.Drawing;
-using LTP.Accounts.Bus;
-namespace hm.Web.role
+
+namespace hm.Web.admin.role
 {
-	public partial class List : Page
-	{
-		
-		
-		
-		hm.BLL.role bll = new hm.BLL.role();
+    public partial class List : AdminPage
+    {
+        hm.BLL.role bll = new hm.BLL.role();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if(!IsPostBack)
+            {
+                DataTable dt = bll.GetList("roleId<>1").Tables[0];
+                rptList.DataSource = dt;
+                rptList.DataBind();
+            }
+            if (RequsetAjax("add"))
+            {
+                //添加
+                try
+                {
+                    string roleName = Request.Form["roleName"].ToString();
+                    Model.role model = new Model.role();
+                    model.roleName = roleName;
+                    bll.Add(model);
 
-		protected void Page_Load(object sender, EventArgs e)
-		{
-			if (!Page.IsPostBack)
-			{
-				gridView.BorderColor = ColorTranslator.FromHtml(Application[Session["Style"].ToString() + "xtable_bordercolorlight"].ToString());
-				gridView.HeaderStyle.BackColor = ColorTranslator.FromHtml(Application[Session["Style"].ToString() + "xtable_titlebgcolor"].ToString());
-				BindData();
-			}
-		}
-		
-		protected void btnSearch_Click(object sender, EventArgs e)
-		{
-			BindData();
-		}
-		
-		#region gridView
-						
-		public void BindData()
-		{
-			#region
-			//if (!Context.User.Identity.IsAuthenticated)
-			//{
-			//    return;
-			//}
-			//AccountsPrincipal user = new AccountsPrincipal(Context.User.Identity.Name);
-			//if (user.HasPermissionID(PermId_Modify))
-			//{
-			//    gridView.Columns[6].Visible = true;
-			//}
-			//if (user.HasPermissionID(PermId_Delete))
-			//{
-			//    gridView.Columns[7].Visible = true;
-			//}
-			#endregion
+                    Response.Write("{\"status\":1,\"msg\":\"添加成功！\"}");
+                }
+                catch { Response.Write("{\"status\":0,\"msg\":\"添加失败！\"}"); }
+                Response.End();
+            }
+            if (RequsetAjax("editshow"))
+            {
+                //编辑
+                try
+                {
+                    string roleId = Request.Form["roleId"].ToString();
+                    Model.role model = bll.GetModel(int.Parse(roleId));
 
-			DataSet ds = new DataSet();
-			StringBuilder strWhere = new StringBuilder();
-			strWhere.Append(" 1=1 and roleId<>1 ");
-			if (txtKeyword.Text.Trim() != "")
-			{      
-				strWhere.AppendFormat(" and roleName like '%{0}%'", txtKeyword.Text.Trim());
-			}
-			ds = bll.GetList(strWhere.ToString());            
-			gridView.DataSource = ds;
-			gridView.DataBind();
-		}
+                    Response.Write("{\"status\":1,\"msg\":\"成功！\",\"roleName\":\"" + model.roleName + "\"}");
+                }
+                catch { Response.Write("{\"status\":0,\"msg\":\"失败！\"}"); }
+                Response.End();
+            }
+            if (RequsetAjax("editsubmit"))
+            {
+                //编辑
+                try
+                {
+                    string roleId = Request.Form["roleId"].ToString();
+                    string roleName = Request.Form["roleName"].ToString();
+                    Model.role model = bll.GetModel(int.Parse(roleId));
+                    model.roleName = roleName;
+                    bll.Update(model);
 
-		protected void gridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
-		{
-			gridView.PageIndex = e.NewPageIndex;
-			BindData();
-		}
-		protected void gridView_OnRowCreated(object sender, GridViewRowEventArgs e)
-		{
-			if (e.Row.RowType == DataControlRowType.Header)
-			{
-				//e.Row.Cells[0].Text = "<input id='Checkbox2' type='checkbox' onclick='CheckAll()'/><label></label>";
-			}
-		}
-		protected void gridView_RowDataBound(object sender, GridViewRowEventArgs e)
-		{
-			//e.Row.Attributes.Add("style", "background:#FFF");
-			if (e.Row.RowType == DataControlRowType.DataRow)
-			{
-				LinkButton linkbtnDel = (LinkButton)e.Row.FindControl("LinkButton1");
-				linkbtnDel.Attributes.Add("onclick", "return confirm(\"你确认要删除吗\")");
-				
-				//object obj1 = DataBinder.Eval(e.Row.DataItem, "Levels");
-				//if ((obj1 != null) && ((obj1.ToString() != "")))
-				//{
-				//    e.Row.Cells[1].Text = obj1.ToString();
-				//}
-			   
-			}
-		}
-		
-		protected void gridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
-		{
-			int ID = Convert.ToInt32(gridView.DataKeys[e.RowIndex].Value);
-			if (ID == 1)
-			{
-				MessageBox.Show(this,"超级管理员无法删除！");
-				return;
-			}
-			BLL.roleMenu rmBll = new BLL.roleMenu();
-			rmBll.DeleteByRoleId(ID);
-			bll.Delete(ID);
-			BindData();
-		}
+                    Response.Write("{\"status\":1,\"msg\":\"成功！\"}");
+                }
+                catch { Response.Write("{\"status\":0,\"msg\":\"失败！\"}"); }
+                Response.End();
+            }
+            if (RequsetAjax("del"))
+            {
+                //编辑
+                try
+                {
+                    string roleId = Request.Form["roleId"].ToString();
+                    bll.Delete(int.Parse(roleId));
 
-		#endregion
-
-
-
-
-
-	}
+                    Response.Write("{\"status\":1,\"msg\":\"成功！\"}");
+                }
+                catch { Response.Write("{\"status\":0,\"msg\":\"失败！\"}"); }
+                Response.End();
+            }
+        }
+    }
 }

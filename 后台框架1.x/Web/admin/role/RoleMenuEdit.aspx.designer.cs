@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace hm.Web.role {
+namespace hm.Web.admin.role {
     
     
     public partial class RoleMenuEdit {

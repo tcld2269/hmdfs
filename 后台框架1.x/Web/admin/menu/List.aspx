@@ -1,93 +1,202 @@
-﻿<%@ Page Title="menu" Language="C#" MasterPageFile="../ListMaster.master" AutoEventWireup="true" CodeBehind="List.aspx.cs" Inherits="hm.Web.menu.List" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/AdminMaster.Master" AutoEventWireup="true"
+    CodeBehind="List.aspx.cs" Inherits="hm.Web.admin.menu.List" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<script language="javascript" src="/js/CheckBox.js" type="text/javascript"></script>
+    <link href="/admin/css/plugins/treeview/bootstrap-treeview.css" rel="stylesheet">
+    <link href="/admin/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="/admin/css/style.min862f.css?v=4.1.0" rel="stylesheet">
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="title" runat="server">
-菜单列表
+<asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>
+                    后台菜单管理</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="col-sm-6">
+                    <div id="menuTree" class="test">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <h5>
+                        菜单编辑：</h5>
+                    <hr>
+                    <div id="event_output" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                ID：</label>
+                            <div class="col-sm-8">
+                                <input id="menu_id" name="name" minlength="2" type="text" class="form-control" style="border:0;background-color:#fff" readonly="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                上级菜单：</label>
+                            <div class="col-sm-8">
+                                <select id="parentId" data-placeholder="选择上级..." class="chosen-select" style="width: 100%;"
+                                    tabindex="2">
+                                    <option value="0">请选择上级菜单</option>
+                                    <%=edithtml %>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                菜单名称：</label>
+                            <div class="col-sm-8">
+                                <input id="menu_name" name="name" minlength="2" type="text" class="form-control"
+                                    required="" aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                排序：</label>
+                            <div class="col-sm-8">
+                                <input id="menu_order" name="name" minlength="2" type="text" class="form-control"
+                                    required="" aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                路径：</label>
+                            <div class="col-sm-8">
+                                <input id="menu_url" name="name" minlength="2" type="text" class="form-control" required=""
+                                    aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button id="btnsubmit" class="btn btn-warning" type="button" onclick="editsubmit()">
+                                    添加</button>
+                                    <button id="btndel" class="btn btn-danger hidden" type="button" onclick="del()">
+                                    删除</button>
+                                    <button id="btncancle" class="btn btn-default hidden" type="button" onclick="editcancle()">
+                                    取消</button>
+                            </div>
+                        </div>
+                        <%--<button class="btn btn-primary" type="button" onclick="test()">提</button>
+                            <button class="btn btn-primary" type="button" onclick="test2()">提交</button>--%>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="search" runat="server">
-<table style="width: 95%;" cellpadding="2" cellspacing="1" class="border">
-                <tr>
-                <td width="21"><img src="../images/ico07.gif" width="20" height="18" /></td>
-                    <td style="width: 80px" align="right" class="tdbg">
-                         <b>上级菜单：</b>
-                    </td>
-                    <td class="tdbg">                       
-                    <asp:DropDownList ID="ddrMenuAdd" runat="server"></asp:DropDownList>   
-                    菜单名称：
-                    <asp:TextBox ID="txtMenuNameAdd" runat="server"></asp:TextBox>
-                    排序：
-                    <asp:TextBox ID="txtOrderAdd" runat="server" Width="20px" Text="1"></asp:TextBox>
-                    路径：
-                    <asp:TextBox ID="txtUrlAdd" runat="server"></asp:TextBox>
-                    &nbsp;
-                    <asp:Button ID="Button1" CssClass="right-button02" runat="server" Text="添加菜单"  OnClick="btnAdd_Click" >
-                    </asp:Button>   
-                    </td>
-                    <td class="tdbg">
-                    </td>
-                </tr>
-            </table>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="list" runat="server">
-<div style="float:left;width:50%">
-<asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" ShowLines="True" 
-        onselectednodechanged="TreeView1_SelectedNodeChanged" >
-    <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
-    <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" 
-        HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
-    <ParentNodeStyle Font-Bold="False" />
-    <SelectedNodeStyle Font-Bold="True" />
-    </asp:TreeView>
-</div>
-<div style="float:left;width:50%">
-<table width="100%" border="0" cellpadding="4" cellspacing="1" class="show-table">
-<tr>
-	<td height="25" width="100%" colspan="2" align="center">
-		修改菜单
-	</td></tr>
-    	<tr>
-	<td height="25" width="30%" align="right">
-		ID
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:label id="lblpId" runat="server"></asp:label>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		上级菜单
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:DropDownList ID="ddrParent" runat="server"></asp:DropDownList>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		菜单名称
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtMenuName" runat="server" Width="200px" MaxLength="50"></asp:TextBox><span class="red">* </span>
-	</td></tr>
-    <tr>
-	<td height="25" width="30%" align="right">
-		排序
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtOrder" runat="server" Width="200px" MaxLength="50"></asp:TextBox><span class="red">* </span>
-	</td></tr>
-    <tr>
-	<td height="25" width="30%" align="right">
-		路径
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtUrl" runat="server" Width="200px" MaxLength="50"></asp:TextBox>
-	</td></tr>
-    <tr>
-	<td height="25" width="100%" colspan="2" align="center">
-		<asp:Button ID="btnMod" runat="server" Text="修改" OnClick="btnMod_Click" /> <asp:Button ID="btnDelete" runat="server" Text="删除" OnClick="btnDelete_Click" OnClientClick="return confirm('确定删除？')" />
-	</td></tr>
-</table>
-</div>
+<asp:Content ID="Content3" ContentPlaceHolderID="foot" runat="server">
+    <script src="/admin/js/plugins/treeview/bootstrap-treeview.js"></script>
+    <script src="/admin/js/plugins/chosen/chosen.jquery.js"></script>
+    <script src="/admin/js/demo/form-advanced-demo.min.js"></script>
+    
+    <script>
+        function load() {
+            var e = [<%=menuhtml %>]
+            $("#menuTree").treeview({ color: "#428bca", data: e, onNodeSelected: function (e, o) {
+                var pars={menuid:o.tags.toString()};
+                ajax("/admin/menu/List.aspx?act=edit&t="+Math.random(),pars,function(ret)
+                {
+                    if(ret.status==1)
+			        {
+			            $("#menu_id").val(ret.menuId);
+                        $("#menu_name").val(ret.menuName);
+                        $("#menu_order").val(ret.orders);
+                        $("#menu_url").val(ret.url);
+                        
+                        $("#parentId option[value='"+ret.parentId+"']").attr("selected","selected");  
+                        $("#parentId").chosen();  
+                        $("#parentId").trigger("chosen:updated");
+
+                        $("#btnsubmit").attr("class", "btn btn-primary");
+                        $("#btnsubmit").html("修改");
+                        $("#btndel").attr("class", "btn btn-danger");
+                        $("#btncancle").attr("class", "btn btn-default");
+			        }
+                });
+             } })
+        }
+        load();
+
+        function editcancle()
+        {
+
+			$("#menu_id").val("");
+            $("#menu_name").val("");
+            $("#menu_order").val("");
+            $("#menu_url").val("");
+            $("#parentId option[value='0']").attr("selected","selected");  
+            $("#parentId").chosen();  
+            $("#parentId").trigger("chosen:updated");
+
+            $("#btnsubmit").attr("class", "btn btn-warning");
+            $("#btnsubmit").html("添加");
+            $("#btndel").attr("class", "btn btn-danger hidden");
+            $("#btncancle").attr("class", "btn btn-default hidden");
+        }
+
+        function editsubmit()
+        {
+            var menuid=$("#menu_id").val();
+            var menuname=$("#menu_name").val();
+            var menuorder=$("#menu_order").val();
+            var menuurl=$("#menu_url").val();
+            var parentId=$("#parentId").val();
+            if(menuname=="" || menuorder=="" || menuurl=="" || parentId=="0")
+            {
+                alert("请输入完整！");
+                return;
+            }
             
+            if(menuid=="")
+            {
+                //添加
+                var pars={menuname:menuname,menuorder:menuorder,menuurl:menuurl,parentId:parentId};
+                ajax("/admin/menu/List.aspx?act=add&t="+Math.random(),pars,function(ret)
+                {
+                    if(ret.status==1)
+			        {
+			            location.href=location.href;
+			        }
+                });
+            }
+            else{
+                //编辑
+                var pars={menuid:menuid,menuname:menuname,menuorder:menuorder,menuurl:menuurl,parentId:parentId};
+                ajax("/admin/menu/List.aspx?act=editsubmit&t="+Math.random(),pars,function(ret)
+                {
+                    if(ret.status==1)
+			        {
+			            location.href=location.href;
+			        }
+                });
+            }
+            
+        }
+
+        function del()
+        {
+            if(confirm('是否删除此选项？'))
+            {
+                var menuid=$("#menu_id").val();
+                if(menuid=="")
+                {
+                    alert("请输入完整！");
+                    return;
+                }
+                var pars={menuid:menuid};
+                ajax("/admin/menu/List.aspx?act=del&t="+Math.random(),pars,function(ret)
+                {
+                    if(ret.status==1)
+			        {
+			            location.href=location.href;
+			        }
+                });
+            }
+            
+        }
+    </script>
 </asp:Content>
-<%--<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceCheckright" runat="server">
-</asp:Content>--%>

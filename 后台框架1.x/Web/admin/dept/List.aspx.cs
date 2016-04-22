@@ -1,153 +1,104 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Text;
-using System.Data;
 using Maticsoft.Common;
-using System.Drawing;
-using LTP.Accounts.Bus;
-namespace hm.Web.place
+using System.Data;
+using System.Text;
+
+namespace hm.Web.admin.dept
 {
-    public partial class List : Page
+    public partial class List : AdminPage
     {
-
-
-
         hm.BLL.dept bll = new hm.BLL.dept();
-
+        public string menuhtml = "", addhtml = "", edithtml = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+            if (!IsPostBack)
             {
-                BindData();
-            }
-        }
-        
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            string strErr = "";
-            if (this.txtDept.Text.Trim().Length == 0)
-            {
-                strErr += "名称不能为空！\\n";
+                bindMenuTree();
             }
 
-            if (strErr != "")
+            if (RequsetAjax("edit"))
             {
-                MessageBox.Show(this, strErr);
-                return;
+                int deptId = int.Parse(Request.Form["deptId"].ToString());
+                Model.dept model = bll.GetModel(deptId);
+
+                Response.Write("{\"status\":1,\"msg\":\"修改成功！\",\"deptId\":\"" + model.deptId + "\",\"deptName\":\"" + model.deptName + "\",\"parentId\":\"" + model.parentId + "\"}");
+                Response.End();
             }
-            string placeName = this.txtDept.Text;
-            int parentId = int.Parse(this.ddrDept.SelectedValue);
-
-            hm.Model.dept model = new hm.Model.dept();
-            model.deptName = placeName;
-            model.parentId = parentId;
-
-
-            bll.Add(model);
-            BindData();
-        }
-
-        protected void btnMod_Click(object sender, EventArgs e)
-        {
-            string id = lblpId.Text;
-            if (string.IsNullOrEmpty(id))
+            if (RequsetAjax("editsubmit"))
             {
-                MessageBox.Show(this,"请选择修改的部门！");
-                return;
+                //编辑
+                int deptId = int.Parse(Request.Form["deptId"].ToString());
+                string deptName = Request.Form["deptName"].ToString();
+                string parentId = Request.Form["parentId"].ToString();
+
+                Model.dept model = bll.GetModel(deptId);
+                model.parentId = int.Parse(parentId);
+                model.deptName = deptName;
+                bll.Update(model);
+
+                Response.Write("{\"status\":1,\"msg\":\"修改成功！\"}");
+                Response.End();
             }
-            string strErr = "";
-            if (this.txtDeptName.Text.Trim().Length == 0)
+            if (RequsetAjax("add"))
             {
-                strErr += "名称不能为空！\\n";
+                //添加
+                string deptName = Request.Form["deptName"].ToString();
+                string parentId = Request.Form["parentId"].ToString();
+
+                Model.dept model = new Model.dept();
+                model.parentId = int.Parse(parentId);
+                model.deptName = deptName;
+                model.userId = 0;
+                model.manager = "";
+                bll.Add(model);
+
+                Response.Write("{\"status\":1,\"msg\":\"添加成功！\"}");
+                Response.End();
             }
-            if (strErr != "")
+            if (RequsetAjax("del"))
             {
-                MessageBox.Show(this, strErr);
-                return;
+                //删除
+                int deptId = int.Parse(Request.Form["deptId"].ToString());
+                bll.Delete(deptId);
+
+                Response.Write("{\"status\":1,\"msg\":\"添加成功！\"}");
+                Response.End();
             }
-            string placeName = this.txtDeptName.Text;
-            int parentId = int.Parse(this.ddrParent.SelectedValue);
-            hm.Model.dept model = bll.GetModel(int.Parse(lblpId.Text));
-            model.deptName = placeName;
-            model.parentId = parentId;
-            bll.Update(model);
-            BindData();
+            
         }
-        
-        protected void btnDelete_Click(object sender, EventArgs e)
+
+        private void bindMenuTree()
         {
-            string id = lblpId.Text;
-            if (string.IsNullOrEmpty(id))
+            StringBuilder sbMenu = new StringBuilder();
+            StringBuilder sbEdit = new StringBuilder();
+            DataTable dt0 = bll.GetList("parentId=0").Tables[0];
+            foreach (DataRow dr0 in dt0.Rows)
             {
-                MessageBox.Show(this, "请选择要删除的部门！");
-                return;
+                sbMenu.Append("{ text: \"" + dr0["deptName"].ToString() + "\", href: \"#parent1\", tags: [\"" + dr0["deptId"].ToString() + "\"]");
+                DataTable dt1 = bll.GetList("parentId=" + dr0["deptId"].ToString() + "").Tables[0];
+                if (dt1.Rows.Count > 0)
+                {
+                    sbMenu.Append(",nodes:[");
+                    foreach (DataRow dr1 in dt1.Rows)
+                    {
+                        sbMenu.Append("{ text: \"" + dr1["deptName"].ToString() + "\", href: \"#parent1\", tags: [\"" + dr1["deptId"].ToString() + "\"] },");
+                    }
+                    sbMenu.Remove(sbMenu.Length - 1, 1);
+                    sbMenu.Append("]");
+                }
+                
+                sbMenu.Append("},");
+
+                sbEdit.AppendFormat("<option value=\"{0}\" hassubinfo=\"true\">{1}</option>", dr0["deptId"].ToString(), dr0["deptName"].ToString());
             }
-            bll.Delete(int.Parse(id));
-            lblpId.Text = "";
-            txtDeptName.Text = "";
-            ddrParent.SelectedValue = "0";
-            BindData();
+            sbMenu.Remove(sbMenu.Length - 1, 1);
+            menuhtml = sbMenu.ToString();
+            edithtml = sbEdit.ToString();
         }
-        
-        #region gridView
-                        
-        public void BindData()
-        {
-            #region
-            //if (!Context.User.Identity.IsAuthenticated)
-            //{
-            //    return;
-            //}
-            //AccountsPrincipal user = new AccountsPrincipal(Context.User.Identity.Name);
-            //if (user.HasPermissionID(PermId_Modify))
-            //{
-            //    gridView.Columns[6].Visible = true;
-            //}
-            //if (user.HasPermissionID(PermId_Delete))
-            //{
-            //    gridView.Columns[7].Visible = true;
-            //}
-            #endregion
-            bindDept();
-            DataSet ds = new DataSet();
-            ds = bll.GetList("");
-
-            string[] arr = { "parentId", "deptName", "deptId" };
-            Common.CommonHelper.AddTopTreeViewNodes(TreeView1, ds.Tables[0], arr);
-        }
-
-        
-
-        #endregion
-
-        protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
-        {
-            TreeNode t = this.TreeView1.SelectedNode;
-            int deptId = int.Parse(t.Value);
-            Model.dept model = bll.GetModel(deptId);
-
-            bindDeptList();
-            lblpId.Text = model.deptId.ToString();
-            ddrParent.SelectedValue = model.parentId.ToString();
-            txtDeptName.Text = model.deptName;
-
-        }
-
-        private void bindDept()
-        {
-            ClassHelper.AddDeptPaeent(ddrDept);
-        }
-        private void bindDeptList()
-        {
-            ClassHelper.AddDeptPaeent(ddrParent);
-        }
-
-
-
-
-
     }
 }
