@@ -116,8 +116,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adv.cs" />
+    <Compile Include="advPos.cs" />
     <Compile Include="dept.cs" />
+    <Compile Include="goods.cs" />
+    <Compile Include="goodsPic.cs" />
+    <Compile Include="goodsStand.cs" />
+    <Compile Include="goodsStandPrice.cs" />
     <Compile Include="menu.cs" />
+    <Compile Include="message.cs" />
     <Compile Include="news.cs" />
     <Compile Include="newsCat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -125,13 +132,20 @@
     </Compile>
     <Compile Include="role.cs" />
     <Compile Include="roleMenu.cs" />
+    <Compile Include="shoppingCart.cs" />
+    <Compile Include="shoppingOrder.cs" />
+    <Compile Include="shoppingPayment.cs" />
+    <Compile Include="siteConfig.cs" />
     <Compile Include="sqlHelper.cs" />
+    <Compile Include="store.cs" />
     <Compile Include="sysItem.cs" />
     <Compile Include="sysItemCategory.cs" />
     <Compile Include="SysManage.cs" />
-    <Compile Include="S_City.cs" />
-    <Compile Include="S_District.cs" />
-    <Compile Include="S_Province.cs" />
+    <Compile Include="t_city.cs" />
+    <Compile Include="t_distinct.cs" />
+    <Compile Include="t_province.cs" />
+    <Compile Include="userAddress.cs" />
+    <Compile Include="userExtension.cs" />
     <Compile Include="users.cs" />
   </ItemGroup>
   <ItemGroup>

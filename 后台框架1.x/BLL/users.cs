@@ -151,9 +151,21 @@ namespace hm.BLL
 					{
 					model.nickName=dt.Rows[n]["nickName"].ToString();
 					}
+					if(dt.Rows[n]["addressCode"]!=null && dt.Rows[n]["addressCode"].ToString()!="")
+					{
+					model.addressCode=dt.Rows[n]["addressCode"].ToString();
+					}
 					if(dt.Rows[n]["address"]!=null && dt.Rows[n]["address"].ToString()!="")
 					{
 					model.address=dt.Rows[n]["address"].ToString();
+					}
+					if(dt.Rows[n]["avatar_small"]!=null && dt.Rows[n]["avatar_small"].ToString()!="")
+					{
+					model.avatar_small=dt.Rows[n]["avatar_small"].ToString();
+					}
+					if(dt.Rows[n]["avatar_big"]!=null && dt.Rows[n]["avatar_big"].ToString()!="")
+					{
+					model.avatar_big=dt.Rows[n]["avatar_big"].ToString();
 					}
 					if(dt.Rows[n]["deptId"]!=null && dt.Rows[n]["deptId"].ToString()!="")
 					{
@@ -191,9 +203,25 @@ namespace hm.BLL
 					{
 						model.score=int.Parse(dt.Rows[n]["score"].ToString());
 					}
-					if(dt.Rows[n]["studyType"]!=null && dt.Rows[n]["studyType"].ToString()!="")
+					if(dt.Rows[n]["scoreFrozen"]!=null && dt.Rows[n]["scoreFrozen"].ToString()!="")
 					{
-						model.studyType=int.Parse(dt.Rows[n]["studyType"].ToString());
+						model.scoreFrozen=int.Parse(dt.Rows[n]["scoreFrozen"].ToString());
+					}
+					if(dt.Rows[n]["account"]!=null && dt.Rows[n]["account"].ToString()!="")
+					{
+						model.account=decimal.Parse(dt.Rows[n]["account"].ToString());
+					}
+					if(dt.Rows[n]["accountFrozen"]!=null && dt.Rows[n]["accountFrozen"].ToString()!="")
+					{
+						model.accountFrozen=decimal.Parse(dt.Rows[n]["accountFrozen"].ToString());
+					}
+					if(dt.Rows[n]["regType"]!=null && dt.Rows[n]["regType"].ToString()!="")
+					{
+					model.regType=dt.Rows[n]["regType"].ToString();
+					}
+					if(dt.Rows[n]["regFrom"]!=null && dt.Rows[n]["regFrom"].ToString()!="")
+					{
+					model.regFrom=dt.Rows[n]["regFrom"].ToString();
 					}
 					if(dt.Rows[n]["addTime"]!=null && dt.Rows[n]["addTime"].ToString()!="")
 					{
@@ -203,9 +231,17 @@ namespace hm.BLL
 					{
 						model.lastLoginTime=DateTime.Parse(dt.Rows[n]["lastLoginTime"].ToString());
 					}
+					if(dt.Rows[n]["loginCount"]!=null && dt.Rows[n]["loginCount"].ToString()!="")
+					{
+						model.loginCount=int.Parse(dt.Rows[n]["loginCount"].ToString());
+					}
 					if(dt.Rows[n]["isAdmin"]!=null && dt.Rows[n]["isAdmin"].ToString()!="")
 					{
 						model.isAdmin=int.Parse(dt.Rows[n]["isAdmin"].ToString());
+					}
+					if(dt.Rows[n]["wxOpenId"]!=null && dt.Rows[n]["wxOpenId"].ToString()!="")
+					{
+					model.wxOpenId=dt.Rows[n]["wxOpenId"].ToString();
 					}
 					if(dt.Rows[n]["status"]!=null && dt.Rows[n]["status"].ToString()!="")
 					{

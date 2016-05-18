@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>APP</title>
+		<link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/aui-flex.css" />
+	</head>
+	<style>
+		ul, li {
+			padding: 0px;
+			margin: 0px;
+			list-style: none;
+		}
+		.text {
+			overflow-y: auto;
+			border: none;
+			font-size: 12px;
+			padding: 0px;
+		}
+		.star{
+		   display:inline-block;
+		   vertical-align: -3px;
+		}
+		.star li {
+			height: 20px;
+			width: 20px;
+			margin-left: 5px;
+			background: url(../../image/star1.png) no-repeat;
+			background-size: contain;
+			float: left;
+		}
+		.clear {
+			clear: both;
+		}
+		.changestar {
+			background: url(../../image/star2.png) no-repeat !important;
+			background-size: contain !important;
+		}
+		.aui-list-view .aui-img-object {
+			width: 60px;
+			height: 60px;
+			line-height: 60px;
+		}
+		.mybtn {
+			padding: 10px;
+			background: rgba(00,00,00,0.4);
+			position: fixed;
+			bottom: 0px;
+			width: 100%;
+			display: none;
+		}
+		.aui-btn-block {
+			display: block;
+			width: 100%;
+			padding: 5px 0;
+			margin-bottom: 10px;
+			font-size: 18px;
+		}
+		.aui-btn-warning{
+		   margin-right: 10px;
+		}
+	</style>
+	<body style  = "background:#ffffff">
+		<ul class="aui-list-view">
+			<li class="aui-list-view-cell aui-img">
+				<img class="aui-img-object aui-pull-left" src="../../image/demo2.png">
+				<div class="aui-img-body">
+					<label>宴圣堂益生菌</label>
+					<textarea placeholder="请输入您的评价!" class="text"></textarea>
+				</div>
+			</li>
+			<li class="aui-list-view-cell">
+				<img class="aui-img-object aui-pull-left" src="../../image/camera.png" id="getpic">
+				<div id="piclist">
+				 
+				</div>
+			</li>
+			<li class="aui-list-view-cell">
+			   <p>评分:</p>
+			   <div class="clear">
+				    <label>描述相符：</label>
+				    <ul class="star" id="star">
+				       <li></li>
+				       <li></li>
+				       <li></li>
+				       <li></li>
+				       <li></li>
+				    </ul>
+			   </div>
+			   <div class="clear">
+			       <label>发货速度：</label>
+				    <ul class="star" id="star">
+				       <li></li>
+				       <li></li>
+				       <li></li>
+				       <li></li>
+				       <li></li>
+				    </ul>
+			   </div>
+			   <div class="clear">
+			      <label>服务态度：</label>
+				    <ul class="star" id="star">
+				       <li></li>
+				       <li></li>
+				       <li></li>
+				       <li></li>
+				       <li></li>
+				    </ul>
+			   </div>			 
+			</li>
+		</ul>
+		<button class="aui-btn aui-btn-warning aui-pull-right">发表评论</button>
+		<div class="mybtn" id="mybtn">
+		   <button class="aui-btn-info aui-btn-block" onclick="getPic1()">拍照</button>
+		   <button class="aui-btn-info aui-btn-block" onclick="getPic2()">相册</button>
+		   <button class="aui-btn-default aui-btn-block" id="cancel">取消</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/jquery.min.js"></script>
+	<script>
+	  $(function(){
+	      $("#star li").click(function(){
+	         $(this).addClass("changestar");
+	         $(this).prevAll().addClass("changestar");
+	         $(this).nextAll().removeClass("changestar");
+	         
+	      });
+	  });
+	</script>
+	<script type="text/javascript" src="../../script/api.js" ></script>
+	<script type="text/javascript">
+		apiready = function() {
+		}
+		$(function(){
+		   $("#getpic").click(function(){
+		      $("#mybtn").css("display","block");
+		   });
+		   $("#cancel").click(function(){
+		      $("#mybtn").css("display","none");
+		   });
+		});
+		   
+		   
+	
+		function getPic1(){
+		  api.getPicture({
+				sourceType : 'camera',
+				encodingType : 'jpg',
+				mediaValue : 'pic',
+				destinationType : 'url',
+				allowEdit : true,
+				quality : 100,
+				targetWidth : 200,
+				targetHeight : 300,
+				saveToPhotoAlbum : false
+			}, function(ret, err) {
+				if (ret) {
+				    var html = $("#piclist").html();
+				    var num = html.split("jpg").length-1;
+				    if(num == 3)
+				    {
+				      alert("最多上传三张！");
+				    }else{
+				      if(ret.data != ''){
+					      html += '<img onclick="delpic(this)" class="aui-img-object aui-pull-left" src="'+ ret.data +'">';
+						  $("#piclist").html(html);
+					  }
+					}
+					 $("#mybtn").css("display","none");
+				} else {
+					alert(JSON.stringify(err));
+				}
+			});	
+		}
+		function getPic2(){
+		  api.getPicture({
+				sourceType : 'album',
+				encodingType : 'jpg',
+				mediaValue : 'pic',
+				destinationType : 'url',
+				allowEdit : true,
+				quality : 100,
+				targetWidth : 200,
+				targetHeight : 300,
+				saveToPhotoAlbum : false
+			}, function(ret, err) {
+				if (ret) {
+				    var html = $("#piclist").html();
+				    var num = html.split("jpg").length-1;
+				    if(num == 3)
+				    {
+				      alert("最多上传三张！");
+				    }else{
+				      if(ret.data != ''){
+					      html += '<img onclick="delpic(this)" class="aui-img-object aui-pull-left" src="'+ ret.data +'">';
+						  $("#piclist").html(html);
+					  }
+					}
+					 $("#mybtn").css("display","none");
+				} else {
+					alert(JSON.stringify(err));
+				}
+			});	
+		}
+		function delpic(a){
+		  $(a).remove();
+		}
+	</script>
+</html>

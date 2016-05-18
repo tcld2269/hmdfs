@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css">
+    <style>
+     .my-save-btn{
+        height: 40px;
+        margin-top: 10px;
+        width: 90%;
+        margin-left: 5%;
+        background-color: #006400;
+        color: #FFFFFF;
+        }
+    .aui-switch.aui-switch-success:checked {
+		border-color: #006400;
+		box-shadow: #006400 0 0 0 26px inset;
+		background-color: #006400;
+	  }
+        .mui-btn, button, input[type=button], input[type=reset], input[type=submit] {
+				padding: 10px 12px;
+			}
+    </style>
+</head>
+<body>
+   <div class="aui-content">
+     <div class="aui-form">
+        <div class="aui-input-row">
+            <label class="aui-input-addon">收货人 </label>
+            <input type="text" class="aui-input" placeholder="姓名" />
+        </div>
+        <div class="aui-input-row">
+            <label class="aui-input-addon">手机号码</label>
+            <input type="text" class="aui-input" placeholder="11位手机号" />
+        </div>
+         <div class="aui-input-row"  style="width: 100%">
+			<span style="width: 30%;float: left" >
+				<button id='showCityPicker3' style="width: 100%"  type='button'>
+					选择地区
+				</button> </span>
+			<span style="width: 70%;float: left">
+				<input id="cityResult3" type="text" class="mui-input-clear" disabled="true" placeholder="选择的区域在此显示">
+			</span>
+			<div style="clear: both"></div>
+		</div>
+      <div class="aui-input-row">
+            <label class="aui-input-addon">详细地址</label>
+            <input type="text" class="aui-input" placeholder="街道门牌信息" />
+        </div>
+        <div class="aui-input-row">
+            <label class="aui-input-addon">邮政编码</label>
+            <input type="text" class="aui-input" placeholder="邮政编码" />
+        </div>
+        <div class="aui-input-row">
+            <label class="aui-input-addon">设为默认地址</label>
+            <input type="checkbox" class="aui-switch aui-switch-success aui-pull-right" checked>
+        </div>
+     </div>
+     <input type="button" value="保存" class="my-save-btn" onclick="openCommon('my','address_manage','管理地址')" />
+   </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript" src="../../script/common.js"></script>
+<script type="text/javascript" src="../../script/jquery.min.js"></script>
+
+<script type="text/javascript">
+    apiready = function(){
+        api.parseTapmode();
+    };
+    function address(){
+    		var uid =sdf ;
+    		var uid =sdf ;
+    		
+    		var url = serverurl + "/AddAddress?uid="++"&ProvinceId="++"&CityId="++"&DistrictId="++"&Phone="++"&Address="++"&Receiver="++"&YouBian="++"&key=" + key;		   
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				if(data.result == true){
+						
+				
+				}
+			});
+    
+    }
+</script>
+
+</html>

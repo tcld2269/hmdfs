@@ -34,7 +34,7 @@ namespace hm.BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int Add(hm.Model.sysItem model)
+		public int  Add(hm.Model.sysItem model)
 		{
 			return dal.Add(model);
 		}
@@ -143,6 +143,26 @@ namespace hm.BLL
 					{
 					model.itemName=dt.Rows[n]["itemName"].ToString();
 					}
+					if(dt.Rows[n]["itemPath"]!=null && dt.Rows[n]["itemPath"].ToString()!="")
+					{
+					model.itemPath=dt.Rows[n]["itemPath"].ToString();
+					}
+					if(dt.Rows[n]["back1"]!=null && dt.Rows[n]["back1"].ToString()!="")
+					{
+					model.back1=dt.Rows[n]["back1"].ToString();
+					}
+					if(dt.Rows[n]["back2"]!=null && dt.Rows[n]["back2"].ToString()!="")
+					{
+					model.back2=dt.Rows[n]["back2"].ToString();
+					}
+					if(dt.Rows[n]["back3"]!=null && dt.Rows[n]["back3"].ToString()!="")
+					{
+					model.back3=dt.Rows[n]["back3"].ToString();
+					}
+					if(dt.Rows[n]["back4"]!=null && dt.Rows[n]["back4"].ToString()!="")
+					{
+					model.back4=dt.Rows[n]["back4"].ToString();
+					}
 					if(dt.Rows[n]["orders"]!=null && dt.Rows[n]["orders"].ToString()!="")
 					{
 						model.orders=int.Parse(dt.Rows[n]["orders"].ToString());
@@ -168,11 +188,6 @@ namespace hm.BLL
 		//{
 			//return dal.GetList(PageSize,PageIndex,strWhere);
 		//}
-
-        public int DeleteByCatId(int catId)
-        {
-            return dal.DeleteByCatId(catId);
-        }
 
 		#endregion  Method
 	}

@@ -46,16 +46,19 @@ namespace hm.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into users(");
-			strSql.Append("userName,password,trueName,nickName,address,deptId,deptName,roleId,roleName,sex,tel,email,qq,score,studyType,addTime,lastLoginTime,isAdmin,status)");
+			strSql.Append("userName,password,trueName,nickName,addressCode,address,avatar_small,avatar_big,deptId,deptName,roleId,roleName,sex,tel,email,qq,score,scoreFrozen,account,accountFrozen,regType,regFrom,addTime,lastLoginTime,loginCount,isAdmin,wxOpenId,status)");
 			strSql.Append(" values (");
-			strSql.Append("@userName,@password,@trueName,@nickName,@address,@deptId,@deptName,@roleId,@roleName,@sex,@tel,@email,@qq,@score,@studyType,@addTime,@lastLoginTime,@isAdmin,@status)");
+			strSql.Append("@userName,@password,@trueName,@nickName,@addressCode,@address,@avatar_small,@avatar_big,@deptId,@deptName,@roleId,@roleName,@sex,@tel,@email,@qq,@score,@scoreFrozen,@account,@accountFrozen,@regType,@regFrom,@addTime,@lastLoginTime,@loginCount,@isAdmin,@wxOpenId,@status)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@userName", SqlDbType.VarChar,100),
 					new SqlParameter("@password", SqlDbType.VarChar,100),
 					new SqlParameter("@trueName", SqlDbType.VarChar,100),
 					new SqlParameter("@nickName", SqlDbType.VarChar,100),
+					new SqlParameter("@addressCode", SqlDbType.VarChar,100),
 					new SqlParameter("@address", SqlDbType.VarChar,200),
+					new SqlParameter("@avatar_small", SqlDbType.VarChar,100),
+					new SqlParameter("@avatar_big", SqlDbType.VarChar,100),
 					new SqlParameter("@deptId", SqlDbType.Int,4),
 					new SqlParameter("@deptName", SqlDbType.VarChar,100),
 					new SqlParameter("@roleId", SqlDbType.Int,4),
@@ -65,30 +68,45 @@ namespace hm.DAL
 					new SqlParameter("@email", SqlDbType.VarChar,100),
 					new SqlParameter("@qq", SqlDbType.VarChar,100),
 					new SqlParameter("@score", SqlDbType.Int,4),
-					new SqlParameter("@studyType", SqlDbType.Int,4),
+					new SqlParameter("@scoreFrozen", SqlDbType.Int,4),
+					new SqlParameter("@account", SqlDbType.Decimal,9),
+					new SqlParameter("@accountFrozen", SqlDbType.Decimal,9),
+					new SqlParameter("@regType", SqlDbType.VarChar,100),
+					new SqlParameter("@regFrom", SqlDbType.VarChar,100),
 					new SqlParameter("@addTime", SqlDbType.DateTime),
 					new SqlParameter("@lastLoginTime", SqlDbType.DateTime),
+					new SqlParameter("@loginCount", SqlDbType.Int,4),
 					new SqlParameter("@isAdmin", SqlDbType.Int,4),
+					new SqlParameter("@wxOpenId", SqlDbType.VarChar,200),
 					new SqlParameter("@status", SqlDbType.Int,4)};
 			parameters[0].Value = model.userName;
 			parameters[1].Value = model.password;
 			parameters[2].Value = model.trueName;
 			parameters[3].Value = model.nickName;
-			parameters[4].Value = model.address;
-			parameters[5].Value = model.deptId;
-			parameters[6].Value = model.deptName;
-			parameters[7].Value = model.roleId;
-			parameters[8].Value = model.roleName;
-			parameters[9].Value = model.sex;
-			parameters[10].Value = model.tel;
-			parameters[11].Value = model.email;
-			parameters[12].Value = model.qq;
-			parameters[13].Value = model.score;
-			parameters[14].Value = model.studyType;
-			parameters[15].Value = model.addTime;
-			parameters[16].Value = model.lastLoginTime;
-			parameters[17].Value = model.isAdmin;
-			parameters[18].Value = model.status;
+			parameters[4].Value = model.addressCode;
+			parameters[5].Value = model.address;
+			parameters[6].Value = model.avatar_small;
+			parameters[7].Value = model.avatar_big;
+			parameters[8].Value = model.deptId;
+			parameters[9].Value = model.deptName;
+			parameters[10].Value = model.roleId;
+			parameters[11].Value = model.roleName;
+			parameters[12].Value = model.sex;
+			parameters[13].Value = model.tel;
+			parameters[14].Value = model.email;
+			parameters[15].Value = model.qq;
+			parameters[16].Value = model.score;
+			parameters[17].Value = model.scoreFrozen;
+			parameters[18].Value = model.account;
+			parameters[19].Value = model.accountFrozen;
+			parameters[20].Value = model.regType;
+			parameters[21].Value = model.regFrom;
+			parameters[22].Value = model.addTime;
+			parameters[23].Value = model.lastLoginTime;
+			parameters[24].Value = model.loginCount;
+			parameters[25].Value = model.isAdmin;
+			parameters[26].Value = model.wxOpenId;
+			parameters[27].Value = model.status;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -111,7 +129,10 @@ namespace hm.DAL
 			strSql.Append("password=@password,");
 			strSql.Append("trueName=@trueName,");
 			strSql.Append("nickName=@nickName,");
+			strSql.Append("addressCode=@addressCode,");
 			strSql.Append("address=@address,");
+			strSql.Append("avatar_small=@avatar_small,");
+			strSql.Append("avatar_big=@avatar_big,");
 			strSql.Append("deptId=@deptId,");
 			strSql.Append("deptName=@deptName,");
 			strSql.Append("roleId=@roleId,");
@@ -121,10 +142,16 @@ namespace hm.DAL
 			strSql.Append("email=@email,");
 			strSql.Append("qq=@qq,");
 			strSql.Append("score=@score,");
-			strSql.Append("studyType=@studyType,");
+			strSql.Append("scoreFrozen=@scoreFrozen,");
+			strSql.Append("account=@account,");
+			strSql.Append("accountFrozen=@accountFrozen,");
+			strSql.Append("regType=@regType,");
+			strSql.Append("regFrom=@regFrom,");
 			strSql.Append("addTime=@addTime,");
 			strSql.Append("lastLoginTime=@lastLoginTime,");
+			strSql.Append("loginCount=@loginCount,");
 			strSql.Append("isAdmin=@isAdmin,");
+			strSql.Append("wxOpenId=@wxOpenId,");
 			strSql.Append("status=@status");
 			strSql.Append(" where userId=@userId");
 			SqlParameter[] parameters = {
@@ -132,7 +159,10 @@ namespace hm.DAL
 					new SqlParameter("@password", SqlDbType.VarChar,100),
 					new SqlParameter("@trueName", SqlDbType.VarChar,100),
 					new SqlParameter("@nickName", SqlDbType.VarChar,100),
+					new SqlParameter("@addressCode", SqlDbType.VarChar,100),
 					new SqlParameter("@address", SqlDbType.VarChar,200),
+					new SqlParameter("@avatar_small", SqlDbType.VarChar,100),
+					new SqlParameter("@avatar_big", SqlDbType.VarChar,100),
 					new SqlParameter("@deptId", SqlDbType.Int,4),
 					new SqlParameter("@deptName", SqlDbType.VarChar,100),
 					new SqlParameter("@roleId", SqlDbType.Int,4),
@@ -142,32 +172,47 @@ namespace hm.DAL
 					new SqlParameter("@email", SqlDbType.VarChar,100),
 					new SqlParameter("@qq", SqlDbType.VarChar,100),
 					new SqlParameter("@score", SqlDbType.Int,4),
-					new SqlParameter("@studyType", SqlDbType.Int,4),
+					new SqlParameter("@scoreFrozen", SqlDbType.Int,4),
+					new SqlParameter("@account", SqlDbType.Decimal,9),
+					new SqlParameter("@accountFrozen", SqlDbType.Decimal,9),
+					new SqlParameter("@regType", SqlDbType.VarChar,100),
+					new SqlParameter("@regFrom", SqlDbType.VarChar,100),
 					new SqlParameter("@addTime", SqlDbType.DateTime),
 					new SqlParameter("@lastLoginTime", SqlDbType.DateTime),
+					new SqlParameter("@loginCount", SqlDbType.Int,4),
 					new SqlParameter("@isAdmin", SqlDbType.Int,4),
+					new SqlParameter("@wxOpenId", SqlDbType.VarChar,200),
 					new SqlParameter("@status", SqlDbType.Int,4),
 					new SqlParameter("@userId", SqlDbType.Int,4)};
 			parameters[0].Value = model.userName;
 			parameters[1].Value = model.password;
 			parameters[2].Value = model.trueName;
 			parameters[3].Value = model.nickName;
-			parameters[4].Value = model.address;
-			parameters[5].Value = model.deptId;
-			parameters[6].Value = model.deptName;
-			parameters[7].Value = model.roleId;
-			parameters[8].Value = model.roleName;
-			parameters[9].Value = model.sex;
-			parameters[10].Value = model.tel;
-			parameters[11].Value = model.email;
-			parameters[12].Value = model.qq;
-			parameters[13].Value = model.score;
-			parameters[14].Value = model.studyType;
-			parameters[15].Value = model.addTime;
-			parameters[16].Value = model.lastLoginTime;
-			parameters[17].Value = model.isAdmin;
-			parameters[18].Value = model.status;
-			parameters[19].Value = model.userId;
+			parameters[4].Value = model.addressCode;
+			parameters[5].Value = model.address;
+			parameters[6].Value = model.avatar_small;
+			parameters[7].Value = model.avatar_big;
+			parameters[8].Value = model.deptId;
+			parameters[9].Value = model.deptName;
+			parameters[10].Value = model.roleId;
+			parameters[11].Value = model.roleName;
+			parameters[12].Value = model.sex;
+			parameters[13].Value = model.tel;
+			parameters[14].Value = model.email;
+			parameters[15].Value = model.qq;
+			parameters[16].Value = model.score;
+			parameters[17].Value = model.scoreFrozen;
+			parameters[18].Value = model.account;
+			parameters[19].Value = model.accountFrozen;
+			parameters[20].Value = model.regType;
+			parameters[21].Value = model.regFrom;
+			parameters[22].Value = model.addTime;
+			parameters[23].Value = model.lastLoginTime;
+			parameters[24].Value = model.loginCount;
+			parameters[25].Value = model.isAdmin;
+			parameters[26].Value = model.wxOpenId;
+			parameters[27].Value = model.status;
+			parameters[28].Value = model.userId;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -231,7 +276,7 @@ namespace hm.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 userId,userName,password,trueName,nickName,address,deptId,deptName,roleId,roleName,sex,tel,email,qq,score,studyType,addTime,lastLoginTime,isAdmin,status from users ");
+			strSql.Append("select  top 1 userId,userName,password,trueName,nickName,addressCode,address,avatar_small,avatar_big,deptId,deptName,roleId,roleName,sex,tel,email,qq,score,scoreFrozen,account,accountFrozen,regType,regFrom,addTime,lastLoginTime,loginCount,isAdmin,wxOpenId,status from users ");
 			strSql.Append(" where userId=@userId");
 			SqlParameter[] parameters = {
 					new SqlParameter("@userId", SqlDbType.Int,4)
@@ -262,9 +307,21 @@ namespace hm.DAL
 				{
 					model.nickName=ds.Tables[0].Rows[0]["nickName"].ToString();
 				}
+				if(ds.Tables[0].Rows[0]["addressCode"]!=null && ds.Tables[0].Rows[0]["addressCode"].ToString()!="")
+				{
+					model.addressCode=ds.Tables[0].Rows[0]["addressCode"].ToString();
+				}
 				if(ds.Tables[0].Rows[0]["address"]!=null && ds.Tables[0].Rows[0]["address"].ToString()!="")
 				{
 					model.address=ds.Tables[0].Rows[0]["address"].ToString();
+				}
+				if(ds.Tables[0].Rows[0]["avatar_small"]!=null && ds.Tables[0].Rows[0]["avatar_small"].ToString()!="")
+				{
+					model.avatar_small=ds.Tables[0].Rows[0]["avatar_small"].ToString();
+				}
+				if(ds.Tables[0].Rows[0]["avatar_big"]!=null && ds.Tables[0].Rows[0]["avatar_big"].ToString()!="")
+				{
+					model.avatar_big=ds.Tables[0].Rows[0]["avatar_big"].ToString();
 				}
 				if(ds.Tables[0].Rows[0]["deptId"]!=null && ds.Tables[0].Rows[0]["deptId"].ToString()!="")
 				{
@@ -302,9 +359,25 @@ namespace hm.DAL
 				{
 					model.score=int.Parse(ds.Tables[0].Rows[0]["score"].ToString());
 				}
-				if(ds.Tables[0].Rows[0]["studyType"]!=null && ds.Tables[0].Rows[0]["studyType"].ToString()!="")
+				if(ds.Tables[0].Rows[0]["scoreFrozen"]!=null && ds.Tables[0].Rows[0]["scoreFrozen"].ToString()!="")
 				{
-					model.studyType=int.Parse(ds.Tables[0].Rows[0]["studyType"].ToString());
+					model.scoreFrozen=int.Parse(ds.Tables[0].Rows[0]["scoreFrozen"].ToString());
+				}
+				if(ds.Tables[0].Rows[0]["account"]!=null && ds.Tables[0].Rows[0]["account"].ToString()!="")
+				{
+					model.account=decimal.Parse(ds.Tables[0].Rows[0]["account"].ToString());
+				}
+				if(ds.Tables[0].Rows[0]["accountFrozen"]!=null && ds.Tables[0].Rows[0]["accountFrozen"].ToString()!="")
+				{
+					model.accountFrozen=decimal.Parse(ds.Tables[0].Rows[0]["accountFrozen"].ToString());
+				}
+				if(ds.Tables[0].Rows[0]["regType"]!=null && ds.Tables[0].Rows[0]["regType"].ToString()!="")
+				{
+					model.regType=ds.Tables[0].Rows[0]["regType"].ToString();
+				}
+				if(ds.Tables[0].Rows[0]["regFrom"]!=null && ds.Tables[0].Rows[0]["regFrom"].ToString()!="")
+				{
+					model.regFrom=ds.Tables[0].Rows[0]["regFrom"].ToString();
 				}
 				if(ds.Tables[0].Rows[0]["addTime"]!=null && ds.Tables[0].Rows[0]["addTime"].ToString()!="")
 				{
@@ -314,9 +387,17 @@ namespace hm.DAL
 				{
 					model.lastLoginTime=DateTime.Parse(ds.Tables[0].Rows[0]["lastLoginTime"].ToString());
 				}
+				if(ds.Tables[0].Rows[0]["loginCount"]!=null && ds.Tables[0].Rows[0]["loginCount"].ToString()!="")
+				{
+					model.loginCount=int.Parse(ds.Tables[0].Rows[0]["loginCount"].ToString());
+				}
 				if(ds.Tables[0].Rows[0]["isAdmin"]!=null && ds.Tables[0].Rows[0]["isAdmin"].ToString()!="")
 				{
 					model.isAdmin=int.Parse(ds.Tables[0].Rows[0]["isAdmin"].ToString());
+				}
+				if(ds.Tables[0].Rows[0]["wxOpenId"]!=null && ds.Tables[0].Rows[0]["wxOpenId"].ToString()!="")
+				{
+					model.wxOpenId=ds.Tables[0].Rows[0]["wxOpenId"].ToString();
 				}
 				if(ds.Tables[0].Rows[0]["status"]!=null && ds.Tables[0].Rows[0]["status"].ToString()!="")
 				{
@@ -336,7 +417,7 @@ namespace hm.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select userId,userName,password,trueName,nickName,address,deptId,deptName,roleId,roleName,sex,tel,email,qq,score,studyType,addTime,lastLoginTime,isAdmin,status ");
+			strSql.Append("select userId,userName,password,trueName,nickName,addressCode,address,avatar_small,avatar_big,deptId,deptName,roleId,roleName,sex,tel,email,qq,score,scoreFrozen,account,accountFrozen,regType,regFrom,addTime,lastLoginTime,loginCount,isAdmin,wxOpenId,status ");
 			strSql.Append(" FROM users ");
 			if(strWhere.Trim()!="")
 			{
@@ -356,7 +437,7 @@ namespace hm.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" userId,userName,password,trueName,nickName,address,deptId,deptName,roleId,roleName,sex,tel,email,qq,score,studyType,addTime,lastLoginTime,isAdmin,status ");
+			strSql.Append(" userId,userName,password,trueName,nickName,addressCode,address,avatar_small,avatar_big,deptId,deptName,roleId,roleName,sex,tel,email,qq,score,scoreFrozen,account,accountFrozen,regType,regFrom,addTime,lastLoginTime,loginCount,isAdmin,wxOpenId,status ");
 			strSql.Append(" FROM users ");
 			if(strWhere.Trim()!="")
 			{

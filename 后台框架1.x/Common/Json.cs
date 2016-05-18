@@ -8,6 +8,7 @@ namespace hm.Common
 {
     public static class Json
     {
+
         /// <summary>
         /// DataTable转json
         /// </summary>

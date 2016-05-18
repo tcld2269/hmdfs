@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+    <style>
+       .my-info{
+         border-bottom: 1px solid #DDDDDD; 
+         white-space: nowrap;
+         }
+        .my-address{
+         height: 30px;
+         line-height: 30px;
+         border-bottom: 1px solid #DDDDDD;
+         }
+         .my-address span{
+             font-size: 10px;
+             color: #1E90FF;
+          } 
+         .my-btn{
+           margin-top: 10px;
+           padding: 5px;
+           font-size: 12px;
+         }
+         .my-Default-address{
+             font-size: 12px;
+             color: #1E90FF;
+         }
+
+    </style>
+</head>
+<body>
+	<div class="aui-content">
+	    <ul class="aui-user-view">
+	        <li class="aui-user-view-cell">	
+	            <a class="aui-arrow-right" tapmode onclick="openCommon('my','address_change','修改地址')">
+	                <span>王小倩 <em>15846458255</em></span>
+	                <p class='aui-ellipsis-1'>山东省济南市山东大学中心校区</p>
+	                <span class="my-Default-address">默认地址</span>
+               </a>
+	        </li>
+	        <li class="aui-user-view-cell">	
+	            <a class="aui-arrow-right" tapmode onclick="openCommon('my','address_change','修改地址')">
+	                <span>王小倩 <em>15846458255</em></span>
+	                <p class='aui-ellipsis-1'>山东省济南市山东大学中心校区</p>
+	            </a>
+	        </li>
+	        <li class="aui-user-view-cell">	
+	             <a class="aui-arrow-right" tapmode onclick="openCommon('my','address_change','修改地址')">
+	                <span>王小倩 <em>15846458255</em></span>
+	                <p class='aui-ellipsis-1'>山东省济南市山东大学中心校区</p>
+	            </a>
+	        </li>
+	        <li class="aui-user-view-cell">	
+	            <a class="aui-arrow-right" tapmode onclick="openCommon('my','address_change','修改地址')">
+	                <span>王小倩 <em>15846458255</em></span>
+	                <p class='aui-ellipsis-1'>山东省济南市山东大学中心校区</p>
+	            </a>
+	        </li>
+	    </ul>
+	</div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript" src="../../script/common.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+        api.parseTapmode();
+    };
+</script>
+</html>

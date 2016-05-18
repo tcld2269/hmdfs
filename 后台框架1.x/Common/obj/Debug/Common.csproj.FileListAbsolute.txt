@@ -25,3 +25,12 @@ E:\后台框架\后台框架1.0\后台框架1.0\Common\bin\Debug\OWC10Chart.dll
 E:\后台框架\后台框架1.0\后台框架1.0\Common\obj\Debug\ResolveAssemblyReference.cache
 E:\后台框架\后台框架1.0\后台框架1.0\Common\obj\Debug\hm.Common.dll
 E:\后台框架\后台框架1.0\后台框架1.0\Common\obj\Debug\hm.Common.pdb
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Common\bin\Debug\hm.Common.dll
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Common\bin\Debug\hm.Common.pdb
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Common\bin\Debug\COM.Excel.dll
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Common\bin\Debug\Excel.dll
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Common\bin\Debug\OpenSmtp.dll
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Common\bin\Debug\OWC10Chart.dll
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Common\obj\Debug\ResolveAssemblyReference.cache
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Common\obj\Debug\hm.Common.dll
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Common\obj\Debug\hm.Common.pdb

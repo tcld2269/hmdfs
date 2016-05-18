@@ -1,0 +1,643 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+		<style type="text/css">
+			.aui-content, .aui-content-padded {
+				background: #ffffff;
+			}
+			.thumb {
+				position: relative;
+				max-height: 280px;
+				overflow: hidden;
+				margin-bottom: 0;
+			}
+			.thumb > img {
+				width: 100%;
+			}
+			.price-info {
+				width: 100%;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background: #ff9900;
+				height: 45px;
+			}
+			.price {
+				margin-left: 15px;
+				color: #ffffff;
+				font-size: 16px;
+				line-height: 55px;
+			}
+			.price strong {
+				font-size: 26px;
+				margin: 0 5px;
+				font-weight: 400;
+			}
+			.price-info .aui-pull-right {
+				height: 55px;
+				width: 35%;
+				background: #ffcc00;
+				padding-top: 5px;
+				text-align: center;
+			}
+			.price-info .aui-pull-right p {
+				color: #ff6600;
+				font-size: 12px;
+				margin-bottom: 0px;
+			}
+			.goods-basic-info {
+				padding: 10px;
+				overflow: hidden;
+			}
+			.goods-title {
+				margin-bottom: 5px;
+			}
+			.aui-tab-nav li.active {
+				color: #ff9900;
+				border-bottom: 2px #ff9900 solid;
+			}
+			.info {
+				padding: 10px;
+				overflow: hidden;
+				margin-bottom: 0;
+			}
+			.info img {
+				width: 100%;
+			}
+			.info p {
+				color: #666;
+			}
+			.aui-border:after {
+				border: 1px solid red;
+			}
+			.aui-content {
+				background: #ffffff;
+				overflow: hidden;
+			}
+			.aui-order-header {
+				width: 100%;
+				padding: 10px 15px;
+				color: #999;
+				font-size: 14px;
+				overflow: hidden;
+				line-height: 32px;
+			}
+			.order-avatar {
+				float: left;
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+			}
+			.order-nickname {
+				float: left;
+				font-size: 14px;
+				line-height: 32px;
+				margin-left: 10px;
+			}
+			.order-time {
+				font-size: 12px;
+			}
+			.aui-order-body {
+				width: 100%;
+			}
+			.aui-order-title {
+				font-size: 16px;
+				color: #333;
+				margin-bottom: 5px;
+			}
+			.aui-order-footer {
+				padding: 0 15px 15px 15px;
+				overflow: hidden;
+				line-height: 30px;
+			}
+			.aui-order-footer, .comment {
+				font-size: 14px;
+				color: #999;
+			}
+			.order-top {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				height: 50px
+			}
+			.mt50 {
+				margin-top: 50px
+			}
+			.my-num {
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+			}
+			.chide {
+				display: none
+			}
+			.cactive {
+				display: block
+			}
+			.aui-nav .aui-bar-tab {
+				background: #34495E;
+			}
+			.aui-nav .aui-bar-tab li .aui-iconfont, .aui-nav .aui-bar-tab li p {
+				color: #fff;
+			}
+			.aui-nav .aui-bar-tab li.active .aui-iconfont, .aui-nav .aui-bar-tab li.active p {
+				color: #14bd7c;
+			}
+			.aui-nav {
+				background: #ff9900;
+				font-size: 18px;
+				color: #fff;
+				text-align: center;
+			}
+			.aui-nav  div {
+				height: 55px;
+			}
+			.aui-nav .buy {
+				line-height: 55px;
+			}
+			.aui-nav p {
+				color: #fff;
+			}
+			.aui-nav .aui-iconfont {
+				font-size: 20px;
+				color: #ffffff;
+			}
+			.blue {
+				background: #eee;
+			}
+			.blue .aui-iconfont, .blue p {
+				color: #999;
+			}
+			.service {
+				background: #eec363;
+			}
+			.red {
+				background: #e74c3c;
+			}
+			.yellow {
+				background: #FFF5E4;
+				border-left: 1px solid #AAAAAA;
+				color: #ED9126;
+			}
+			.yellow i, .yellow p {
+				color: #ED9126 !important;
+			}
+			.aui-bar-danger {
+				background-color: #34495e;
+			}
+			#wrap {
+				width: 100%;
+				background: rgba(00,00,00,0.5);
+				position: fixed;
+				bottom: 0px;
+				display: none;
+				z-index: 999;
+			}
+			.goodinfo {
+				width: 100%;
+				background: #FFFFFF;
+				padding: 10px;
+				position: absolute;
+				bottom: 0px;
+			}
+			.imgsize {
+				width: 50px;
+			}
+			.aui-img {
+				border-bottom: 1px solid #EEEEEE;
+				padding: 5px;
+			}
+			.goodinfo span {
+				padding: 2px 5px;
+				border: 1px solid #EEEEEE;
+				margin: 0px 5px;
+			}
+			.goodinfo p {
+				color: #000000;
+				padding: 5px 3px;
+			}
+			.color, .size {
+				border-bottom: 1px solid #EEEEEE;
+				padding: 5px;
+			}
+			.num {
+				padding: 10px;
+				border-bottom: 1px solid #EEEEEE;
+			}
+			.mybtn {
+				text-align: center;
+			}
+			.mybtn button {
+				margin: 10px 30px;
+			}
+			.myactive {
+				border: 1px solid red;
+				border-radius: 8px;
+				background: red;
+				color: #FFFFFF;
+			}
+		</style>
+	</head>
+	<body style="background: ##FFFFFF">
+		<div style="position: fixed;bottom: 50px;right: 30px;z-index:999;" >
+			<a href="#top"><img src="../../image/top.jpg" style="height: 50px;border-radius: 30px;" alt="" /></a>
+		</div>
+		<div>
+			<section class="aui-content thumb">
+				<img src="../../image/demo3.png">
+				<!--<div class="price-info">
+				<span class="price">¥<strong>88.88</strong>元</span>
+				<div class="aui-pull-right">
+				<p style="text-decoration:line-through">
+				原价：66.66 元
+				</p>
+				<p>
+				2016件已售
+				</p>
+				</div>
+				</div>-->
+			</section>
+			<section class="aui-content goods-basic-info">
+				<div class="goods-title">
+					<span id="spmc"></span>
+					<p style="font-size: 22px;color: red">
+						￥<span id="jiage"></span>
+					</p>
+					<p style="color:#667379" id="cxxx">
+						<!--促销信息<u>123123</u>促销信息-->
+					</p>
+				</div>
+				<p>
+					<span class="aui-pull-left" style="color: red">快递：(￥<span id="yunfei"></span>元)</span>
+					<span class="aui-pull-left" style="margin-left: 20px;color: red">(<span id="hdfk"></span>)</span>
+				</p>
+			</section>
+			<section class="aui-content">
+				<ul class="aui-user-view">
+					<!--<li class="aui-user-view-cell aui-img" onclick="openCommon('cart1','团队顾问')">
+					<img class="aui-img-object aui-pull-left" src="../../image/demo3.png">
+					<div class="aui-img-body aui-arrow-right">
+					<span>店铺名称</span>
+					<p class='aui-ellipsis-1'>
+					共售出888件
+					</p>
+					</div>
+					</li>-->
+					<li class="aui-user-view-cell ">
+						已销售数量( <span style="color: #667379" id="xiaoliang"></span>&nbsp;)
+					</li>
+					<li class="aui-user-view-cell ">
+						<a id="choice" class="aui-arrow-right"> 选择商品属性 </a>
+					</li>
+					<li class="aui-user-view-cell ">
+						<div style="width: 50%;float: left" align="center">
+							<button onclick="openCommon("cate","分类")" style="border:1px solid #a2a2a2;background: #FFFFFF">
+								进入品牌
+							</button>
+						</div>
+						<div style="width: 50%;float: left" align="center">
+							<button  style="border:1px solid #a2a2a2;background: #FFFFFF">
+								进入店铺
+							</button>
+						</div>
+					</li>
+					<!--<li class="aui-user-view-cell ">
+					<span style="float: left;width: 30px">
+					<p>
+					促销
+					</p></span>
+					<span class="aui-border aui-border-radius " style="padding: 2px;color: red;font-size: 13px;float: left">满减</span>
+					<span style="font-size: 12px">&nbsp; 满一亿不要钱，随便拿，看中啥拿啥，不用付钱</span>
+					<br />
+					<span class="aui-border aui-border-radius " style="padding: 2px;color: red;font-size: 13px;float: left;margin-left: 30px">多买优惠</span>
+					<span style="font-size: 12px">&nbsp; 满一亿不要钱，随便拿，看中啥拿啥，不用付钱</span>
+					</li>-->
+					<div style="clear: both"></div>
+				</ul>
+			</section>
+			<section class="aui-tab">
+				<ul class="aui-tab-nav" id="ordertab" >
+					<li class="active" id="b0">
+						商品详情
+					</li>
+					<li id="b1">
+						热门点评
+					</li>
+				</ul>
+			</section>
+			<div id="tab0">
+				<section class="aui-content info" id="spxq">
+					<p id="gbt">
+						商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述沙拉汁不够的，可联系客服购买~新鲜非洲冰草3斤装顺丰包邮，偏远地区除外。亲们：现在发货会加冰袋的哦 保证新鲜的哦。
+					</p>
+					<img class="aui-img-object aui-pull-left" src="../../image/shoes.png">
+				</section>
+			</div>
+			<div id="tab1" class="chide">
+				<div style="height: 15px"></div>
+				<div style="background: #ffffff;padding: 10px">
+					<span style="color: #aaaaaa">评价(2043)</span><span style="float: right;color: red">好评率&nbsp;98%</span>
+					<div style="clear: both;height: 10px"></div>
+					<div>
+						<ul class="aui-list-view">
+							<li class="aui-list-view-cell">
+								<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+								<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+								<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+								<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+								<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+								<span style="float: right;color: #aaaaaa">bababala</span>
+								<br />
+								物美价廉，物美价廉，物美价廉，物美价廉物美价廉，物美价廉，
+								<br />
+								<img src="../../image/noavatar.gif" alt="" />
+							</li>
+							<ul class="aui-list-view">
+								<li class="aui-list-view-cell">
+									<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+									<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+									<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+									<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+									<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+									<span style="float: right;color: #aaaaaa">bababala</span>
+									<br />
+									物美价廉，物美价廉，物美价廉，物美价廉物美价廉，物美价廉，
+									<br />
+									<img src="../../image/noavatar.gif" alt="" />
+								</li>
+								<ul class="aui-list-view">
+									<li class="aui-list-view-cell">
+										<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+										<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+										<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+										<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+										<span class="aui-iconfont aui-icon-favorfill " style="color: red"></span>
+										<span style="float: right;color: #aaaaaa">bababala</span>
+										<br />
+										物美价廉，物美价廉，物美价廉，物美价廉物美价廉，物美价廉，
+										<br />
+										<img src="../../image/noavatar.gif" alt="" />
+									</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+			<div id="wrap">
+				<div id="goodinfo" class="goodinfo">
+					<div class="aui-img">
+						<img style="margin-right: 8px" class="aui-img-object aui-pull-left imgsize" src="../../image/demo3.png">
+						<div class="aui-img-body" >
+							商品名称  商品名称  商品名称
+							<p>
+								<span style="color: red;font-size: 18px">￥<span id="gjiage"></span></span><span>库存：<span id="kucun"></span></span>
+							</p>
+						</div>
+					</div>
+					<div id="color" class="color">
+						<!--<p>
+						颜色
+						</p>
+						<span class="myactive">蓝色</span><span>红色</span><span>绿色</span>-->
+					</div>
+					<div id="size" class="size">
+						<!--<p>
+						大小
+						</p>
+						<span class="myactive">L</span><span>M</span><span>S</span>-->
+					</div>
+					<div id="num" class="num">
+						数量
+						<div class="aui-counter aui-pull-right">
+							<div id="minus" class="aui-counter-minus aui-disabled"></div>
+							<input id="val" class="aui-counter-input" type="text" value="1">
+							<div id="plus" class="aui-counter-plus"></div>
+						</div>
+					</div>
+					<div class="mybtn">
+						<button class="aui-btn aui-btn-warning">
+							加入购物车
+						</button>
+						<button class="aui-btn aui-btn-danger" onclick="add()">
+							立即购买
+						</button>
+					</div>
+				</div>
+			</div>
+			<footer class="aui-nav" id="aui-footer">
+				<div class="aui-col-xs-2  yellow" id="main" tapmode >
+					<i class="aui-iconfont aui-icon-service"></i>
+					<p>
+						客服
+					</p>
+				</div>
+				<div class="aui-col-xs-2 yellow" id="main" tapmode >
+					<i class="aui-iconfont aui-icon-favor"></i>
+					<p>
+						收藏
+					</p>
+				</div>
+				<div class="aui-col-xs-4 buy gg" id="main" tapmode >
+					加入购物车 <span class="aui-iconfont aui-icon-cart"></span>
+				</div>
+				<div class="aui-col-xs-4 buy red gg" id="main" tapmode >
+					立即购买 <span class="aui-iconfont aui-icon-recharge "></span>
+				</div>
+			</footer>
+			<input type="hidden"  value="" id="gprice"/>
+			<input type="hidden"  value="" id="gid"/>
+			<input type="hidden"  value="" id="gnum"/>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript" src="../../script/common.js"></script>
+	<script type="text/javascript" src="../../script/jquery.min.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			api.parseTapmode();
+			loadinfo()
+			setTab();
+		}
+		function setTab() {
+			var ordertab = $api.domAll("#ordertab li");
+			for (var i in ordertab) {
+				$api.addEvt(ordertab[i], 'click', function() {
+					$api.removeCls($api.dom("#ordertab li.active"), 'active');
+					$api.addCls(this, 'active');
+					var id = $api.attr(this, 'id');
+					for (var j = 0; j < 2; j++) {
+						$api.removeCls($api.byId('tab' + j), 'cactive');
+						$api.addCls($api.byId('tab' + j), 'chide');
+					}
+					$api.addCls($api.byId('ta' + id), 'cactive');
+				});
+			}
+		}
+
+		function loadinfo() {
+			var pid = api.pageParam.pid;
+			var openid = "o7mMrxPTdn9meu-HscJjPAlRXXBg";
+			var url = serverurl + "/getProductInfo?pid=" + pid + "&openId=" + openid + "&key=" + key;
+			//			alert(url)
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				if (data.list != "" && data.list != undefined) {
+					document.getElementById("spmc").innerHTML = data.list[0].product_name;
+					document.getElementById("gbt").innerHTML = data.list[0].product_name;
+					document.getElementById("jiage").innerHTML = data.list[0].sale_price;
+					document.getElementById("yunfei").innerHTML = data.list[0].transPay;
+					document.getElementById("hdfk").innerHTML = data.list[0].isHuodaoPay;
+					document.getElementById("xiaoliang").innerHTML = data.list[0].AllSale_number;
+					var cc = fanbianyi(data.list[0].description);
+					document.getElementById("spxq").innerHTML = cc;
+					if (data.list[0].fanLi != "") {
+						document.getElementById("cxxx").innerHTML = data.list[0].fanLi;
+					}
+				}
+			});
+			url = serverurl + "/getProductStandPrice?productId=" + pid + "&key=" + key;
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				if (data.list != "" && data.list != undefined) {
+					var html = "";
+					var hhtml = "";
+					var cc = new Array();
+					for (var i = 0; i < data.list.length; i++) {
+						if (i == 0) {
+							html += "<p>颜色</p><span onclick=\"bian(this)\" class=\"myactive\">" + data.list[i].standSecondName + "</span>";
+							cc[0] = data.list[i].standSecondName;
+							hhtml += "<p>大小</p><span onclick=\"bian(this)\" class=\"myactive\">" + data.list[i].standFirstName + "</span>";
+						} else {
+							hhtml += "<span onclick=\"bian(this)\" class=\"guigui\">" + data.list[i].standFirstName + "</span>";
+							if (cc.indexOf(data.list[i].standSecondName) == -1) {
+								html += "<span onclick=\"bian(this)\">" + data.list[i].standSecondName + "</span>";
+								cc.push(data.list[i].standSecondName);
+							}
+						}
+					}
+					document.getElementById("color").innerHTML = html;
+					document.getElementById("size").innerHTML = hhtml;
+					kucun();
+				}
+			})
+		}
+
+		function kucun() {
+			var aa = $("span.myactive").first().html();
+			var bb = $("span.myactive").last().html();
+			var pid = api.pageParam.pid;
+			var url = serverurl + "/getStandPriceByPower?productId=" + pid + "&standFirstName=" + bb + "&standSecondName=" + aa + "&key=" + key;
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				if (data.list != "" && data.list != undefined) {
+					document.getElementById("gjiage").innerHTML = data.list[0].realprice;
+					document.getElementById("kucun").innerHTML = data.list[0].count;
+				}
+			})
+		}
+		function add() {
+			var aa = $("span.myactive").first().html();
+			var bb = $("span.myactive").last().html();
+			var pid = api.pageParam.pid;
+			var url = serverurl + "/getStandPriceByPower?productId=" + pid + "&standFirstName=" + bb + "&standSecondName=" + aa + "&key=" + key;
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				document.getElementById("gprice").value = data.list[0].realprice;
+				document.getElementById("gid").value = data.list[0].Id;
+			
+			var uid = "11";
+			var price = document.getElementById("gprice").value;
+			var gid = document.getElementById("gid").value;
+			var num = document.getElementById("val").value;
+			
+			var urll = serverurl + "/addCart?memberId=" + uid + "&productId=" + pid + "&StandPowerId=" + gid + "&produtCount=" + num + "&price=" + price + "&key=" + key;
+//			alert(urll)
+			api.ajax({
+				url : urll,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				if (data.result == "true") {
+					api.sendEvent({
+						name : 'cat_back',
+						extra : {
+							sav_param : '1'
+						}
+					});
+					openParentCommon("cart", "3");
+					api.closeWin();
+				} else {
+					api.toast({
+						msg : '添加失败！'
+					});
+				}
+			});
+			});
+		}
+
+		function bian(a) {
+			$(a).addClass('myactive').siblings('span').removeClass('myactive');
+			kucun();
+		}
+
+
+		$(document).ready(function() {
+			$("#choice").click(function() {
+				$("#wrap").show().css('height', $(window).height());
+			});
+			$(".gg").click(function() {
+				$("#wrap").show().css('height', $(window).height());
+			});
+			$("#wrap").click(function() {
+				$("#wrap").hide();
+			});
+			$("#goodinfo").click(function() {
+				return false;
+			});
+			var val = 1;
+			$("#plus").click(function() {
+				val = val + 1;
+				if (val < 1) {
+					$("#minus").addClass('aui-disabled');
+				} else {
+					$("#minus").removeClass('aui-disabled');
+					$("#val").val(val);
+				}
+			});
+			$("#minus").click(function() {
+				val = val - 1;
+				if (val < 1) {
+					$("#minus").addClass('aui-disabled');
+				} else {
+					$("#minus").removeClass('aui-disabled');
+					$("#val").val(val);
+				}
+			});
+		});
+		
+	</script>
+</html>

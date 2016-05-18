@@ -10,149 +10,120 @@ using System.Drawing;
 using LTP.Accounts.Bus;
 namespace hm.Web.sysItem
 {
-    public partial class List : Page
+    public partial class List : AdminPage
     {
-        
-        
-        
 		hm.BLL.sysItem bll = new hm.BLL.sysItem();
-
+        public string id = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+            if (!IsPostBack)
             {
-                gridView.BorderColor = ColorTranslator.FromHtml(Application[Session["Style"].ToString() + "xtable_bordercolorlight"].ToString());
-                gridView.HeaderStyle.BackColor = ColorTranslator.FromHtml(Application[Session["Style"].ToString() + "xtable_titlebgcolor"].ToString());
-                btnDelete.Attributes.Add("onclick", "return confirm(\"你确认要删除吗？\")");
-                BindData();
+                if (Request.QueryString["act"] == null)
+                {
+                    BindData();
+                }
+            }
+            if (RequsetAjax("add"))
+            {
+                //添加
+                try
+                {
+                    string id = Request.Form["id"].ToString();
+                    string itemName = Request.Form["itemName"].ToString();
+                    string itemPath = Request.Form["itemPath"].ToString();
+                    string back1 = Request.Form["back1"].ToString();
+                    string back2 = Request.Form["back2"].ToString();
+                    string back3 = Request.Form["back3"].ToString();
+                    string back4 = Request.Form["back4"].ToString();
+                    string orders = Request.Form["orders"].ToString();
+                    Model.sysItem model = new Model.sysItem();
+                    model.sicId = int.Parse(id);
+                    model.itemName = itemName;
+                    model.itemPath = itemPath;
+                    model.back1 = back1;
+                    model.back2 = back2;
+                    model.back3 = back3;
+                    model.back4 = back4;
+                    model.orders = int.Parse(orders);
+                    bll.Add(model);
+
+                    Response.Write("{\"status\":1,\"msg\":\"添加成功！\"}");
+                }
+                catch { Response.Write("{\"status\":0,\"msg\":\"添加失败！\"}"); }
+                Response.End();
+            }
+            if (RequsetAjax("editshow"))
+            {
+                //编辑
+                try
+                {
+                    string siId = Request.Form["siId"].ToString();
+                    Model.sysItem model = bll.GetModel(int.Parse(siId));
+
+                    Response.Write("{\"status\":1,\"msg\":\"成功！\",\"itemName\":\"" + model.itemName + "\",\"itemPath\":\"" + model.itemPath + "\",\"back1\":\"" + model.back1 + "\",\"back2\":\"" + model.back2 + "\",\"back3\":\"" + model.back3 + "\",\"back4\":\"" + model.back4 + "\",\"orders\":\"" + model.orders + "\"}");
+                }
+                catch { Response.Write("{\"status\":0,\"msg\":\"失败！\"}"); }
+                Response.End();
+            }
+            if (RequsetAjax("editsubmit"))
+            {
+                //编辑
+                try
+                {
+                    string siId = Request.Form["siId"].ToString();
+                    string itemName = Request.Form["itemName"].ToString();
+                    string itemPath = Request.Form["itemPath"].ToString();
+                    string back1 = Request.Form["back1"].ToString();
+                    string back2 = Request.Form["back2"].ToString();
+                    string back3 = Request.Form["back3"].ToString();
+                    string back4 = Request.Form["back4"].ToString();
+                    string orders = Request.Form["orders"].ToString();
+                    Model.sysItem model = bll.GetModel(int.Parse(siId));
+                    model.itemName = itemName;
+                    model.itemPath = itemPath;
+                    model.back1 = back1;
+                    model.back2 = back2;
+                    model.back3 = back3;
+                    model.back4 = back4;
+                    model.orders = int.Parse(orders);
+                    bll.Update(model);
+
+                    Response.Write("{\"status\":1,\"msg\":\"成功！\"}");
+                }
+                catch { Response.Write("{\"status\":0,\"msg\":\"失败！\"}"); }
+                Response.End();
+            }
+            if (RequsetAjax("del"))
+            {
+                //删除
+                try
+                {
+                    string catId = Request.Form["catId"].ToString();
+                    bll.Delete(int.Parse(catId));
+
+                    Response.Write("{\"status\":1,\"msg\":\"成功！\"}");
+                }
+                catch { Response.Write("{\"status\":0,\"msg\":\"失败！\"}"); }
+                Response.End();
             }
         }
-        
-        protected void btnSearch_Click(object sender, EventArgs e)
-        {
-            BindData();
-        }
-        
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
-            string idlist = GetSelIDlist();
-            if (idlist.Trim().Length == 0) 
-                return;
-            bll.DeleteList(idlist);
-            BindData();
-        }
-        
-        #region gridView
-                        
+         
         public void BindData()
         {
-            #region
-            //if (!Context.User.Identity.IsAuthenticated)
-            //{
-            //    return;
-            //}
-            //AccountsPrincipal user = new AccountsPrincipal(Context.User.Identity.Name);
-            //if (user.HasPermissionID(PermId_Modify))
-            //{
-            //    gridView.Columns[6].Visible = true;
-            //}
-            //if (user.HasPermissionID(PermId_Delete))
-            //{
-            //    gridView.Columns[7].Visible = true;
-            //}
-            #endregion
+
             string catId = "";
             if (Request.QueryString["id"] != null)
             { 
                 catId = Request.QueryString["id"];
             }
-
+            id = catId;
             DataSet ds = new DataSet();
             StringBuilder strWhere = new StringBuilder();
             strWhere.Append("sicId=" + catId);
-            if (txtKeyword.Text.Trim() != "")
-            {      
-                strWhere.AppendFormat(" and itemName like '%{0}%'", txtKeyword.Text.Trim());
-            }
             ds = bll.GetList(strWhere.ToString() + " order by orders asc");
-            gridView.DataSource = ds;
-            gridView.DataBind();
+            rptList.DataSource = ds;
+            rptList.DataBind();
         }
-
-        protected void gridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            gridView.PageIndex = e.NewPageIndex;
-            BindData();
-        }
-        protected void gridView_OnRowCreated(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.Header)
-            {
-                //e.Row.Cells[0].Text = "<input id='Checkbox2' type='checkbox' onclick='CheckAll()'/><label></label>";
-            }
-        }
-        protected void gridView_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            //e.Row.Attributes.Add("style", "background:#FFF");
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                LinkButton linkbtnDel = (LinkButton)e.Row.FindControl("LinkButton1");
-                linkbtnDel.Attributes.Add("onclick", "return confirm(\"你确认要删除吗\")");
-                
-                //object obj1 = DataBinder.Eval(e.Row.DataItem, "Levels");
-                //if ((obj1 != null) && ((obj1.ToString() != "")))
-                //{
-                //    e.Row.Cells[1].Text = obj1.ToString();
-                //}
-               
-            }
-        }
-        
-        protected void gridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            //#warning 代码生成警告：请检查确认真实主键的名称和类型是否正确
-            //int ID = (int)gridView.DataKeys[e.RowIndex].Value;
-            //bll.Delete(ID);
-            //gridView.OnBind();
-        }
-
-        private string GetSelIDlist()
-        {
-            string idlist = "";
-            bool BxsChkd = false;
-            for (int i = 0; i < gridView.Rows.Count; i++)
-            {
-                CheckBox ChkBxItem = (CheckBox)gridView.Rows[i].FindControl("DeleteThis");
-                if (ChkBxItem != null && ChkBxItem.Checked)
-                {
-                    BxsChkd = true;
-                    //#warning 代码生成警告：请检查确认Cells的列索引是否正确
-                    if (gridView.DataKeys[i].Value != null)
-                    {                        
-                        idlist += gridView.DataKeys[i].Value.ToString() + ",";
-                    }
-                }
-            }
-            if (BxsChkd)
-            {
-                idlist = idlist.Substring(0, idlist.LastIndexOf(","));
-            }
-            return idlist;
-        }
-
-        #endregion
-
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            string catId = "";
-            if (Request.QueryString["id"] != null)
-            {
-                catId = Request.QueryString["id"];
-            }
-            Response.Redirect("Add.aspx?id="+catId);
-        }
-        
-
 
     }
 }

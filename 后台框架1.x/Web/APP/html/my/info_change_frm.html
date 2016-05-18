@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+    <style>
+     .my-save-btn{
+        height: 40px;
+        margin-top: 10px;
+        width: 90%;
+        margin-left: 5%;
+        background-color: #ED9126;
+        color: #FFFFFF;
+        }
+        .my-words{
+         margin-top: 10px;
+         padding: 0px 10px;
+        }
+        .my-words p{
+        color: #666666;
+
+        }
+        .aui-input-row{
+          padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+   <div class="aui-content">
+     <div class="aui-form">
+        <div class="aui-input-row">
+            <label class="aui-input-addon aui-iconfont aui-icon-messagefill"></label>
+            <input type="text" class="aui-input" placeholder="请输入您的微信账号" />
+        </div>
+        <div class="aui-input-row">
+            <label class="aui-input-addon aui-iconfont aui-icon-like"></label>
+            <input type="text" class="aui-input" placeholder="请输入您的微信名" />
+        </div>
+        <div class="aui-input-row">
+            <label class="aui-input-addon aui-iconfont aui-icon-myfill"></label>
+            <input type="text" class="aui-input" placeholder="请输入您的真实姓名" />
+        </div>
+        <div class="aui-input-row">
+            <label class="aui-input-addon aui-iconfont aui-icon-phone"></label>
+            <input type="text" class="aui-input" placeholder="请输入您的联系电话" />
+        </div>
+     </div>
+     <input type="button" value="保存" class="my-save-btn"/>
+     <div class="my-words">
+        <label class="aui-input-addon aui-iconfont aui-icon-infofill aui-warning"></label>
+        <p>提现资金将会直接转入您的微信零钱账户中。为了您的资金安全，在进行微信零钱转账过程中需要进行实名验证，另外真实姓名修改后，您的二维码
+        将显示您的真实姓名，一边您吸收更多的粉丝。</p>
+        <label class="aui-input-addon aui-iconfont aui-icon-warnfill aui-warning"></label>
+        <p>为防止微信转账失败，请务必填写微信账号、真实姓名和联系电话。当转账异常时，我们将及时联系您。</p>
+     </div>
+   </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript" src="../../script/common.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+        api.parseTapmode();
+    };
+</script>
+</html>

@@ -88,13 +88,17 @@ namespace hm.Common
                 {
                     try
                     {
-                        string sourcePath = path + DateTime.Now.ToString("yyyyMMddhhmmss") + "_big" + fileExtension;
-                        string smallPath = path + DateTime.Now.ToString("yyyyMMddhhmmss") + "_small" + fileExtension;
-                        string bigPath = "/upload/" + folerPath + "/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "_big" + fileExtension;
-                        string sPath = "/upload/" + folerPath + "/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "_small" + fileExtension;
+                        string datastr = DateTime.Now.ToString("yyyyMMddhhmmss");
+                        string sourcePath = path + datastr + "_big" + fileExtension;
+                        string normalPath = path + datastr + "_normal" + fileExtension;
+                        string smallPath = path + datastr + "_small" + fileExtension;
+                        string bigPath = "/upload/" + folerPath + "/" + datastr + "_big" + fileExtension;
+                        string nPath = "/upload/" + folerPath + "/" + datastr + "_normal" + fileExtension;
+                        string sPath = "/upload/" + folerPath + "/" + datastr + "_small" + fileExtension;
                         file1.PostedFile.SaveAs(sourcePath);
-                        MakeThumbnail(sourcePath, smallPath, 200, 120, "W", "jpg");
-                        msg = "上传成功|" + bigPath + "|" + sPath;
+                        MakeThumbnail(sourcePath, normalPath, 200, 120, "W", "jpg");
+                        MakeThumbnail(sourcePath, smallPath, 50, 20, "W", "jpg");
+                        msg = "上传成功|" + bigPath + "|" + nPath + "|" + sPath;
                     }
                     catch
                     {
@@ -345,6 +349,28 @@ namespace hm.Common
             }
 
             return str.Substring(startIndex, length);
+        }
+
+        /// <summary>
+        /// 返回星期几
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        public static string getDayOfWeek(DateTime dt)
+        {
+            string result = "";
+            int k = (int)dt.DayOfWeek;//获取当前时间
+            switch (k)
+            {
+                case 0: result = "星期日"; break;
+                case 1: result = "星期一"; break;
+                case 2: result = "星期二"; break;
+                case 3: result = "星期三"; break;
+                case 4: result = "星期四"; break;
+                case 5: result = "星期五"; break;
+                case 6: result = "星期六"; break;
+            }
+            return result;
         }
     }
 }

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+		<style type="text/css">
+		     body{
+		       background-color: #FFFFFF;
+		     }
+            input[type="text"]{
+              width: 80%;
+              line-height: 13px;
+              padding: 8px 10px;
+              font-size: 13px;
+            }
+            .text{
+              padding: 5px 10px;
+              position: fixed;
+              bottom: 0px;
+              width: 100%;
+              height: 50px;
+              background: #FFFFFF;
+              border: 1px solid #DDDDDD;
+              overflow: hidden;
+            }
+            .aui-chat-receiver .aui-chat-receiver-cont{
+              background-color: #DDDDDD;
+            }
+            .aui-chat-left-triangle{
+              border-color: transparent #DDDDDD transparent transparent;
+            }
+            #message-content{
+              margin: 10px 0 50px 0;
+            }
+		</style>
+	</head>
+	<body>
+         
+         <div class="aui-content aui-content-padded" id="message-content">
+         	<p class="aui-text-center history-date">7-16 20:00</p>
+         	<div class="aui-chat-sender">
+         		<div class="aui-chat-sender-avatar"><img src="../../image/aui/demo1.png"></div>
+         		<div class="aui-chat-sender-cont">
+         		<div class="aui-chat-right-triangle"></div>
+         		<span>Hello!!</span>
+         		</div>
+         	</div>
+         	<div class="aui-chat-receiver">
+         		<div class="aui-chat-receiver-avatar"><img src="../../image/aui/demo2.png"></div>
+         		<div class="aui-chat-receiver-cont">
+         		<div class="aui-chat-left-triangle"></div>
+         		<span>你好！</span>
+         		</div>
+         	</div>
+         	<div class="aui-chat-sender">
+         		<div class="aui-chat-sender-avatar"><img src="../../image/aui/demo1.png"></div>
+         		<div class="aui-chat-sender-cont">
+         			<div class="aui-chat-right-triangle"></div>
+         			<span>nice to meet you!</span>
+         		</div>
+         	</div>
+         	<div class="aui-chat-receiver">
+         		<div class="aui-chat-receiver-avatar"><img src="../../image/aui/demo2.png"></div>
+         		<div class="aui-chat-receiver-cont">
+         			<div class="aui-chat-left-triangle"></div>
+         			<span>很高兴见到你！</span>
+         		</div>
+         	</div>
+         	<div class="aui-chat-sender">
+         		<div class="aui-chat-sender-avatar"><img src="../../image/aui/demo1.png"></div>
+         		<div class="aui-chat-sender-cont">
+         			<div class="aui-chat-right-triangle"></div>
+         			<span>如果文字太长了会是什么效果，再多一点再多一点</span>
+         		</div>
+         	</div>
+         	<div class="aui-chat-receiver">
+         		<div class="aui-chat-receiver-avatar"><img src="../../image/aui/demo2.png"></div>
+         		<div class="aui-chat-receiver-cont">
+         			<div class="aui-chat-left-triangle"></div>
+         			<div class="aui-chat-status"><i class="aui-iconfont aui-icon-loading aui-chat-progress"></i></div>
+         			<span>如果想自定义气泡颜色，修改aui-chat-receiver-cont背景和aui-chat-left-triangle的border-color</span>
+         		</div>
+         	</div>
+         </div>
+         <div class="text">
+            <input type="text" />
+            <button class="aui-btn aui-btn-info">发送</button>
+         </div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript" src="../../script/common.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			api.parseTapmode();
+		}
+
+	</script>
+</html>

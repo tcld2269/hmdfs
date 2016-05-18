@@ -13,3 +13,8 @@ E:\后台框架\后台框架1.0\后台框架1.0\Model\bin\Debug\hm.Model.pdb
 E:\后台框架\后台框架1.0\后台框架1.0\Model\obj\Debug\ResolveAssemblyReference.cache
 E:\后台框架\后台框架1.0\后台框架1.0\Model\obj\Debug\hm.Model.dll
 E:\后台框架\后台框架1.0\后台框架1.0\Model\obj\Debug\hm.Model.pdb
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Model\bin\Debug\hm.Model.dll
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Model\bin\Debug\hm.Model.pdb
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Model\obj\Debug\ResolveAssemblyReference.cache
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Model\obj\Debug\hm.Model.dll
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\Model\obj\Debug\hm.Model.pdb

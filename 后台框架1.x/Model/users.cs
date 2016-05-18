@@ -15,7 +15,10 @@ namespace hm.Model
 		private string _password;
 		private string _truename;
 		private string _nickname;
+		private string _addresscode;
 		private string _address;
+		private string _avatar_small;
+		private string _avatar_big;
 		private int? _deptid;
 		private string _deptname;
 		private int? _roleid;
@@ -25,10 +28,16 @@ namespace hm.Model
 		private string _email;
 		private string _qq;
 		private int? _score;
-		private int? _studytype;
+		private int? _scorefrozen;
+		private decimal? _account;
+		private decimal? _accountfrozen;
+		private string _regtype;
+		private string _regfrom;
 		private DateTime? _addtime;
 		private DateTime? _lastlogintime;
+		private int? _logincount;
 		private int? _isadmin;
+		private string _wxopenid;
 		private int? _status;
 		/// <summary>
 		/// 
@@ -73,10 +82,34 @@ namespace hm.Model
 		/// <summary>
 		/// 
 		/// </summary>
+		public string addressCode
+		{
+			set{ _addresscode=value;}
+			get{return _addresscode;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
 		public string address
 		{
 			set{ _address=value;}
 			get{return _address;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string avatar_small
+		{
+			set{ _avatar_small=value;}
+			get{return _avatar_small;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string avatar_big
+		{
+			set{ _avatar_big=value;}
+			get{return _avatar_big;}
 		}
 		/// <summary>
 		/// 
@@ -153,10 +186,42 @@ namespace hm.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public int? studyType
+		public int? scoreFrozen
 		{
-			set{ _studytype=value;}
-			get{return _studytype;}
+			set{ _scorefrozen=value;}
+			get{return _scorefrozen;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? account
+		{
+			set{ _account=value;}
+			get{return _account;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? accountFrozen
+		{
+			set{ _accountfrozen=value;}
+			get{return _accountfrozen;}
+		}
+		/// <summary>
+		/// username,tel,email
+		/// </summary>
+		public string regType
+		{
+			set{ _regtype=value;}
+			get{return _regtype;}
+		}
+		/// <summary>
+		/// pc,app,wap
+		/// </summary>
+		public string regFrom
+		{
+			set{ _regfrom=value;}
+			get{return _regfrom;}
 		}
 		/// <summary>
 		/// 
@@ -177,10 +242,26 @@ namespace hm.Model
 		/// <summary>
 		/// 
 		/// </summary>
+		public int? loginCount
+		{
+			set{ _logincount=value;}
+			get{return _logincount;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
 		public int? isAdmin
 		{
 			set{ _isadmin=value;}
 			get{return _isadmin;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string wxOpenId
+		{
+			set{ _wxopenid=value;}
+			get{return _wxopenid;}
 		}
 		/// <summary>
 		/// 

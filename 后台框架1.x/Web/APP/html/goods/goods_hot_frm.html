@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>APP</title>
+		<link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+	</head>
+	<style>
+		img.avatar {
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+		}
+		.boxCont {
+			position: relative;
+		}
+		.xiaoliang {
+			font-size: 11px;
+			color: #aaa;
+			margin-top: 3px;
+		}
+		.xianjia {
+			color: #d00;
+		}
+		#sort_by {
+			position: fixed;
+			top: 0;
+			z-index: 99;
+			background: #fff;
+			border-bottom: 1px solid #CEB17C;
+			height: 35px;
+		}
+		#sort_by td {
+			text-align: center;
+		}
+		#fenlei {
+			margin-top: 35px;
+			font-size: 12px;
+			display: none;
+		}
+	</style>
+	<body>
+		<table id="sort_by" width="100%">
+			<tr>
+				<td width="20%">综合</td><td width="20%"><span class="aui-iconfont aui-icon-order"></span>销量</td><td width="20%"><span class="aui-iconfont aui-icon-order"></span>价格</td><td width="20%"><span class="aui-iconfont aui-icon-order"></span>人气</td><td class="fenlei_btn" width="20%"><span class="aui-iconfont aui-icon-sort"></span>分类</td>
+			</tr>
+		</table>
+		<ul id="fenlei" class="aui-list-view" style="position: fixed;top:0px;width: 100%;z-index: 999 ">
+			<li onclick="openCommon('goods','goods_show','商品详情')" class="aui-list-view-cell">
+				<a class="aui-arrow-right">全部商品</a>
+			</li>
+			<li onclick="openCommon('goods','goods_show','商品详情')" class="aui-list-view-cell">
+				<a class="aui-arrow-right">女装</a>
+			</li>
+			<li onclick="openCommon('goods','goods_show','商品详情')" class="aui-list-view-cell">
+				<a class="aui-arrow-right">男装</a>
+			</li>
+			<li onclick="openCommon('goods','goods_show','商品详情')" class="aui-list-view-cell">
+				<a class="aui-arrow-right">耐克专区</a>
+			</li>
+			<li onclick="openCommon('goods','goods_show','商品详情')" class="aui-list-view-cell">
+				<a class="aui-arrow-right">骆驼/圣弗莱</a>
+			</li>
+			<li onclick="openCommon('goods','goods_show','商品详情')" class="aui-list-view-cell">
+				<a class="aui-arrow-right">内衣</a>
+			</li>
+			<li onclick="openCommon('goods','goods_show','商品详情')" class="aui-list-view-cell">
+				<a class="aui-arrow-right">女鞋男鞋</a>
+			</li>
+			<li onclick="openCommon('goods','goods_show','商品详情')" class="aui-list-view-cell">
+				<a class="aui-arrow-right">童装童鞋</a>
+			</li>
+			<li onclick="openCommon('goods','goods_show','商品详情')" class="aui-list-view-cell">
+				<a class="aui-arrow-right">珠宝配饰</a>
+			</li>
+			<li onclick="openCommon('goods','goods_show','商品详情')" class="aui-list-view-cell">
+				<a class="aui-arrow-right">箱包皮具</a>
+			</li>
+			<li onclick="openCommon('goods','goods_show','商品详情')" class="aui-list-view-cell">
+				<a class="aui-arrow-right">医药保健</a>
+			</li>
+			<li onclick="openCommon('goods','goods_show','商品详情')" class="aui-list-view-cell">
+				<a class="aui-arrow-right">一元创业卡</a>
+			</li>
+			<li onclick="openCommon('goods','goods_show','商品详情')" class="aui-list-view-cell">
+				<a class="aui-arrow-right">5.1活动专区</a>
+			</li>
+			
+		</ul>
+		<div class="aui-content" style="margin-top: 35px;">
+			<ul class="aui-waterfall" id="aui-waterfall">
+				<li onclick="openCommon('goods','goods_show','商品详情')">
+					<div class="aui-waterfall-header">
+						<img src="../../image/demo1.png" />
+					</div>
+					<div class="aui-waterfall-body">
+						<div class="aui-ellipsis-2">
+							瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果
+						</div>
+						<div class="xiaoliang">
+							销售量：5
+						</div>
+					</div>
+					<div class="aui-waterfall-footer">
+						<del> ¥159 </del>
+						<span class="aui-pull-right xianjia"> ¥123 </span>
+					</div>
+				</li>
+				<li onclick="openCommon('goods','goods_show','商品详情')">
+					<div class="aui-waterfall-header">
+						<img src="../../image/demo1.png" />
+					</div>
+					<div class="aui-waterfall-body">
+						<div class="aui-ellipsis-2">
+							瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果
+						</div>
+						<div class="xiaoliang">
+							销售量：5
+						</div>
+					</div>
+					<div class="aui-waterfall-footer">
+						<del> ¥159 </del>
+						<span class="aui-pull-right xianjia"> ¥123 </span>
+					</div>
+				</li>
+				<li onclick="openCommon('goods','goods_show','商品详情')">
+					<div class="aui-waterfall-header">
+						<img src="../../image/demo1.png" />
+					</div>
+					<div class="aui-waterfall-body">
+						<div class="aui-ellipsis-2">
+							瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果
+						</div>
+						<div class="xiaoliang">
+							销售量：5
+						</div>
+					</div>
+					<div class="aui-waterfall-footer">
+						<del> ¥159 </del>
+						<span class="aui-pull-right xianjia"> ¥123 </span>
+					</div>
+				</li>
+				<li onclick="openCommon('goods','goods_show','商品详情')">
+					<div class="aui-waterfall-header">
+						<img src="../../image/demo1.png" />
+					</div>
+					<div class="aui-waterfall-body">
+						<div class="aui-ellipsis-2">
+							瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果
+						</div>
+						<div class="xiaoliang">
+							销售量：5
+						</div>
+					</div>
+					<div class="aui-waterfall-footer">
+						<del> ¥159 </del>
+						<span class="aui-pull-right xianjia"> ¥123 </span>
+					</div>
+				</li>
+				<li onclick="openCommon('goods','goods_show','商品详情')">
+					<div class="aui-waterfall-header">
+						<img src="../../image/demo1.png" />
+					</div>
+					<div class="aui-waterfall-body">
+						<div class="aui-ellipsis-2">
+							瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果瀑布流的效果
+						</div>
+						<div class="xiaoliang">
+							销售量：5
+						</div>
+					</div>
+					<div class="aui-waterfall-footer">
+						<del> ¥159 </del>
+						<span class="aui-pull-right xianjia"> ¥123 </span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js" ></script>
+	<script type="text/javascript" src="../../script/common.js"></script>
+	<script type="text/javascript" src="../../script/aui-waterfall.js" ></script>
+	<script type="text/javascript" src="../../script/jquery.min.js" ></script>
+	<script type="text/javascript">
+		$aui.waterfall($api.byId("aui-waterfall"), {
+			col : 2, //列数
+			padding : 10, //容器内边距
+			space : 10//列间距
+		});
+		apiready = function() {
+		}
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".fenlei_btn").click(function() {
+				$("#fenlei").toggle();
+			});
+		});
+	</script>
+</html>

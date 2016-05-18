@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+		<style type="text/css">
+		    .title{
+		       border-bottom: 1px solid #DDDDDD;
+		       color:#333333;
+		    }
+		    .aui-card{
+		      padding: 10px;
+		    }
+		    .text{
+		      padding: 5px;
+		      text-indent: 10px;
+		      font-size: 15px;
+		    }
+		    .bottom{
+		      font-size: 12px;
+		      color:#666666;
+		    }
+		</style>
+	</head>
+	<body>
+		<div class="aui-card" style="margin-top: 10px;">
+			<p class="title">
+				<span class="aui-iconfont aui-icon-roundcheckfill aui-text-info"></span> 如何推销恋恋布舍产品？
+			</p>
+			<div class="text">
+				UI为用户提供了200个线型字体图标，使用字体图标的好处就是大小和颜色可以自由控制，同时还能方便的增加背景等效果。使用图标时请确保字体文件和css文件在同一目录下。
+				使用方法
+				图标的对应可以使用参考代码演示，在图标名称下方都有对应的名称，修改.aui-icon-*即可。
+				同时AUI也是支持自定义图标的，但是需要避免名称的重复。
+			</div>
+		</div>
+		<div class="aui-card bottom">
+		  <span>还没解决您的问题？</span>
+		  <a class="aui-pull-right" onclick="openCommon('service','question','在线提问')"><span class="aui-iconfont aui-icon-comment"></span> 向我提问</a>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript" src="../../script/common.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			api.parseTapmode();
+		}
+
+	</script>
+</html>

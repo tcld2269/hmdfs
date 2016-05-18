@@ -1,0 +1,2132 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>APP</title>
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+	</head>
+	<style>
+         .my-tab{
+            width: 100%;
+            margin-bottom: 100px;
+         }
+		  .my-tab li{
+		   list-style-type: none;
+		   height: 50px;
+		   width: 100%;
+		   border-bottom: 1px solid #F4F4F4;
+		   text-align: center;
+		   line-height: 50px;
+		   font-size: 12px;
+		   background-color: #FFFFFF;
+		   }
+		   .my-active{
+		     background-color: #F4F4F4 !important;
+		   }
+		   .my-content{
+		      width:75%;
+		      float: right;
+		      height: 100%;
+		      overflow-y: auto;
+		   }
+		   .my-page{
+		      height: 663px;
+		   }
+		   .my-ad img{
+		      width: 100%;
+		      height: 70px;
+		   }
+		   .my-type{
+		      background-color:#FFFFFF;
+		      overflow: hidden;
+		   }
+		   .my-type p{
+		      text-align: center;
+		      color:#333333;
+		      font-size: 12px;
+		   }
+		   .my-type img{
+		      width: 100%;
+		   }
+		   .aui-col-xs-4{
+		      padding: 5px;
+		   }
+		   .my-title{
+		      height: 40px;
+		      line-height: 40px;
+		   }
+		   .my-wrap{
+		       overflow-y: auto;
+		       height: 100%;
+		       display:inline-block;
+		       width: 24%;
+               float: left;
+               position:fixed;
+               top: 15px;
+		   }
+	</style>
+	<body>
+		<div class="aui-content">
+		    <div class="my-wrap">
+			    <ul id="tab" class="my-tab">
+			        <li class="my-active">全部品牌</li>
+			        <li>女装</li>
+			        <li>男装</li>
+			        <li>骆驼/圣弗莱</li>
+			        <li>耐克专区</li>
+			        <li>阿迪达斯</li>		       
+			        <li>内衣</li>
+			        <li>女鞋男鞋</li>
+			        <li>童装童鞋</li>		       
+			        <li>珠宝配饰</li>
+			        <li>箱包皮具</li>
+			        <li>医药保健</li>
+			        <li>一元创业卡</li>
+			    </ul>
+		    </div>
+		    <div id="content" class="my-content">
+		        <div class="my-page aui-content-padded" >
+		   			<div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />		                  
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />		                  
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />		                  
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />		                  
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />		                  
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />		                  
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />		                  
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />		                  
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />		                  
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />		                  
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />		                  
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />		                  
+		               </div>       		               		               
+		           </div>
+                </div>
+		        <div class="my-page aui-content-padded">
+		            <div class="my-ad">
+		               <img src="../image/cat-ad/ad3.png" />
+		            </div> 
+		            <h4 class="my-title">衬衫</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		           </div>
+                   <h4 class="my-title">上装</h4> 
+		           <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">下装</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">热卖品牌</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad4.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>          
+		        </div>		        
+		        <div class="my-page aui-content-padded">
+		           <div class="my-ad">
+		               <img src="../image/cat-ad/ad1.png" />
+		            </div> 
+		            <h4 class="my-title">面部护肤</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		           </div>
+                   <h4 class="my-title">身体护肤</h4> 
+		           <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">口腔护理</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">洗发护理</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>                          
+		        </div>
+		        <div class="my-page aui-content-padded">
+		           <div class="my-ad">
+		               <img src="../image/cat-ad/ad1.png" />
+		            </div> 
+		            <h4 class="my-title">奶粉</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		           </div>
+                   <h4 class="my-title">营养辅食</h4> 
+		           <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">尿裤湿巾</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">喂养用品</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>          
+		        </div>
+		        <div class="my-page aui-content-padded">
+		           <div class="my-ad">
+		               <img src="../image/cat-ad/ad1.png" />
+		            </div> 
+		            <h4 class="my-title">流行男鞋</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		           </div>
+                   <h4 class="my-title">时尚女鞋</h4> 
+		           <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">潮流女包</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">精品男包</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>          
+		        </div>
+		        <div class="my-page aui-content-padded">
+		           <div class="my-ad">
+		               <img src="../image/cat-ad/ad1.png" />
+		            </div> 
+		            <h4 class="my-title">内衣</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		           </div>
+                   <h4 class="my-title">睡衣</h4> 
+		           <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">服饰配件</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">热卖品牌</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>          
+		        </div>
+		        <div class="my-page aui-content-padded">
+		           <div class="my-ad">
+		               <img src="../image/cat-ad/ad1.png" />
+		            </div> 
+		            <h4 class="my-title">家纺</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		           </div>
+                   <h4 class="my-title">生活日用</h4> 
+		           <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">家装软饰</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">灯具</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>          
+		        </div>
+		        <div class="my-page aui-content-padded">
+		           <div class="my-ad">
+		               <img src="../image/cat-ad/ad1.png" />
+		            </div> 
+		            <h4 class="my-title">热门推荐</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		           </div>
+                   <h4 class="my-title">奢侈品</h4> 
+		           <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">礼品</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">热卖品牌</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>          
+		        </div>
+                <div class="my-page aui-content-padded" >
+		            <div class="my-ad">
+		               <img src="../image/cat-ad/ad1.png" />
+		            </div> 
+		            <h4 class="my-title">裙装</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		           </div>
+                   <h4 class="my-title">上装</h4> 
+		           <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">下装</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">热卖品牌</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>                  		                
+		        </div>
+		        <div class="my-page aui-content-padded" >
+		            <div class="my-ad">
+		               <img src="../image/cat-ad/ad1.png" />
+		            </div> 
+		            <h4 class="my-title">珠宝首饰</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		           </div>
+                   <h4 class="my-title">上装</h4> 
+		           <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">下装</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">热卖品牌</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>                  		                
+		        </div>
+		        	
+		       
+		        <div class="my-page aui-content-padded" >
+		            <div class="my-ad">
+		               <img src="../image/cat-ad/ad1.png" />
+		            </div> 
+		            <h4 class="my-title">箱包皮具</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		           </div>
+                   <h4 class="my-title">上装</h4> 
+		           <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">下装</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">热卖品牌</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>                  		                
+		        </div>	
+		        <div class="my-page aui-content-padded" >
+		            <div class="my-ad">
+		               <img src="../image/cat-ad/ad1.png" />
+		            </div> 
+		            <h4 class="my-title">医药</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		           </div>
+                   <h4 class="my-title">上装</h4> 
+		           <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">下装</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">热卖品牌</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>                  		                
+		        </div>	
+		        <div class="my-page aui-content-padded" >
+		            <div class="my-ad">
+		               <img src="../image/cat-ad/ad1.png" />
+		            </div> 
+		            <h4 class="my-title">一元创业卡</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		           </div>
+                   <h4 class="my-title">上装</h4> 
+		           <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">下装</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>
+		          <h4 class="my-title">热卖品牌</h4> 
+		            <div class="my-type">
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>	
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+	         
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+                       </div>
+		               <div class="aui-col-xs-4" onclick="openCommon('goods','category_show','分类详情')">
+		                   <img src="../image/cat-ad/ad2.png" />
+		                   <p>印花连衣裙</p>
+		               </div>		       		               		               
+		          </div>                  		                
+		        </div>		       
+		    </div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js" ></script>
+	<script type="text/javascript" src="../script/common.js"></script>
+	<script type="text/javascript" src="../script/jquery.min.js"></script>
+	<script type="text/javascript" src="../script/aui-waterfall.js" ></script>
+	<script type="text/javascript">
+		
+		apiready = function() {
+		}
+		$(document).ready(function(){	
+		        $(".my-page").first().show().siblings().hide();	       
+		        $("#tab li").click(function(){
+		        $(this).addClass("my-active").siblings().removeClass("my-active"); 
+		        var index = $("#tab li").index(this);
+		        $(".my-page").eq(index).show().siblings().hide();
+		    });
+		});
+	</script>
+</html>

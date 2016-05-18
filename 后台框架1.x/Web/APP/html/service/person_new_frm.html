@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+		<style type="text/css">
+			body,html{
+			    width:100%;
+			    height:100%;
+				background: url(../../image/newperson.jpg) center no-repeat;
+				background-size: 100% 100%;
+				text-align: center;
+			}
+			body{
+			   padding: 1px;
+			}
+			h1 {
+				margin-top: 70px;
+				color: #FFFFFF;
+				font-size: 25px;
+			}
+			h3{
+			   color: #FFFFFF;
+			}
+			.list{
+			   margin: 20px auto;
+			   width:250px;
+			}
+			.list li{
+			   width: 250px;
+			   background:rgba(225,225,225,0.9);
+			   padding: 2px 10px;
+			   overflow: hidden;
+			   margin-top:15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="aui-content">
+		    <h1>GETTING STARTED</h1>
+			<h3>新手入门</h3>
+		</div>
+		<ul class="list">
+		  <li onclick="openCommon('service','answering_question','解疑答惑')"><span class="aui-pull-left">疑惑解答</span><i class="aui-iconfont aui-icon-right aui-pull-right"></i></li>
+		  <li onclick="openCommon('service','personal','管理与推广')"><span class="aui-pull-left">个人中心管理和店铺推广</span><i class="aui-iconfont aui-icon-right aui-pull-right"></i></li>
+		  <li onclick="openCommon('service','become_agent','如何成为代理')"><span class="aui-pull-left">如何成为代理</span><i class="aui-iconfont aui-icon-right aui-pull-right"></i></li>
+		  <li onclick="openCommon('service','internet_trends','互联网趋势')"><span class="aui-pull-left">互联网趋势</span><i class="aui-iconfont aui-icon-right aui-pull-right"></i></li>
+		  <li onclick="openCommon('service','extend','加粉与推广')"><span class="aui-pull-left">如何加粉和推广</span><i class="aui-iconfont aui-icon-right aui-pull-right"></i></li>
+		  <li onclick="openCommon('service','profit_model','盈利分销模式')"><span class="aui-pull-left">盈利分销模式</span><i class="aui-iconfont aui-icon-right aui-pull-right"></i></li>
+		  <li onclick="openCommon('service','code_make','二维码的生成与推广')"><span class="aui-pull-left">二维码的生成与推广</span><i class="aui-iconfont aui-icon-right aui-pull-right"></i></li>
+		  <li onclick="openCommon('service','store_operation','商城操作指南')"><span class="aui-pull-left">商城操作指南</span><i class="aui-iconfont aui-icon-right aui-pull-right"></i></li>
+		  <li onclick="openCommon('service','call_us','联系我们')"><span class="aui-pull-left">联系我们</span><i class="aui-iconfont aui-icon-right aui-pull-right"></i></li>
+		</ul>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript" src="../../script/common.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			api.parseTapmode();
+		}
+	</script>
+</html>

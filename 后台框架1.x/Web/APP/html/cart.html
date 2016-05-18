@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<style type="text/css">
+			.cart-title{font-size:12px;padding:10px;}
+			.colg{color:#999}
+			.bottom-menu {
+				position: fixed;
+				bottom: 0;
+				width: 100%;
+				text-align: center;
+				background: #c20000;
+				color: #fff;
+				font-size: 12px;
+				padding-top: 5px;
+			}
+			.bottom-menu a {
+				color: #fff;
+			}
+			.bottom-menu a img {
+				width: 25px;
+				height: 25px;
+			}
+			.cart_btm {
+				background: #fff5e4;
+				color: #3c3c3c;
+				border-top: 1px solid #986d4b;
+				line-height: 40px;
+				padding-top: 0;
+				font-size: 14px;
+			}
+			.cart_btm img {
+				position: relative;
+				top: 5px;
+				margin: 0 5px;
+			}
+			.cart_total_fee {
+				font-size: 16px;
+			}
+			.cart_total_fee span {
+				color: #c20000;
+			}
+			.cart_goto_pay {
+				color: #fff;
+				background: #ffb027;
+				font-size: 16px;
+			}
+			.cartcheck{color:#FAA732;font-size:22px}
+			.lh30{line-height: 28px !important;margin:8px}
+			.aui-icon-pulldown {
+			color: orange;
+		}
+		.aui-icon-cartfill {
+			color: orange;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="cart-title">
+			购物车 （0）
+			<div class="aui-iconfont aui-icon-delete aui-pull-right colg"></div>
+		</div>
+		<div class="aui-content">
+			<ul class="aui-list-view">
+				<li class="aui-list-view-cell aui-img aui-counter-list">
+					<input class="aui-pull-left aui-checkbox" type="checkbox">
+					<img class="aui-img-object aui-pull-left" src="../image/demo1.png">
+					<div class="aui-img-body">
+						计数列表
+						<div class="aui-counter-box">
+							<div class="aui-pull-left aui-text-danger">
+								¥ 88元
+							</div>
+							<div class="aui-counter aui-pull-right">
+								<div class="aui-counter-minus aui-disabled"></div>
+								<input class="aui-counter-input" type="text" value="1">
+								<div class="aui-counter-plus"  ></div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-counter-list">
+					<input class="aui-pull-left aui-checkbox" type="checkbox">
+					<img class="aui-img-object aui-pull-left" src="../image/demo2.png">
+					<div class="aui-img-body">
+						计数列表
+						<div class="aui-counter-box">
+							<div class="aui-pull-left aui-text-danger">
+								¥ 88元
+							</div>
+							<div class="aui-counter aui-pull-right">
+								<div class="aui-counter-minus aui-disabled"></div>
+								<input class="aui-counter-input" type="text" value="1">
+								<div class="aui-counter-plus"  ></div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-counter-list">
+					<input class="aui-pull-left aui-checkbox" type="checkbox">
+					<img class="aui-img-object aui-pull-left" src="../image/demo3.png">
+					<div class="aui-img-body">
+						计数列表
+						<div class="aui-counter-box">
+							<div class="aui-pull-left aui-text-danger">
+								¥ 88元
+							</div>
+							<div class="aui-counter aui-pull-right" id="wrap">
+								<div class="aui-counter-minus aui-disabled"></div>
+								<input class="aui-counter-input" type="text" value="1">
+								<div class="aui-counter-plus" ></div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-counter-list">
+					<input class="aui-pull-left aui-checkbox" type="checkbox">
+					<img class="aui-img-object aui-pull-left" src="../image/demo2.png">
+					<div class="aui-img-body">
+						计数列表
+						<div class="aui-counter-box">
+							<div class="aui-pull-left aui-text-danger">
+								¥ 88元
+							</div>
+							<div class="aui-counter aui-pull-right">
+								<div class="aui-counter-minus aui-disabled"></div>
+								<input class="aui-counter-input" type="text" value="1">
+								<div class="aui-counter-plus"  ></div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div style="background: #f2f2f2">
+			<div style="width: 100%;padding-bottom: 5px" align="center" >
+				<span class="aui-iconfont aui-icon-pulldown"></span>
+				<span>&nbsp;您可能喜欢</span>
+			</div>
+			<ul class="aui-list-view aui-grid-view">
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						<p style="color: #000000">
+							商品名称商品名称商品名称商品名称
+						</p>
+						<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						<span class="aui-iconfont aui-icon-cartfill" style="float: right;padding-right: 10px"></span>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						<p style="color: #000000">
+							商品名称商品名称商品名称商品名称
+						</p>
+						<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						<span class="aui-iconfont aui-icon-cartfill" style="float: right;padding-right: 10px"></span>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						<p style="color: #000000">
+							商品名称商品名称商品名称商品名称
+						</p>
+						<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						<span class="aui-iconfont aui-icon-cartfill" style="float: right;padding-right: 10px"></span>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						<p style="color: #000000">
+							商品名称商品名称商品名称商品名称
+						</p>
+						<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						<span class="aui-iconfont aui-icon-cartfill" style="float: right;padding-right: 10px"></span>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						<p style="color: #000000">
+							商品名称商品名称商品名称商品名称
+						</p>
+						<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						<span class="aui-iconfont aui-icon-cartfill" style="float: right;padding-right: 10px"></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div style="height:40px"></div>
+		<div class="bottom-menu cart_btm">
+			<div class="aui-table">
+				<div class="aui-col-xs-3">
+					<input class="aui-pull-left aui-checkbox aui-checkbox-warning lh30" id="ckbox" type="checkbox">全选
+				</div>
+				<div class="aui-col-xs-6">
+					<div class="cart_total_fee">
+						合计：<span>￥</span><span id="allPrice" class="cart_total_fee_num">0</span>
+					</div>
+				</div>
+				<div class="aui-col-xs-3">
+					<div  onclick="openCommon('order','pay','订单支付')"  class="cart_goto_pay">
+						<!--onclick="goPay()"-->结算(<span id="checkCount" class="cart_total_num_btm">0</span>)
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript" src="../script/common.js"></script>
+	<script type="text/javascript" src="../script/jquery.min.js"></script>
+	<script>
+	  $(function(){
+	    $(".aui-counter-plus").each(function(i){
+	        $(this).click(function(){
+	             var num = $(this).parent().find("input").val();
+	             var n = parseInt(num);
+	             n = n + 1;
+	             $(this).parent().find("input").val(n);
+	             $(this).parent().find(".aui-disabled").removeClass("aui-disabled");
+	        });
+	    });
+          $(".aui-counter-minus").each(function(i){
+			    $(this).click(function(){
+			      var num = $(this).parent().find("input").val(); 
+			      if(num == 1)
+			      {
+			         $(this).addClass("aui-disabled");
+			      }else{	        
+			         num = num - 1;
+			         $(this).parent().find("input").val(num);
+			       }
+			    });
+			});
+			var onOff = true;
+			$("#ckbox").click(function(){ 
+			 if(onOff){
+			     $(":checkbox").prop("checked",true);
+			  }else{
+			     $(":checkbox").prop("checked",false);
+			  }
+			  onOff = !onOff;
+			});
+	  });
+	  
+	</script>
+	<script type="text/javascript">
+		apiready = function() {
+			api.parseTapmode();
+			api.addEventListener({
+				name : 'cat_back'
+			}, function(ret, err) {
+				loadCart();
+			});
+		}
+		
+		function openGoods() {
+			var delay = 0;
+			if (api.systemType != 'ios') {
+				delay = 300;
+			}
+			api.openWin({
+				name : 'goods_show_win',
+				url : 'goods_show_win.html',
+				bounces : false,
+				delay : delay
+			});
+		}
+	</script>
+</html>

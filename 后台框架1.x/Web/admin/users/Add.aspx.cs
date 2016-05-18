@@ -88,7 +88,7 @@ namespace hm.Web.users
 			string qq=this.txtqq.Text;
             DateTime addTime = DateTime.Now;
             DateTime lastLoginTime = DateTime.Now;
-            int status = int.Parse(this.ddrStatus.SelectedValue);
+            int status = StatusHelpercs.User_Status_Normal;
 
 			hm.Model.users model=new hm.Model.users();
 			model.userName=userName;

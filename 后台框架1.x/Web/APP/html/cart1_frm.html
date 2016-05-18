@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>APP</title>
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+	</head>
+	<style>
+		.aui-btn {
+			background: #ffffff;
+			border: 2px solid orange;
+			padding: 3px 12px;
+		}
+		.aui-icon-pulldown {
+			color: orange;
+		}
+		.aui-icon-cartfill {
+			color: orange;
+		}
+	</style>
+	<body style  = "background:#ffffff">
+		
+		<div align="center" style="padding: 10px">
+			<span class="aui-iconfont aui-icon-cartfill"></span>&nbsp;&nbsp;&nbsp;购物车是空的，您可以 <span class="aui-btn" style="vertical-align: 1px">逛逛秒杀</span>
+		</div>
+		<div style="background: #f2f2f2">
+			<div style="width: 100%;padding: 5px" align="center" >
+				<span class="aui-iconfont aui-icon-pulldown"></span>
+				<span>&nbsp;看看热卖</span>
+			</div>
+			<ul class="aui-list-view aui-grid-view">
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						<p style="color: #000000">
+							商品名称商品名称商品名称商品名称
+						</p>
+						<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						<span class="aui-iconfont aui-icon-cartfill" style="float: right;padding-right: 10px"></span>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						<p style="color: #000000">
+							商品名称商品名称商品名称商品名称
+						</p>
+						<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						<span class="aui-iconfont aui-icon-cartfill" style="float: right;padding-right: 10px"></span>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						<p style="color: #000000">
+							商品名称商品名称商品名称商品名称
+						</p>
+						<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						<span class="aui-iconfont aui-icon-cartfill" style="float: right;padding-right: 10px"></span>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						<p style="color: #000000">
+							商品名称商品名称商品名称商品名称
+						</p>
+						<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						<span class="aui-iconfont aui-icon-cartfill" style="float: right;padding-right: 10px"></span>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						<p style="color: #000000">
+							商品名称商品名称商品名称商品名称
+						</p>
+						<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						<span class="aui-iconfont aui-icon-cartfill" style="float: right;padding-right: 10px"></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../script/api.js" ></script>
+	<script type="text/javascript" src="../script/common.js"></script>
+	<script type="text/javascript" src="../script/aui-waterfall.js" ></script>
+	<script type="text/javascript">
+		apiready = function() {
+		}
+		function goto_top() {
+			var str = "goto_top()";
+			api.execScript({
+				frameName : 'home',
+				script : str
+			});
+		}
+	</script>
+</html>

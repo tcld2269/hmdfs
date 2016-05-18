@@ -1,96 +1,105 @@
-﻿<%@ Page Language="C#" MasterPageFile="../MasterPage.master" AutoEventWireup="true"
+﻿<%@ Page Language="C#" MasterPageFile="~/admin/AdminMaster.master" AutoEventWireup="true"
 	CodeBehind="AddAdmin.aspx.cs" Inherits="hm.Web.users.AddAdmin" Title="增加页" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<link href="/admin/css/plugins/chosen/chosen.css" rel="stylesheet">
+<link href="/admin/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+<style>
+.zdy-radio tr td{padding:0 10px}
+</style>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="title" runat="server">
-添加管理员
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">    
-	<table style="width: 100%;" cellpadding="2" cellspacing="1" class="border">
-		<tr>
-			<td class="tdbg">
-				
-<table width="100%" border="0" cellpadding="4" cellspacing="1" class="show-table">
-	<tr>
-	<td height="25" width="30%" align="right">
-		登录名
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtuserName" runat="server" Width="200px"></asp:TextBox>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		密码
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtpassword" runat="server" Width="200px" TextMode="Password"></asp:TextBox>
-	</td></tr>
-		<tr>
-	<td height="25" width="30%" align="right">
-		真实姓名
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtTrueName" runat="server" Width="200px"></asp:TextBox>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		所属部门
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:DropDownList ID="ddrPlace" runat="server"></asp:DropDownList>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		所属角色
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:DropDownList ID="ddrRole" runat="server"></asp:DropDownList>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		性别
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:RadioButtonList ID="rblSex" runat="server" RepeatDirection="Horizontal">
+<asp:Content ID="Content3" ContentPlaceHolderID="content" runat="server">
+<div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>
+                    添加管理员</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            登录名：</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox id="txtuserName" runat="server" Width="200px" CssClass="form-control" required="" aria-required="true"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            密码：</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox id="txtpassword" runat="server" Width="200px" TextMode="Password" CssClass="form-control" required="" aria-required="true"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            真实姓名：</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox id="txtTrueName" runat="server" Width="200px" CssClass="form-control" required="" aria-required="true"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            所属部门：</label>
+                        <div class="col-sm-8">
+                            <asp:DropDownList ID="ddrPlace" runat="server" CssClass="chosen-select" Width="200px"></asp:DropDownList>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            所属角色：</label>
+                        <div class="col-sm-8">
+                            <asp:DropDownList ID="ddrRole" runat="server" CssClass="chosen-select" Width="200px"></asp:DropDownList>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            性别：</label>
+                        <div class="col-sm-8">
+                            <asp:RadioButtonList ID="rblSex" runat="server" RepeatDirection="Horizontal" CssClass="zdy-radio">
 		<asp:ListItem Value="1" Selected="True">男</asp:ListItem>
 		<asp:ListItem Value="0">女</asp:ListItem>
 		</asp:RadioButtonList>
-	</td></tr>
-    <tr>
-	<td height="25" width="30%" align="right">
-		手机
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txttel" runat="server" Width="200px"></asp:TextBox>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		email
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtemail" runat="server" Width="200px"></asp:TextBox>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		qq
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtqq" runat="server" Width="200px"></asp:TextBox>
-	</td></tr>
-</table>
-<script src="/js/calendar1.js" type="text/javascript"></script>
-
-			</td>
-		</tr>
-		<tr>
-		<th align="center"><asp:Button ID="btnSave" runat="server" Text="保存" 
-					OnClick="btnSave_Click" class="right-button09"></asp:Button>
-				<asp:Button ID="btnCancle" runat="server" Text="取消"
-					OnClick="btnCancle_Click" class="right-button09" ></asp:Button></th>
-		</tr>
-	</table>
-	<br />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            手机：</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox id="txttel" runat="server" Width="200px" CssClass="form-control" required="" aria-required="true"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            Email：</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox id="txtemail" runat="server" Width="200px" CssClass="form-control" required="" aria-required="true"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
+                            QQ：</label>
+                        <div class="col-sm-8">
+                            <asp:TextBox id="txtqq" runat="server" Width="200px" CssClass="form-control" required="" aria-required="true"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-8 col-sm-offset-3">
+                            <asp:Button ID="btnSave" runat="server" Text="保存" 
+					OnClick="btnSave_Click" CssClass="btn btn-warning"></asp:Button>
+                            <button id="Button1" class="btn btn-default" type="button" onclick="history.back()">
+                                取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
-<%--<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceCheckright" runat="server">
-</asp:Content>--%>
+<asp:Content ID="Content2" ContentPlaceHolderID="foot" runat="server">
+<script src="/admin/js/plugins/chosen/chosen.jquery.js"></script>
+<script src="/admin/js/demo/form-advanced-demo.min.js"></script>
+</asp:Content>

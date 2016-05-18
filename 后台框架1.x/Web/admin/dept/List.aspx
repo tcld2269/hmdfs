@@ -35,18 +35,18 @@
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">
-                                上级菜单：</label>
+                                上级部门：</label>
                             <div class="col-sm-8">
                                 <select id="parentId" data-placeholder="选择上级..." class="chosen-select" style="width: 100%;"
                                     tabindex="2">
-                                    <option value="0">请选择上级菜单</option>
+                                    <option value="0">请选择上级部门</option>
                                     <%=edithtml %>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">
-                                菜单名称：</label>
+                                部门名称：</label>
                             <div class="col-sm-8">
                                 <input id="dept_name" name="name" minlength="2" type="text" class="form-control"
                                     required="" aria-required="true">
@@ -159,7 +159,7 @@
                 var deptId=$("#dept_id").val();
                 if(deptId=="")
                 {
-                    alert("请输入完整！");
+                    layer.msg("请输入完整！");
                     return;
                 }
                 var pars={deptId:deptId};

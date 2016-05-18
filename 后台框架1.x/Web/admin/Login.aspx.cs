@@ -49,6 +49,7 @@ namespace hm.Web.admin
                     Common.Cookie.SetObject(StatusHelpercs.Cookie_Admin_RoleName, 2, DESEncrypt.Encrypt(userList.Rows[0]["roleName"].ToString()));
                     Common.Cookie.SetObject(StatusHelpercs.Cookie_Admin_DeptId, 2, userList.Rows[0]["deptId"].ToString());
                     Common.Cookie.SetObject(StatusHelpercs.Cookie_Admin_IsAdmin, 2, userList.Rows[0]["isAdmin"].ToString());
+                    Common.Cookie.SetObject(StatusHelpercs.Cookie_Admin_Avatar, 2, userList.Rows[0]["avatar_small"].ToString());
                     Common.Cookie.SetObject(StatusHelpercs.Cookie_Admin_LastLoginTime, 2, DateTime.Parse(userList.Rows[0]["lastLoginTime"].ToString()).ToString("yyyy-MM-dd HH:mm:ss"));
                 }
                 catch

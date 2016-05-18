@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+		<style type="text/css">
+			.aui-content {
+				background: #ffffff;
+				overflow: hidden;
+			}
+			.aui-order-header {
+				width: 100%;
+				padding: 10px 15px;
+				color: #999;
+				font-size: 14px;
+				overflow: hidden;
+				line-height: 32px;
+			}
+			.order-avatar {
+				float: left;
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+			}
+			.order-nickname {
+				float: left;
+				font-size: 14px;
+				line-height: 32px;
+				margin-left: 10px;
+			}
+			.order-time {
+				font-size: 12px;
+			}
+			.aui-order-body {
+				width: 100%;
+			}
+			.aui-order-title {
+				font-size: 16px;
+				color: #333;
+				margin-bottom: 5px;
+			}
+			.aui-order-footer {
+				padding: 0 15px 15px 15px;
+				overflow: hidden;
+				line-height: 30px;
+			}
+			.aui-order-footer, .comment {
+				font-size: 14px;
+				color: #999;
+			}
+			.order-top {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				height: 50px
+			}
+			.mt50 {
+				margin-top: 50px
+			}
+			.chide{display:none}
+			.cactive{display:block}
+		</style>
+	</head>
+	<body>
+		<div class="aui-tab order-top">
+			<ul class="aui-tab-nav" id="ordertab">
+				<li id="b0" class="active">
+					待付款
+				</li>
+				<li id="b1">
+					待发货
+				</li>
+				<li id="b2">
+					待收货
+				</li>
+				<li id="b3">
+					待评价
+				</li>
+			</ul>
+		</div>
+		<div id="tab0">
+			<div class="aui-content mt50" tapmode onclick="openFrm();">
+				<div class="aui-order-header">
+					<img src="../../image/person.jpg" class="order-avatar"/>
+					<div class="aui-text-info order-nickname">
+						0000000
+					</div>
+					<span class="aui-pull-right order-time">交易成功</span>
+				</div>
+				<div class="aui-order-body">
+					<ul class="aui-list-view">
+						<li class="aui-list-view-cell aui-img">
+							<img class="aui-img-object aui-pull-left" src="../../image/demo5.png">
+							<div class="aui-img-body">
+								图文列表
+								<p class='aui-ellipsis-2'>
+									价格：¥120  数量：x2
+								</p>
+							</div>
+						</li>
+						<li class="aui-list-view-cell aui-img">
+							<img class="aui-img-object aui-pull-left" src="../../image/demo5.png">
+							<div class="aui-img-body">
+								图文列表
+								<p class='aui-ellipsis-2'>
+									价格：¥120  数量：x2
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="aui-order-footer">
+					<span class="aui-pull-left aui-text-warning"> <i class="aui-iconfont aui-icon-rechargefill"></i> <strong>合计：88.88</strong>元 </span>
+					<span class="aui-pull-right comment">
+						<button class="aui-btn aui-btn-danger">
+							评价
+						</button> </span>
+				</div>
+			</div>
+		</div>
+		<div id="tab1" class="chide">
+			<div class="aui-content mt50" tapmode onclick="openFrm();">
+				<div class="aui-order-header">
+					<img src="image/a1.jpeg" class="order-avatar"/>
+					<div class="aui-text-info order-nickname">
+						店铺名称
+					</div>
+					<span class="aui-pull-right order-time">交易成功</span>
+				</div>
+				<div class="aui-order-body">
+					<ul class="aui-list-view">
+						<li class="aui-list-view-cell aui-img">
+							<img class="aui-img-object aui-pull-left" src="../../image/demo5.png">
+							<div class="aui-img-body">
+								图文列表
+								<p class='aui-ellipsis-2'>
+									价格：¥120  数量：x2
+								</p>
+							</div>
+						</li>
+						<li class="aui-list-view-cell aui-img">
+							<img class="aui-img-object aui-pull-left" src="../../image/demo5.png">
+							<div class="aui-img-body">
+								图文列表
+								<p class='aui-ellipsis-2'>
+									价格：¥120  数量：x2
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="aui-order-footer">
+					<span class="aui-pull-left aui-text-warning"> <i class="aui-iconfont aui-icon-rechargefill"></i> <strong>合计：88.88</strong>元 </span>
+					<span class="aui-pull-right comment">
+						<button class="aui-btn aui-btn-danger">
+							评价
+						</button> </span>
+				</div>
+			</div>
+			<div class="aui-content" tapmode onclick="openFrm();">
+				<div class="aui-order-header">
+					<img src="image/a1.jpeg" class="order-avatar"/>
+					<div class="aui-text-info order-nickname">
+						店铺名称
+					</div>
+					<span class="aui-pull-right order-time">交易成功</span>
+				</div>
+				<div class="aui-order-body">
+					<ul class="aui-list-view">
+						<li class="aui-list-view-cell aui-img">
+							<img class="aui-img-object aui-pull-left" src="../../image/demo5.png">
+							<div class="aui-img-body">
+								图文列表
+								<p class='aui-ellipsis-2'>
+									价格：¥120  数量：x2
+								</p>
+							</div>
+						</li>
+						<li class="aui-list-view-cell aui-img">
+							<img class="aui-img-object aui-pull-left" src="../../image/demo5.png">
+							<div class="aui-img-body">
+								图文列表
+								<p class='aui-ellipsis-2'>
+									价格：¥120  数量：x2
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="aui-order-footer">
+					<span class="aui-pull-left aui-text-warning"> <i class="aui-iconfont aui-icon-rechargefill"></i> <strong>合计：88.88</strong>元 </span>
+					<span class="aui-pull-right comment">
+						<button class="aui-btn aui-btn-danger">
+							评价
+						</button> </span>
+				</div>
+			</div>
+		</div>
+		<div id="tab2"  class="chide">
+			<div class="aui-content mt50" tapmode onclick="openFrm();">
+				<div class="aui-order-header">
+					<img src="image/a1.jpeg" class="order-avatar"/>
+					<div class="aui-text-info order-nickname">
+						店铺名称2222222222
+					</div>
+					<span class="aui-pull-right order-time">交易成功</span>
+				</div>
+				<div class="aui-order-body">
+					<ul class="aui-list-view">
+						<li class="aui-list-view-cell aui-img">
+							<img class="aui-img-object aui-pull-left" src="../../image/demo5.png">
+							<div class="aui-img-body">
+								图文列表
+								<p class='aui-ellipsis-2'>
+									价格：¥120  数量：x2
+								</p>
+							</div>
+						</li>
+						<li class="aui-list-view-cell aui-img">
+							<img class="aui-img-object aui-pull-left" src="../../image/demo5.png">
+							<div class="aui-img-body">
+								图文列表
+								<p class='aui-ellipsis-2'>
+									价格：¥120  数量：x2
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="aui-order-footer">
+					<span class="aui-pull-left aui-text-warning"> <i class="aui-iconfont aui-icon-rechargefill"></i> <strong>合计：88.88</strong>元 </span>
+					<span class="aui-pull-right comment">
+						<button class="aui-btn aui-btn-danger">
+							评价
+						</button> </span>
+				</div>
+			</div>
+		</div>
+		<div id="tab3" class="chide">
+			<div class="aui-content mt50" tapmode onclick="openFrm();">
+				<div class="aui-order-header">
+					<img src="image/a1.jpeg" class="order-avatar"/>
+					<div class="aui-text-info order-nickname">
+						333333333
+					</div>
+					<span class="aui-pull-right order-time">交易成功</span>
+				</div>
+				<div class="aui-order-body">
+					<ul class="aui-list-view">
+						<li class="aui-list-view-cell aui-img">
+							<img class="aui-img-object aui-pull-left" src="../../image/demo5.png">
+							<div class="aui-img-body">
+								图文列表
+								<p class='aui-ellipsis-2'>
+									价格：¥120  数量：x2
+								</p>
+							</div>
+						</li>
+						<li class="aui-list-view-cell aui-img">
+							<img class="aui-img-object aui-pull-left" src="../../image/demo5.png">
+							<div class="aui-img-body">
+								图文列表
+								<p class='aui-ellipsis-2'>
+									价格：¥120  数量：x2
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="aui-order-footer">
+					<span class="aui-pull-left aui-text-warning"> <i class="aui-iconfont aui-icon-rechargefill"></i> <strong>合计：88.88</strong>元 </span>
+					<span class="aui-pull-right comment">
+						<button class="aui-btn aui-btn-danger">
+							评价
+						</button> </span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			api.parseTapmode();
+			setTab();
+		}
+		function setTab() {
+			var ordertab = $api.domAll("#ordertab li");
+			for (var i in ordertab) {
+				$api.addEvt(ordertab[i], 'click', function() {
+					$api.removeCls($api.dom("#ordertab li.active"), 'active');
+					$api.addCls(this, 'active');
+					var id=$api.attr(this,'id');
+
+					for(var j=0;j<4;j++)
+					{
+						$api.removeCls($api.byId('tab' + j), 'cactive');
+						$api.addCls($api.byId('tab' + j), 'chide');
+					}
+					$api.addCls($api.byId('ta' + id), 'cactive');
+				});
+			}
+		}
+	</script>
+</html>

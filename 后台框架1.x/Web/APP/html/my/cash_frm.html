@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+		<style type="text/css">
+		    body{
+		      background-color: #FFFFFF;
+		    }
+		     .my-btn{
+              padding: 10px 0 10px 0 !important;
+              line-height: 20px;
+              margin-top: 15px;
+              width: 90%;
+              margin-left: 5%;
+            }
+           .my-title div,.my-apply-list div{
+                 height: 30px;
+                 line-height: 30px;
+                 font-size: 13px;
+                 border-bottom:  1px solid #DDDDDD;
+                 overflow: hidden;
+                 white-space: nowrap;
+           }
+           .my-title{
+              margin-top: 15px;            
+           }
+  
+              
+		</style>
+	</head>
+	<body>
+	   <div class="aui-form">
+	      <div class="aui-input-row">
+	         <label class="aui-input-addon">可提取现金</label>
+	         <input type="text" class="aui-input"  value="0.00元" />
+	      </div>
+	      <div class="aui-input-row">
+	         <label class="aui-input-addon">提取现金</label>
+	         <input type="text" class="aui-input" placeholder="提现额度最低30元" />
+	      </div>
+	      <div class="aui-input-row">
+	         <label class="aui-input-addon">支付宝账号</label>
+	         <input type="text" class="aui-input" placeholder="请输入支付宝账号" />
+	      </div>
+	      <div class="aui-input-row">
+	         <label class="aui-input-addon">姓名</label>
+	         <input type="text" class="aui-input" placeholder="请输入姓名" />
+	      </div>
+	      <div class="aui-input-row">
+	         <label class="aui-input-addon">手机号</label>
+	         <input type="text" class="aui-input" placeholder="请输入手机号" />
+	      </div>
+	      <div class="aui-input-row">
+	         <label class="aui-input-addon">微信号</label>
+	         <input type="text" class="aui-input"  placeholder="请输入微信号"/>
+	      </div>
+	   </div>
+	   <input type="button" class="aui-btn aui-btn-block aui-btn-warning my-btn"  value="确认提交"/>
+	   <div class="aui-text-center my-title">
+           <div class="aui-col-xs-4">申请日期</div>
+           <div class="aui-col-xs-4">金额(元)</div>
+           <div class="aui-col-xs-4">状态</div>
+       </div>
+       <div class="my-apply-list aui-text-center">
+           <div class="aui-col-xs-4">2016-01-01 12:00</div>
+           <div class="aui-col-xs-4">500</div>
+           <div class="aui-col-xs-4">待审核</div>
+       </div>
+	
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			api.parseTapmode();
+		}
+
+	</script>
+</html>

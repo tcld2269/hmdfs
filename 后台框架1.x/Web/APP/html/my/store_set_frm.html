@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+		<style type="text/css">
+          .aui-btn-block{
+             padding: 5px;
+             width: 80%;
+             margin-left:10%;
+             margin-top:10px;
+           }
+           .notice{
+             font-size:14px;
+             padding-top: 10px; 
+           }
+		</style>
+	</head>
+	<body>
+     <div class="aui-form">
+        <div class="aui-input-row">
+            <label class="aui-input-addon">店铺名称</label>
+            <input type="text" class="aui-input" placeholder="输入店铺名称"/>        
+        </div>
+        <div class="aui-input-row">
+            <label class="aui-input-addon">转发话语</label>
+            <input type="text" class="aui-input" placeholder="输入转述话语"/>
+        </div>
+        <div class="aui-input-row">
+            <label class="aui-input-addon">真实姓名</label>
+            <input type="text" class="aui-input" placeholder="输入真实姓名"/>
+        </div>
+        <div class="aui-input-row">
+            <label class="aui-input-addon">手机号码</label>
+            <input type="text" class="aui-input" placeholder="输入手机号码"/>
+        </div>
+     </div>
+     <button class="aui-btn aui-btn-warning aui-btn-block">保存</button>
+     <div class="aui-content-padded notice">
+        <div>
+           <i class="aui-iconfont aui-icon-infofill aui-text-danger"></i>
+                                恋恋不舍严禁推广者使用“关注得红包”之类的诱导性宣传，一经发现将关闭店铺
+        </div>
+        <div>
+           <i class="aui-iconfont aui-icon-warnfill aui-text-danger"></i>
+                                 为防止微信转账失败，请务必填写真实姓名和联系电话。当转账异常时，我们将及时联系您。
+        </div>
+     </div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript" src="../../script/common.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			api.parseTapmode();
+		}
+
+	</script>
+</html>

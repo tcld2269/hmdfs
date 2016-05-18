@@ -62,7 +62,7 @@ namespace hm.Web.users
 		ddrStatus.SelectedValue = model.status.ToString();
         ddrPlace.SelectedValue = model.deptId.Value.ToString();
         txttel.Text = model.tel;
-
+        txtpassword.Text = Maticsoft.Common.DEncrypt.DESEncrypt.Decrypt(model.password, ConfigHelper.GetConfigString("PassWordEncrypt"));
 	}
 
 		public void btnSave_Click(object sender, EventArgs e)
@@ -102,6 +102,7 @@ namespace hm.Web.users
 			string email = this.txtemail.Text;
 			string qq = this.txtqq.Text;
 			int status = int.Parse(this.ddrStatus.SelectedValue);
+            string password = Maticsoft.Common.DEncrypt.DESEncrypt.Encrypt(txtpassword.Text, ConfigHelper.GetConfigString("PassWordEncrypt"));
 
 			hm.Model.users model = bll.GetModel(userId);
 			model.userName=userName;
@@ -116,9 +117,15 @@ namespace hm.Web.users
 			model.qq=qq;
 			model.status=status;
             model.tel = txttel.Text;
+            model.password = password;
 			
 			bll.Update(model);
-			Maticsoft.Common.MessageBox.ShowAndRedirect(this,"保存成功！","list.aspx");
+            string backurl = "list";
+            if (Request.Params["backurl"] != null && Request.Params["backurl"].Trim() != "")
+            {
+                backurl = Request.Params["backurl"].ToString();
+            }
+            Maticsoft.Common.MessageBox.ShowAndRedirect(this, "保存成功！", backurl + ".aspx");
 
 		}
 

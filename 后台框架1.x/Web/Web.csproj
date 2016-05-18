@@ -62,6 +62,10 @@
       <HintPath>..\Lib\Microsoft.Web.UI.WebControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -79,6 +83,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\adv\advPosList.aspx" />
+    <Content Include="admin\adv\List.aspx" />
+    <Content Include="admin\common\ContactUs.aspx" />
+    <Content Include="admin\common\MessageShow.aspx" />
+    <Content Include="admin\common\siteConfig.aspx" />
     <Content Include="admin\css\animate.min.css" />
     <Content Include="admin\css\bootstrap.min.css" />
     <Content Include="admin\css\bootstrap.min14ed.css" />
@@ -145,6 +154,13 @@
     <Content Include="admin\css\style.min.css" />
     <Content Include="admin\css\style.min862f.css" />
     <Content Include="admin\dept\List.aspx" />
+    <Content Include="admin\goods\Add.aspx" />
+    <Content Include="admin\goods\CatList.aspx" />
+    <Content Include="admin\goods\List.aspx" />
+    <Content Include="admin\goods\standList.aspx" />
+    <Content Include="admin\goods\Modify.aspx" />
+    <Content Include="admin\goods\PicList.aspx" />
+    <Content Include="admin\goods\goodsStands.aspx" />
     <Content Include="admin\img\a1.jpg" />
     <Content Include="admin\img\a2.jpg" />
     <Content Include="admin\img\a3.jpg" />
@@ -312,15 +328,71 @@
     <Content Include="admin\js\plugins\webuploader\webuploader.min.js" />
     <Content Include="admin\js\welcome.min.js" />
     <Content Include="admin\Login.aspx" />
+    <Content Include="admin\Main.aspx" />
     <Content Include="admin\menu\List.aspx" />
+    <Content Include="admin\news\CatList.aspx" />
+    <Content Include="admin\orders\List.aspx" />
+    <Content Include="admin\orders\RefunList.aspx" />
+    <Content Include="admin\orders\PaymentList.aspx" />
     <Content Include="admin\plugins\fullavatareditor\scripts\fullAvatarEditor.js" />
     <Content Include="admin\plugins\fullavatareditor\scripts\jQuery.Cookie.js" />
     <Content Include="admin\plugins\fullavatareditor\scripts\swfobject.js" />
     <Content Include="admin\plugins\fullavatareditor\scripts\test.js" />
+    <Content Include="admin\common\MessageList.aspx" />
     <Content Include="admin\role\List.aspx" />
     <Content Include="admin\role\RoleMenuEdit.aspx" />
+    <Content Include="admin\store\Add.aspx" />
+    <Content Include="admin\store\CatList.aspx" />
+    <Content Include="admin\store\List.aspx" />
+    <Content Include="admin\store\Modify.aspx" />
+    <Content Include="admin\store\VerifyList.aspx" />
+    <Content Include="admin\store\VerifyShow.aspx" />
+    <Content Include="admin\test.aspx" />
+    <Content Include="admin\test1.aspx" />
     <Content Include="admin\users\AddAdmin.aspx" />
     <Content Include="admin\users\AdminList.aspx" />
+    <Content Include="admin\users\ModAvatar.aspx" />
+    <Content Include="admin\users\UserInfo.aspx" />
+    <Content Include="APP\css\api.css" />
+    <Content Include="APP\css\aui-win.css" />
+    <Content Include="APP\css\aui.css" />
+    <Content Include="APP\css\common.css" />
+    <Content Include="APP\html\cart.html" />
+    <Content Include="APP\html\goods\goods_list.html" />
+    <Content Include="APP\html\goods\goods_show.html" />
+    <Content Include="APP\html\main.html" />
+    <Content Include="APP\html\my.html" />
+    <Content Include="APP\html\my\my_info_frm.html" />
+    <Content Include="APP\html\my\my_info_win.html" />
+    <Content Include="APP\html\order.html" />
+    <Content Include="APP\html\public\login.html" />
+    <Content Include="APP\html\public\register_one_frm.html" />
+    <Content Include="APP\html\public\register_two_frm.html" />
+    <Content Include="APP\html\public\register_win.html" />
+    <Content Include="APP\icon\icon150x150.png" />
+    <Content Include="APP\image\473.png" />
+    <Content Include="APP\image\ad1.jpg" />
+    <Content Include="APP\image\ad2.jpg" />
+    <Content Include="APP\image\ad3.jpg" />
+    <Content Include="APP\image\d5.png" />
+    <Content Include="APP\image\demo1.png" />
+    <Content Include="APP\image\demo2.png" />
+    <Content Include="APP\image\demo3.png" />
+    <Content Include="APP\image\demo4.png" />
+    <Content Include="APP\image\demo5.png" />
+    <Content Include="APP\image\loading_more.gif" />
+    <Content Include="APP\image\logo-bg.png" />
+    <Content Include="APP\image\mybg.png" />
+    <Content Include="APP\image\noavatar.gif" />
+    <Content Include="APP\launch\launch1080x1920.png" />
+    <Content Include="APP\script\api.js" />
+    <Content Include="APP\script\aui-alert.js" />
+    <Content Include="APP\script\aui-range.js" />
+    <Content Include="APP\script\aui-tap.js" />
+    <Content Include="APP\script\aui-waterfall.js" />
+    <Content Include="APP\script\common.js" />
+    <Content Include="APP\script\swipe.js" />
+    <Content Include="APP\script\zepto.min.js" />
     <Content Include="bin\AspNetPager.dll" />
     <Content Include="bin\hm.Web.dll" />
     <Content Include="bin\hm.Web.pdb" />
@@ -577,6 +649,8 @@
     <Content Include="admin\Controls\left.aspx" />
     <Content Include="admin\Controls\main.aspx" />
     <Content Include="admin\Controls\top.aspx" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="business\Login.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\build-config.js" />
     <Content Include="ckeditor\ckeditor.js" />
@@ -1446,6 +1520,7 @@
     <Content Include="ckfinder\userfiles\_thumbs\Images\文件 001.jpg" />
     <Content Include="ckfinder\userfiles\_thumbs\Images\未标题-2.png" />
     <Content Include="css\style.css" />
+    <Content Include="ErrorPages\404.html" />
     <Content Include="Global.asax" />
     <Content Include="admin\Images\!.gif" />
     <Content Include="admin\Images\ad.gif" />
@@ -1699,23 +1774,65 @@
     <Content Include="admin\js\skin\whyGreen\datepicker.css" />
     <Content Include="admin\js\skin\whyGreen\img.gif" />
     <Content Include="admin\Logout.aspx" />
-    <Content Include="admin\newsCat\Add.aspx" />
-    <Content Include="admin\newsCat\List.aspx" />
-    <Content Include="admin\newsCat\Modify.aspx" />
-    <Content Include="admin\newsCat\Show.aspx" />
     <Content Include="admin\news\Add.aspx" />
     <Content Include="admin\news\List.aspx" />
     <Content Include="admin\news\Modify.aspx" />
-    <Content Include="admin\news\Show.aspx" />
     <Content Include="admin\role\SaveRoleMenu.aspx" />
-    <Content Include="admin\sysItemCategory\Add.aspx" />
     <Content Include="admin\sysItemCategory\List.aspx" />
-    <Content Include="admin\sysItemCategory\Modify.aspx" />
-    <Content Include="admin\sysItem\Add.aspx" />
     <Content Include="admin\sysItem\List.aspx" />
-    <Content Include="admin\sysItem\Modify.aspx" />
+    <Content Include="img\a1.jpg" />
+    <Content Include="img\a2.jpg" />
+    <Content Include="img\a3.jpg" />
+    <Content Include="img\a4.jpg" />
+    <Content Include="img\a5.jpg" />
+    <Content Include="img\a6.jpg" />
+    <Content Include="img\a7.jpg" />
+    <Content Include="img\a8.jpg" />
+    <Content Include="img\a9.jpg" />
+    <Content Include="img\avatar\avatar1.png" />
+    <Content Include="img\avatar\avatar2.png" />
+    <Content Include="img\avatar\avatar3.png" />
+    <Content Include="img\avatar\avatar4.png" />
+    <Content Include="img\avatar\avatar5.png" />
+    <Content Include="img\avatar\avatar6.png" />
+    <Content Include="img\avatar\avatar7.png" />
+    <Content Include="img\avatar\avatar8.png" />
+    <Content Include="img\avatar\avatar9.png" />
+    <Content Include="img\bg.png" />
+    <Content Include="img\default_store_logo.gif" />
+    <Content Include="img\iconfont-logo.png" />
+    <Content Include="img\icons.png" />
+    <Content Include="img\index.jpg" />
+    <Content Include="img\index_4.jpg" />
+    <Content Include="img\loading-upload.gif" />
+    <Content Include="img\locked.png" />
+    <Content Include="img\login-background.jpg" />
+    <Content Include="img\p1.jpg" />
+    <Content Include="img\p2.jpg" />
+    <Content Include="img\p3.jpg" />
+    <Content Include="img\pay.png" />
+    <Content Include="img\profile.jpg" />
+    <Content Include="img\profile_big.jpg" />
+    <Content Include="img\profile_small.jpg" />
+    <Content Include="img\progress.png" />
+    <Content Include="img\p_big1.jpg" />
+    <Content Include="img\p_big2.jpg" />
+    <Content Include="img\p_big3.jpg" />
+    <Content Include="img\qr_code.png" />
+    <Content Include="img\success.png" />
+    <Content Include="img\user.png" />
+    <Content Include="img\wenku_logo.png" />
     <Content Include="js\common.js" />
     <Content Include="js\jquery.min.js" />
+    <Content Include="js\layer\extend\layer.ext.js" />
+    <Content Include="js\layer\layer.js" />
+    <Content Include="js\layer\skin\default\icon-ext.png" />
+    <Content Include="js\layer\skin\default\icon.png" />
+    <Content Include="js\layer\skin\default\loading-0.gif" />
+    <Content Include="js\layer\skin\default\loading-1.gif" />
+    <Content Include="js\layer\skin\default\loading-2.gif" />
+    <Content Include="js\layer\skin\layer.css" />
+    <Content Include="js\layer\skin\layer.ext.css" />
     <Content Include="js\My97DatePicker\calendar.js" />
     <Content Include="js\My97DatePicker\lang\en.js" />
     <Content Include="js\My97DatePicker\lang\zh-cn.js" />
@@ -1739,6 +1856,276 @@
     <Content Include="js\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
     <Content Include="js\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
     <Content Include="js\My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="ueditor\dialogs\anchor\anchor.html" />
+    <Content Include="ueditor\dialogs\attachment\attachment.css" />
+    <Content Include="ueditor\dialogs\attachment\attachment.html" />
+    <Content Include="ueditor\dialogs\attachment\attachment.js" />
+    <Content Include="ueditor\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="ueditor\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="ueditor\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="ueditor\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="ueditor\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="ueditor\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="ueditor\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="ueditor\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="ueditor\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="ueditor\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="ueditor\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="ueditor\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="ueditor\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="ueditor\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="ueditor\dialogs\attachment\images\alignicon.png" />
+    <Content Include="ueditor\dialogs\attachment\images\bg.png" />
+    <Content Include="ueditor\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="ueditor\dialogs\attachment\images\file-icons.png" />
+    <Content Include="ueditor\dialogs\attachment\images\icons.gif" />
+    <Content Include="ueditor\dialogs\attachment\images\icons.png" />
+    <Content Include="ueditor\dialogs\attachment\images\image.png" />
+    <Content Include="ueditor\dialogs\attachment\images\progress.png" />
+    <Content Include="ueditor\dialogs\attachment\images\success.gif" />
+    <Content Include="ueditor\dialogs\attachment\images\success.png" />
+    <Content Include="ueditor\dialogs\background\background.css" />
+    <Content Include="ueditor\dialogs\background\background.html" />
+    <Content Include="ueditor\dialogs\background\background.js" />
+    <Content Include="ueditor\dialogs\background\images\bg.png" />
+    <Content Include="ueditor\dialogs\background\images\success.png" />
+    <Content Include="ueditor\dialogs\charts\chart.config.js" />
+    <Content Include="ueditor\dialogs\charts\charts.css" />
+    <Content Include="ueditor\dialogs\charts\charts.html" />
+    <Content Include="ueditor\dialogs\charts\charts.js" />
+    <Content Include="ueditor\dialogs\charts\images\charts0.png" />
+    <Content Include="ueditor\dialogs\charts\images\charts1.png" />
+    <Content Include="ueditor\dialogs\charts\images\charts2.png" />
+    <Content Include="ueditor\dialogs\charts\images\charts3.png" />
+    <Content Include="ueditor\dialogs\charts\images\charts4.png" />
+    <Content Include="ueditor\dialogs\charts\images\charts5.png" />
+    <Content Include="ueditor\dialogs\emotion\emotion.css" />
+    <Content Include="ueditor\dialogs\emotion\emotion.html" />
+    <Content Include="ueditor\dialogs\emotion\emotion.js" />
+    <Content Include="ueditor\dialogs\emotion\images\0.gif" />
+    <Content Include="ueditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="ueditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="ueditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="ueditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="ueditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="ueditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="ueditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="ueditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="ueditor\dialogs\gmap\gmap.html" />
+    <Content Include="ueditor\dialogs\help\help.css" />
+    <Content Include="ueditor\dialogs\help\help.html" />
+    <Content Include="ueditor\dialogs\help\help.js" />
+    <Content Include="ueditor\dialogs\image\image.css" />
+    <Content Include="ueditor\dialogs\image\image.html" />
+    <Content Include="ueditor\dialogs\image\image.js" />
+    <Content Include="ueditor\dialogs\image\images\alignicon.jpg" />
+    <Content Include="ueditor\dialogs\image\images\bg.png" />
+    <Content Include="ueditor\dialogs\image\images\icons.gif" />
+    <Content Include="ueditor\dialogs\image\images\icons.png" />
+    <Content Include="ueditor\dialogs\image\images\image.png" />
+    <Content Include="ueditor\dialogs\image\images\progress.png" />
+    <Content Include="ueditor\dialogs\image\images\success.gif" />
+    <Content Include="ueditor\dialogs\image\images\success.png" />
+    <Content Include="ueditor\dialogs\insertframe\insertframe.html" />
+    <Content Include="ueditor\dialogs\internal.js" />
+    <Content Include="ueditor\dialogs\link\link.html" />
+    <Content Include="ueditor\dialogs\map\map.html" />
+    <Content Include="ueditor\dialogs\map\show.html" />
+    <Content Include="ueditor\dialogs\music\music.css" />
+    <Content Include="ueditor\dialogs\music\music.html" />
+    <Content Include="ueditor\dialogs\music\music.js" />
+    <Content Include="ueditor\dialogs\preview\preview.html" />
+    <Content Include="ueditor\dialogs\scrawl\images\addimg.png" />
+    <Content Include="ueditor\dialogs\scrawl\images\brush.png" />
+    <Content Include="ueditor\dialogs\scrawl\images\delimg.png" />
+    <Content Include="ueditor\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="ueditor\dialogs\scrawl\images\empty.png" />
+    <Content Include="ueditor\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="ueditor\dialogs\scrawl\images\eraser.png" />
+    <Content Include="ueditor\dialogs\scrawl\images\redo.png" />
+    <Content Include="ueditor\dialogs\scrawl\images\redoH.png" />
+    <Content Include="ueditor\dialogs\scrawl\images\scale.png" />
+    <Content Include="ueditor\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="ueditor\dialogs\scrawl\images\size.png" />
+    <Content Include="ueditor\dialogs\scrawl\images\undo.png" />
+    <Content Include="ueditor\dialogs\scrawl\images\undoH.png" />
+    <Content Include="ueditor\dialogs\scrawl\scrawl.css" />
+    <Content Include="ueditor\dialogs\scrawl\scrawl.html" />
+    <Content Include="ueditor\dialogs\scrawl\scrawl.js" />
+    <Content Include="ueditor\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="ueditor\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="ueditor\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="ueditor\dialogs\spechars\spechars.html" />
+    <Content Include="ueditor\dialogs\spechars\spechars.js" />
+    <Content Include="ueditor\dialogs\table\dragicon.png" />
+    <Content Include="ueditor\dialogs\table\edittable.css" />
+    <Content Include="ueditor\dialogs\table\edittable.html" />
+    <Content Include="ueditor\dialogs\table\edittable.js" />
+    <Content Include="ueditor\dialogs\table\edittd.html" />
+    <Content Include="ueditor\dialogs\table\edittip.html" />
+    <Content Include="ueditor\dialogs\template\config.js" />
+    <Content Include="ueditor\dialogs\template\images\bg.gif" />
+    <Content Include="ueditor\dialogs\template\images\pre0.png" />
+    <Content Include="ueditor\dialogs\template\images\pre1.png" />
+    <Content Include="ueditor\dialogs\template\images\pre2.png" />
+    <Content Include="ueditor\dialogs\template\images\pre3.png" />
+    <Content Include="ueditor\dialogs\template\images\pre4.png" />
+    <Content Include="ueditor\dialogs\template\template.css" />
+    <Content Include="ueditor\dialogs\template\template.html" />
+    <Content Include="ueditor\dialogs\template\template.js" />
+    <Content Include="ueditor\dialogs\video\images\bg.png" />
+    <Content Include="ueditor\dialogs\video\images\center_focus.jpg" />
+    <Content Include="ueditor\dialogs\video\images\file-icons.gif" />
+    <Content Include="ueditor\dialogs\video\images\file-icons.png" />
+    <Content Include="ueditor\dialogs\video\images\icons.gif" />
+    <Content Include="ueditor\dialogs\video\images\icons.png" />
+    <Content Include="ueditor\dialogs\video\images\image.png" />
+    <Content Include="ueditor\dialogs\video\images\left_focus.jpg" />
+    <Content Include="ueditor\dialogs\video\images\none_focus.jpg" />
+    <Content Include="ueditor\dialogs\video\images\progress.png" />
+    <Content Include="ueditor\dialogs\video\images\right_focus.jpg" />
+    <Content Include="ueditor\dialogs\video\images\success.gif" />
+    <Content Include="ueditor\dialogs\video\images\success.png" />
+    <Content Include="ueditor\dialogs\video\video.css" />
+    <Content Include="ueditor\dialogs\video\video.html" />
+    <Content Include="ueditor\dialogs\video\video.js" />
+    <Content Include="ueditor\dialogs\webapp\webapp.html" />
+    <Content Include="ueditor\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="ueditor\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="ueditor\dialogs\wordimage\tangram.js" />
+    <Content Include="ueditor\dialogs\wordimage\wordimage.html" />
+    <Content Include="ueditor\dialogs\wordimage\wordimage.js" />
+    <Content Include="ueditor\index.html" />
+    <Content Include="ueditor\lang\en\en.js" />
+    <Content Include="ueditor\lang\en\images\addimage.png" />
+    <Content Include="ueditor\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="ueditor\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="ueditor\lang\en\images\background.png" />
+    <Content Include="ueditor\lang\en\images\button.png" />
+    <Content Include="ueditor\lang\en\images\copy.png" />
+    <Content Include="ueditor\lang\en\images\deletedisable.png" />
+    <Content Include="ueditor\lang\en\images\deleteenable.png" />
+    <Content Include="ueditor\lang\en\images\listbackground.png" />
+    <Content Include="ueditor\lang\en\images\localimage.png" />
+    <Content Include="ueditor\lang\en\images\music.png" />
+    <Content Include="ueditor\lang\en\images\rotateleftdisable.png" />
+    <Content Include="ueditor\lang\en\images\rotateleftenable.png" />
+    <Content Include="ueditor\lang\en\images\rotaterightdisable.png" />
+    <Content Include="ueditor\lang\en\images\rotaterightenable.png" />
+    <Content Include="ueditor\lang\en\images\upload.png" />
+    <Content Include="ueditor\lang\zh-cn\images\copy.png" />
+    <Content Include="ueditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="ueditor\lang\zh-cn\images\music.png" />
+    <Content Include="ueditor\lang\zh-cn\images\upload.png" />
+    <Content Include="ueditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="ueditor\net\Bin\Newtonsoft.Json.dll" />
+    <Content Include="ueditor\net\Bin\Newtonsoft.Json.pdb" />
+    <Content Include="ueditor\net\Bin\Newtonsoft.Json.xml" />
+    <Content Include="ueditor\net\net.sln" />
+    <Content Include="ueditor\net\upload\image\20160112\6358821819366762032219357.jpg" />
+    <Content Include="ueditor\themes\default\css\ueditor.css" />
+    <Content Include="ueditor\themes\default\css\ueditor.min.css" />
+    <Content Include="ueditor\themes\default\dialogbase.css" />
+    <Content Include="ueditor\themes\default\images\anchor.gif" />
+    <Content Include="ueditor\themes\default\images\arrow.png" />
+    <Content Include="ueditor\themes\default\images\arrow_down.png" />
+    <Content Include="ueditor\themes\default\images\arrow_up.png" />
+    <Content Include="ueditor\themes\default\images\button-bg.gif" />
+    <Content Include="ueditor\themes\default\images\cancelbutton.gif" />
+    <Content Include="ueditor\themes\default\images\charts.png" />
+    <Content Include="ueditor\themes\default\images\cursor_h.gif" />
+    <Content Include="ueditor\themes\default\images\cursor_h.png" />
+    <Content Include="ueditor\themes\default\images\cursor_v.gif" />
+    <Content Include="ueditor\themes\default\images\cursor_v.png" />
+    <Content Include="ueditor\themes\default\images\dialog-title-bg.png" />
+    <Content Include="ueditor\themes\default\images\filescan.png" />
+    <Content Include="ueditor\themes\default\images\highlighted.gif" />
+    <Content Include="ueditor\themes\default\images\icons-all.gif" />
+    <Content Include="ueditor\themes\default\images\icons.gif" />
+    <Content Include="ueditor\themes\default\images\icons.png" />
+    <Content Include="ueditor\themes\default\images\loaderror.png" />
+    <Content Include="ueditor\themes\default\images\loading.gif" />
+    <Content Include="ueditor\themes\default\images\lock.gif" />
+    <Content Include="ueditor\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="ueditor\themes\default\images\pagebreak.gif" />
+    <Content Include="ueditor\themes\default\images\scale.png" />
+    <Content Include="ueditor\themes\default\images\sortable.png" />
+    <Content Include="ueditor\themes\default\images\spacer.gif" />
+    <Content Include="ueditor\themes\default\images\sparator_v.png" />
+    <Content Include="ueditor\themes\default\images\table-cell-align.png" />
+    <Content Include="ueditor\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="ueditor\themes\default\images\toolbar_bg.png" />
+    <Content Include="ueditor\themes\default\images\unhighlighted.gif" />
+    <Content Include="ueditor\themes\default\images\upload.png" />
+    <Content Include="ueditor\themes\default\images\videologo.gif" />
+    <Content Include="ueditor\themes\default\images\word.gif" />
+    <Content Include="ueditor\themes\default\images\wordpaste.png" />
+    <Content Include="ueditor\themes\iframe.css" />
+    <Content Include="ueditor\third-party\codemirror\codemirror.css" />
+    <Content Include="ueditor\third-party\codemirror\codemirror.js" />
+    <Content Include="ueditor\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="ueditor\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="ueditor\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="ueditor\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="ueditor\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="ueditor\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="ueditor\third-party\highcharts\highcharts-more.js" />
+    <Content Include="ueditor\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="ueditor\third-party\highcharts\highcharts.js" />
+    <Content Include="ueditor\third-party\highcharts\highcharts.src.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\annotations.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\data.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\data.src.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\exporting.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\funnel.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\map.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\map.src.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="ueditor\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="ueditor\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="ueditor\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="ueditor\third-party\highcharts\themes\gray.js" />
+    <Content Include="ueditor\third-party\highcharts\themes\grid.js" />
+    <Content Include="ueditor\third-party\highcharts\themes\skies.js" />
+    <Content Include="ueditor\third-party\jquery-1.10.2.js" />
+    <Content Include="ueditor\third-party\jquery-1.10.2.min.js" />
+    <Content Include="ueditor\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="ueditor\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="ueditor\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="ueditor\third-party\video-js\video-js.css" />
+    <Content Include="ueditor\third-party\video-js\video-js.min.css" />
+    <Content Include="ueditor\third-party\video-js\video-js.swf" />
+    <Content Include="ueditor\third-party\video-js\video.dev.js" />
+    <Content Include="ueditor\third-party\video-js\video.js" />
+    <Content Include="ueditor\third-party\webuploader\Uploader.swf" />
+    <Content Include="ueditor\third-party\webuploader\webuploader.css" />
+    <Content Include="ueditor\third-party\webuploader\webuploader.custom.js" />
+    <Content Include="ueditor\third-party\webuploader\webuploader.custom.min.js" />
+    <Content Include="ueditor\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="ueditor\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="ueditor\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="ueditor\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="ueditor\third-party\webuploader\webuploader.js" />
+    <Content Include="ueditor\third-party\webuploader\webuploader.min.js" />
+    <Content Include="ueditor\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="ueditor\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="ueditor\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="ueditor\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="ueditor\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="ueditor\ueditor.all.js" />
+    <Content Include="ueditor\ueditor.all.min.js" />
+    <Content Include="ueditor\ueditor.config.js" />
+    <Content Include="ueditor\ueditor.parse.js" />
+    <Content Include="ueditor\ueditor.parse.min.js" />
     <Content Include="upload\avatar\20130912041927_big.jpg" />
     <Content Include="upload\avatar\20130912041927_small.jpg" />
     <Content Include="upload\file\2014042404240453.txt" />
@@ -1769,12 +2156,8 @@
     <Content Include="upload\pic\20140518024458_big.jpg" />
     <Content Include="upload\pic\20140518024458_small.jpg" />
     <Content Include="admin\users\Add.aspx" />
-    <Content Include="admin\users\List.aspx" />
     <Content Include="admin\users\Modify.aspx" />
-    <Content Include="admin\users\ModifyByAdmin.aspx" />
-    <Content Include="admin\users\ModifyMe.aspx" />
     <Content Include="admin\users\ModifyPass.aspx" />
-    <Content Include="admin\users\Show.aspx" />
     <Content Include="admin\users\UserList.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1791,12 +2174,96 @@
     <Compile Include="admin\AdminPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="admin\adv\advPosList.aspx.cs">
+      <DependentUpon>advPosList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adv\advPosList.aspx.designer.cs">
+      <DependentUpon>advPosList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\adv\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adv\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\common\ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\common\ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\common\MessageShow.aspx.cs">
+      <DependentUpon>MessageShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\common\MessageShow.aspx.designer.cs">
+      <DependentUpon>MessageShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\common\siteConfig.aspx.cs">
+      <DependentUpon>siteConfig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\common\siteConfig.aspx.designer.cs">
+      <DependentUpon>siteConfig.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\dept\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\dept\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\goods\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\goods\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\goods\CatList.aspx.cs">
+      <DependentUpon>CatList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\goods\CatList.aspx.designer.cs">
+      <DependentUpon>CatList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\goods\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\goods\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\goods\standList.aspx.cs">
+      <DependentUpon>standList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\goods\standList.aspx.designer.cs">
+      <DependentUpon>standList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\goods\Modify.aspx.cs">
+      <DependentUpon>Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\goods\Modify.aspx.designer.cs">
+      <DependentUpon>Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\goods\PicList.aspx.cs">
+      <DependentUpon>PicList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\goods\PicList.aspx.designer.cs">
+      <DependentUpon>PicList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\goods\goodsStands.aspx.cs">
+      <DependentUpon>goodsStands.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\goods\goodsStands.aspx.designer.cs">
+      <DependentUpon>goodsStands.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -1812,12 +2279,54 @@
     <Compile Include="admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\menu\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\menu\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\news\CatList.aspx.cs">
+      <DependentUpon>CatList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\news\CatList.aspx.designer.cs">
+      <DependentUpon>CatList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\common\MessageList.aspx.cs">
+      <DependentUpon>MessageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\common\MessageList.aspx.designer.cs">
+      <DependentUpon>MessageList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\orders\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\orders\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\orders\RefunList.aspx.cs">
+      <DependentUpon>RefunList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\orders\RefunList.aspx.designer.cs">
+      <DependentUpon>RefunList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\orders\PaymentList.aspx.cs">
+      <DependentUpon>PaymentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\orders\PaymentList.aspx.designer.cs">
+      <DependentUpon>PaymentList.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\role\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
@@ -1833,6 +2342,62 @@
     <Compile Include="admin\role\RoleMenuEdit.aspx.designer.cs">
       <DependentUpon>RoleMenuEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\store\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\store\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\store\CatList.aspx.cs">
+      <DependentUpon>CatList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\store\CatList.aspx.designer.cs">
+      <DependentUpon>CatList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\store\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\store\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\store\Modify.aspx.cs">
+      <DependentUpon>Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\store\Modify.aspx.designer.cs">
+      <DependentUpon>Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\store\VerifyList.aspx.cs">
+      <DependentUpon>VerifyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\store\VerifyList.aspx.designer.cs">
+      <DependentUpon>VerifyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\store\VerifyShow.aspx.cs">
+      <DependentUpon>VerifyShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\store\VerifyShow.aspx.designer.cs">
+      <DependentUpon>VerifyShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\test1.aspx.cs">
+      <DependentUpon>test1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\test1.aspx.designer.cs">
+      <DependentUpon>test1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\users\AddAdmin.aspx.cs">
       <DependentUpon>AddAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1846,6 +2411,20 @@
     </Compile>
     <Compile Include="admin\users\AdminList.aspx.designer.cs">
       <DependentUpon>AdminList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\users\ModAvatar.aspx.cs">
+      <DependentUpon>ModAvatar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\users\ModAvatar.aspx.designer.cs">
+      <DependentUpon>ModAvatar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\users\UserInfo.aspx.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\users\UserInfo.aspx.designer.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP_Code\ClassHelper.cs" />
     <Compile Include="admin\Controls\CheckRight.ascx.cs">
@@ -1883,6 +2462,13 @@
     <Compile Include="admin\Controls\top.aspx.designer.cs">
       <DependentUpon>top.aspx</DependentUpon>
     </Compile>
+    <Compile Include="business\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="business\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1899,34 +2485,6 @@
     </Compile>
     <Compile Include="admin\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\newsCat\Add.aspx.cs">
-      <DependentUpon>Add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\newsCat\Add.aspx.designer.cs">
-      <DependentUpon>Add.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\newsCat\List.aspx.cs">
-      <DependentUpon>List.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\newsCat\List.aspx.designer.cs">
-      <DependentUpon>List.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\newsCat\Modify.aspx.cs">
-      <DependentUpon>Modify.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\newsCat\Modify.aspx.designer.cs">
-      <DependentUpon>Modify.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\newsCat\Show.aspx.cs">
-      <DependentUpon>Show.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\newsCat\Show.aspx.designer.cs">
-      <DependentUpon>Show.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\news\Add.aspx.cs">
       <DependentUpon>Add.aspx</DependentUpon>
@@ -1949,12 +2507,8 @@
     <Compile Include="admin\news\Modify.aspx.designer.cs">
       <DependentUpon>Modify.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\news\Show.aspx.cs">
-      <DependentUpon>Show.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\news\Show.aspx.designer.cs">
-      <DependentUpon>Show.aspx</DependentUpon>
+    <Compile Include="handler\UploadImageHandler.ashx.cs">
+      <DependentUpon>UploadImageHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="admin\role\SaveRoleMenu.aspx.cs">
@@ -1964,33 +2518,12 @@
     <Compile Include="admin\role\SaveRoleMenu.aspx.designer.cs">
       <DependentUpon>SaveRoleMenu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\sysItemCategory\Add.aspx.cs">
-      <DependentUpon>Add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\sysItemCategory\Add.aspx.designer.cs">
-      <DependentUpon>Add.aspx</DependentUpon>
-    </Compile>
     <Compile Include="admin\sysItemCategory\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\sysItemCategory\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\sysItemCategory\Modify.aspx.cs">
-      <DependentUpon>Modify.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\sysItemCategory\Modify.aspx.designer.cs">
-      <DependentUpon>Modify.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\sysItem\Add.aspx.cs">
-      <DependentUpon>Add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\sysItem\Add.aspx.designer.cs">
-      <DependentUpon>Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\sysItem\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
@@ -1999,26 +2532,12 @@
     <Compile Include="admin\sysItem\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\sysItem\Modify.aspx.cs">
-      <DependentUpon>Modify.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\sysItem\Modify.aspx.designer.cs">
-      <DependentUpon>Modify.aspx</DependentUpon>
-    </Compile>
     <Compile Include="admin\users\Add.aspx.cs">
       <DependentUpon>Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\users\Add.aspx.designer.cs">
       <DependentUpon>Add.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\List.aspx.cs">
-      <DependentUpon>List.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\List.aspx.designer.cs">
-      <DependentUpon>List.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\users\Modify.aspx.cs">
       <DependentUpon>Modify.aspx</DependentUpon>
@@ -2027,33 +2546,12 @@
     <Compile Include="admin\users\Modify.aspx.designer.cs">
       <DependentUpon>Modify.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\users\ModifyByAdmin.aspx.cs">
-      <DependentUpon>ModifyByAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\ModifyByAdmin.aspx.designer.cs">
-      <DependentUpon>ModifyByAdmin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\ModifyMe.aspx.cs">
-      <DependentUpon>ModifyMe.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\ModifyMe.aspx.designer.cs">
-      <DependentUpon>ModifyMe.aspx</DependentUpon>
-    </Compile>
     <Compile Include="admin\users\ModifyPass.aspx.cs">
       <DependentUpon>ModifyPass.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\users\ModifyPass.aspx.designer.cs">
       <DependentUpon>ModifyPass.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\Show.aspx.cs">
-      <DependentUpon>Show.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\Show.aspx.designer.cs">
-      <DependentUpon>Show.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\users\UserList.aspx.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
@@ -2063,6 +2561,14 @@
       <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
     <Compile Include="APP_Code\StatusHelpercs.cs" />
+    <Compile Include="ueditor\net\App_Code\Config.cs" />
+    <Compile Include="ueditor\net\App_Code\ConfigHandler.cs" />
+    <Compile Include="ueditor\net\App_Code\CrawlerHandler.cs" />
+    <Compile Include="ueditor\net\App_Code\Handler.cs" />
+    <Compile Include="ueditor\net\App_Code\ListFileHandler.cs" />
+    <Compile Include="ueditor\net\App_Code\NotSupportedHandler.cs" />
+    <Compile Include="ueditor\net\App_Code\PathFormater.cs" />
+    <Compile Include="ueditor\net\App_Code\UploadHandler.cs" />
     <Compile Include="ValidateCode.aspx.cs">
       <DependentUpon>ValidateCode.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2098,6 +2604,10 @@
     <Content Include="ValidateCode.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="APP\feature\" />
+    <Folder Include="APP\html\order\" />
+    <Folder Include="APP\res\" />
+    <Folder Include="APP\wgt\" />
     <Folder Include="ckeditor\images\" />
     <Folder Include="ckeditor\plugins\a11yhelp\lang\" />
     <Folder Include="ckeditor\plugins\adobeair\" />
@@ -2215,6 +2725,7 @@
     <None Include="admin\fonts\glyphicons-halflings-regulard41d.eot" />
     <Content Include="admin\js\plugins\layer\laydate-v1.1.zip" />
     <None Include="admin\js\plugins\layer\laydate-v1.1\layDate官网.url" />
+    <None Include="APP\css\aui_iconfont.ttf" />
     <None Include="ckeditor\CHANGES.md" />
     <None Include="ckeditor\LICENSE.md" />
     <None Include="ckeditor\plugins\scayt\LICENSE.md" />
@@ -2233,6 +2744,16 @@
     <None Include="ckfinder\userfiles\files\附件.doc" />
     <None Include="ckfinder\userfiles\files\附件：2013年度山东省高职高专院校骨干教师省级培训计划表（word版）.docx" />
     <None Include="admin\Images\banner\vssver2.scc" />
+    <Content Include="handler\UploadImageHandler.ashx" />
+    <None Include="ueditor\net\config.json" />
+    <Content Include="ueditor\net\controller.ashx" />
+    <None Include="ueditor\net\README.md" />
+    <Content Include="ueditor\net\Web.config" />
+    <None Include="ueditor\third-party\jquery-1.10.2.min.map" />
+    <None Include="ueditor\third-party\video-js\font\vjs.eot" />
+    <None Include="ueditor\third-party\video-js\font\vjs.svg" />
+    <None Include="ueditor\third-party\video-js\font\vjs.ttf" />
+    <None Include="ueditor\third-party\video-js\font\vjs.woff" />
     <None Include="upload\excel\学员信息导入模版%28导入%29.xls" />
     <None Include="upload\excel\班级信息导入模版%28导入%29.xls" />
     <None Include="upload\excel\课程信息导入模版%28导入%29.xls" />
@@ -2252,7 +2773,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54385</DevelopmentServerPort>
+          <DevelopmentServerPort>54488</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

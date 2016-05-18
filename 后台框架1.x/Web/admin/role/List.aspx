@@ -155,7 +155,7 @@
     function addRole() {
         var roleName = $("#role_name").val();
         if (roleName == "") {
-            alert("请输入角色名称！");
+            layer.msg("请输入角色名称！");
             return;
         }
         var pars = { roleName: roleName };
@@ -164,7 +164,7 @@
                 location.href = location.href;
             }
             else { 
-                alert(ret.msg)
+                layer.msg(ret.msg)
             }
         });
     }
@@ -177,7 +177,7 @@
                 showEditpanel();
             }
             else {
-                alert(ret.msg)
+                layer.msg(ret.msg)
             }
         });
     }
@@ -191,7 +191,7 @@
                 location.href = location.href;
             }
             else {
-                alert(ret.msg)
+                layer.msg(ret.msg)
             }
         });
     }
@@ -204,7 +204,7 @@
                     location.href = location.href;
                 }
                 else {
-                    alert(ret.msg)
+                    layer.msg(ret.msg)
                 }
             });
         }

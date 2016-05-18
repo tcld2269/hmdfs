@@ -53,8 +53,8 @@ namespace hm.Web.news
 			}
             int catId = int.Parse(this.ddrCat.SelectedValue);
             string catName = this.ddrCat.Items[ddrCat.SelectedIndex].Text;
-			int userId=int.Parse(Request.Cookies["userId"].Value);
-            string userName = Request.Cookies["userName"].Value;
+			int userId=int.Parse(Common.Cookie.GetValue(StatusHelpercs.Cookie_Admin_UserId));
+            string userName = Common.Cookie.GetValue(StatusHelpercs.Cookie_Admin_UserName);
 
             int deptId = 1;
             
@@ -88,7 +88,7 @@ namespace hm.Web.news
 
 			hm.BLL.news bll=new hm.BLL.news();
 			bll.Add(model);
-            Maticsoft.Common.MessageBox.ShowAndRedirect(this, "保存成功！", "list.aspx?type=" + new BLL.newsCat().GetModel(catId).type.Value + "&id=" + model.catId.Value);
+            Maticsoft.Common.MessageBox.ShowAndRedirect(this, "保存成功！", "list.aspx");
 
 		}
 

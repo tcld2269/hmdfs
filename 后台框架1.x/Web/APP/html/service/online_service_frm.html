@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+		<style type="text/css">
+		     body{
+		       background-color: #FFFFFF;
+		     }
+            .top{
+               height: 130px;
+               background: linear-gradient(#3873BB,#01A9FE);
+               width: 100%;
+               padding: 5px;
+               position: relative;
+               text-align: center;
+            }
+            .top p{
+                color: #FFFFFF;
+                text-align: center;
+                font-size: 12px;
+                margin-top: 10px;
+            }
+            .top p label{
+               font-size: 20px;
+            }
+            .portrait{
+                width: 100px;
+                border-radius: 50%;
+                overflow: hidden;
+                height: 100px;
+                margin-top: 10px;
+            }
+            .title{
+              padding: 20px 0 3px 15px;
+              font-size: 16px;
+            }
+            ul li span{
+              color: #00AAFF;
+              font-size: 20px !important;
+            }
+            .btn{
+              padding: 0px 20px 10px 20px;
+            }
+		</style>
+	</head>
+	<body>
+         <div class="top">
+             <p>客服 <label>安娜</label> 为您服务</p>
+             <img src="../../image/person.jpg" class="portrait" />
+         </div>
+         <p class="title aui-text-danger">常见问题</p>
+         <ul class="aui-list-view">
+			<li class="aui-list-view-cell" onclick="openCommon('service','question_detail','问题详情')">
+				<div class="aui-arrow-right"><span class="aui-iconfont aui-icon-questionfill"></span> 如何推销恋恋布舍产品？</div>
+			</li>
+			<li class="aui-list-view-cell">
+				<div class="aui-arrow-right"><span class="aui-iconfont aui-icon-questionfill"></span> 如何推销恋恋布舍产品？</div>
+			</li>
+			<li class="aui-list-view-cell">
+				<div class="aui-arrow-right"><span class="aui-iconfont aui-icon-questionfill"></span> 如何推销恋恋布舍产品？</div>
+			</li>
+			<li class="aui-list-view-cell">
+				<div class="aui-arrow-right"><span class="aui-iconfont aui-icon-questionfill"></span> 如何推销恋恋布舍产品？</div>
+			</li>
+			<li class="aui-list-view-cell">
+				<div class="aui-arrow-right"><span class="aui-iconfont aui-icon-questionfill"></span> 如何推销恋恋布舍产品？</div>
+			</li>
+			<li class="aui-list-view-cell">
+				<div class="aui-arrow-right"><span class="aui-iconfont aui-icon-questionfill"></span> 如何推销恋恋布舍产品？</div>
+			</li>
+		 </ul>
+		 <div class="btn">
+		    <button class="aui-btn aui-btn-info aui-btn-block" onclick="openCommon('service','question','在线提问')">我要提问</button>
+		 </div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript" src="../../script/common.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			api.parseTapmode();
+		}
+
+	</script>
+</html>

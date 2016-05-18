@@ -46,17 +46,27 @@ namespace hm.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into sysItem(");
-			strSql.Append("sicId,itemName,orders)");
+			strSql.Append("sicId,itemName,itemPath,back1,back2,back3,back4,orders)");
 			strSql.Append(" values (");
-			strSql.Append("@sicId,@itemName,@orders)");
+			strSql.Append("@sicId,@itemName,@itemPath,@back1,@back2,@back3,@back4,@orders)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@sicId", SqlDbType.Int,4),
 					new SqlParameter("@itemName", SqlDbType.VarChar,100),
+					new SqlParameter("@itemPath", SqlDbType.VarChar,200),
+					new SqlParameter("@back1", SqlDbType.VarChar,200),
+					new SqlParameter("@back2", SqlDbType.VarChar,200),
+					new SqlParameter("@back3", SqlDbType.VarChar,200),
+					new SqlParameter("@back4", SqlDbType.VarChar,200),
 					new SqlParameter("@orders", SqlDbType.Int,4)};
 			parameters[0].Value = model.sicId;
 			parameters[1].Value = model.itemName;
-			parameters[2].Value = model.orders;
+			parameters[2].Value = model.itemPath;
+			parameters[3].Value = model.back1;
+			parameters[4].Value = model.back2;
+			parameters[5].Value = model.back3;
+			parameters[6].Value = model.back4;
+			parameters[7].Value = model.orders;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -77,17 +87,32 @@ namespace hm.DAL
 			strSql.Append("update sysItem set ");
 			strSql.Append("sicId=@sicId,");
 			strSql.Append("itemName=@itemName,");
+			strSql.Append("itemPath=@itemPath,");
+			strSql.Append("back1=@back1,");
+			strSql.Append("back2=@back2,");
+			strSql.Append("back3=@back3,");
+			strSql.Append("back4=@back4,");
 			strSql.Append("orders=@orders");
 			strSql.Append(" where siId=@siId");
 			SqlParameter[] parameters = {
 					new SqlParameter("@sicId", SqlDbType.Int,4),
 					new SqlParameter("@itemName", SqlDbType.VarChar,100),
+					new SqlParameter("@itemPath", SqlDbType.VarChar,200),
+					new SqlParameter("@back1", SqlDbType.VarChar,200),
+					new SqlParameter("@back2", SqlDbType.VarChar,200),
+					new SqlParameter("@back3", SqlDbType.VarChar,200),
+					new SqlParameter("@back4", SqlDbType.VarChar,200),
 					new SqlParameter("@orders", SqlDbType.Int,4),
 					new SqlParameter("@siId", SqlDbType.Int,4)};
 			parameters[0].Value = model.sicId;
 			parameters[1].Value = model.itemName;
-			parameters[2].Value = model.orders;
-			parameters[3].Value = model.siId;
+			parameters[2].Value = model.itemPath;
+			parameters[3].Value = model.back1;
+			parameters[4].Value = model.back2;
+			parameters[5].Value = model.back3;
+			parameters[6].Value = model.back4;
+			parameters[7].Value = model.orders;
+			parameters[8].Value = model.siId;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -151,7 +176,7 @@ namespace hm.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 siId,sicId,itemName,orders from sysItem ");
+			strSql.Append("select  top 1 siId,sicId,itemName,itemPath,back1,back2,back3,back4,orders from sysItem ");
 			strSql.Append(" where siId=@siId");
 			SqlParameter[] parameters = {
 					new SqlParameter("@siId", SqlDbType.Int,4)
@@ -174,6 +199,26 @@ namespace hm.DAL
 				{
 					model.itemName=ds.Tables[0].Rows[0]["itemName"].ToString();
 				}
+				if(ds.Tables[0].Rows[0]["itemPath"]!=null && ds.Tables[0].Rows[0]["itemPath"].ToString()!="")
+				{
+					model.itemPath=ds.Tables[0].Rows[0]["itemPath"].ToString();
+				}
+				if(ds.Tables[0].Rows[0]["back1"]!=null && ds.Tables[0].Rows[0]["back1"].ToString()!="")
+				{
+					model.back1=ds.Tables[0].Rows[0]["back1"].ToString();
+				}
+				if(ds.Tables[0].Rows[0]["back2"]!=null && ds.Tables[0].Rows[0]["back2"].ToString()!="")
+				{
+					model.back2=ds.Tables[0].Rows[0]["back2"].ToString();
+				}
+				if(ds.Tables[0].Rows[0]["back3"]!=null && ds.Tables[0].Rows[0]["back3"].ToString()!="")
+				{
+					model.back3=ds.Tables[0].Rows[0]["back3"].ToString();
+				}
+				if(ds.Tables[0].Rows[0]["back4"]!=null && ds.Tables[0].Rows[0]["back4"].ToString()!="")
+				{
+					model.back4=ds.Tables[0].Rows[0]["back4"].ToString();
+				}
 				if(ds.Tables[0].Rows[0]["orders"]!=null && ds.Tables[0].Rows[0]["orders"].ToString()!="")
 				{
 					model.orders=int.Parse(ds.Tables[0].Rows[0]["orders"].ToString());
@@ -192,7 +237,7 @@ namespace hm.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select siId,sicId,itemName,orders ");
+			strSql.Append("select siId,sicId,itemName,itemPath,back1,back2,back3,back4,orders ");
 			strSql.Append(" FROM sysItem ");
 			if(strWhere.Trim()!="")
 			{
@@ -212,7 +257,7 @@ namespace hm.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" siId,sicId,itemName,orders ");
+			strSql.Append(" siId,sicId,itemName,itemPath,back1,back2,back3,back4,orders ");
 			strSql.Append(" FROM sysItem ");
 			if(strWhere.Trim()!="")
 			{
@@ -222,11 +267,6 @@ namespace hm.DAL
 			return DbHelperSQL.Query(strSql.ToString());
 		}
 
-        public int DeleteByCatId(int catId)
-        {
-            string sql = "delete FROM sysItem where sicId=" + catId;
-            return DbHelperSQL.ExecuteSql(sql);
-        }
 		/*
 		/// <summary>
 		/// 分页获取数据列表

@@ -25,3 +25,12 @@ E:\后台框架\后台框架1.0\后台框架1.0\DBUtility\bin\Debug\System.Data.
 E:\后台框架\后台框架1.0\后台框架1.0\DBUtility\obj\Debug\ResolveAssemblyReference.cache
 E:\后台框架\后台框架1.0\后台框架1.0\DBUtility\obj\Debug\hm.DBUtility.dll
 E:\后台框架\后台框架1.0\后台框架1.0\DBUtility\obj\Debug\hm.DBUtility.pdb
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\DBUtility\bin\Debug\hm.DBUtility.dll
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\DBUtility\bin\Debug\hm.DBUtility.pdb
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\DBUtility\bin\Debug\IBatisNet.Common.dll
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\DBUtility\bin\Debug\IBatisNet.DataMapper.dll
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\DBUtility\bin\Debug\MySql.Data.dll
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\DBUtility\bin\Debug\System.Data.SQLite.DLL
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\DBUtility\obj\Debug\ResolveAssemblyReference.cache
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\DBUtility\obj\Debug\hm.DBUtility.dll
+F:\GitProjects\hmdfs\hmdfs\后台框架1.x\DBUtility\obj\Debug\hm.DBUtility.pdb

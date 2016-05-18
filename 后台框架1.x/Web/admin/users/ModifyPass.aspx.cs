@@ -29,14 +29,13 @@ namespace hm.Web.users
 		public void btnSave_Click(object sender, EventArgs e)
 		{
             hm.BLL.users bllUser = new hm.BLL.users();
-            HttpCookie cookie = Request.Cookies["userId"];
-            if (null == cookie)
+            string userId = Common.Cookie.GetValue(StatusHelpercs.Cookie_Admin_UserId);
+            if (string.IsNullOrEmpty(userId))
             {
                 Response.Write("<script language=javascript>window.parent.location='../Login.aspx';</script>");//
             }
             else
             {
-                string userId = cookie.Value;
                 string oldPass = Maticsoft.Common.DEncrypt.DESEncrypt.Encrypt(txtPassword.Text.Trim(), ConfigHelper.GetConfigString("PassWordEncrypt"));
                 string newPass = Maticsoft.Common.DEncrypt.DESEncrypt.Encrypt(txtNewPass.Text.Trim(), ConfigHelper.GetConfigString("PassWordEncrypt"));
                 string reNewPass = Maticsoft.Common.DEncrypt.DESEncrypt.Encrypt(txtReNewPass.Text.Trim(), ConfigHelper.GetConfigString("PassWordEncrypt"));

@@ -1,0 +1,972 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+		<!--<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>-->
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+		<link href="../css/style.css" rel="stylesheet"/>
+		<link href="../css/mui.min.css" rel="stylesheet"/>
+		<style type="text/css">
+			.slider {
+				margin-bottom: 0;
+				height: 200px;
+			}
+			.slider img {
+				width: 100%;
+				height: 120px;
+				display: inherit;
+			}
+			.ad {
+				margin-bottom: 0;
+				margin-bottom: 15px;
+			}
+			.ad img {
+				width: 100%;
+				height: 120px;
+				display: inherit;
+			}
+			.aui-grid-sixteen:after {
+				border: none;
+			}
+			.aui-grid-sixteen li:after {
+				border: none;
+			}
+			.aui-grid-sixteen li .aui-iconfont {
+				color: #ffffff;
+				width: 38px;
+				height: 38px;
+				line-height: 38px;
+				border-radius: 50%;
+				font-size: 20px;
+			}
+			p.goods-title {
+				font-size: 1em;
+				color: #333;
+			}
+			p.goods-info {
+				font-size: 12px;
+				color: #999;
+			}
+			.aui-line-x {
+				margin: 5px 0;
+			}
+			.aui-line-x:after {
+				border-color: #ddd;
+			}
+			.goods-price {
+				font-size: 0.875em;
+			}
+			.goods-price strong {
+				margin: 0 5px;
+				font-size: 16px;
+			}
+			.aui-content.box {
+				background: #fff;
+			}
+			.box {
+				/*padding-top: 15px;*/
+			}
+			.box-title {
+				margin: 15px 10px 5px 10px;
+				/*margin-bottom: 5px;*/
+				height: 20px;
+				line-height: 20px;
+				border-left: 5px solid #ff9900;
+				color: #666;
+				font-weight: 700;
+				padding-left: 10px;
+			}
+			.box .aui-list-view {
+				margin-bottom: 0;
+			}
+			.aui-list-view i.aui-iconfont {
+				margin-right: 0;
+			}
+			img {
+				outline: none;
+			}
+			.swipe li div, .swipe div div div {
+				padding: 0px 0px;
+				background: #FFFFFF;
+				font-weight: bold;
+				color: #fff;
+				font-size: 20px;
+				text-align: center;
+			}
+			.swipe li img {
+				max-width: 100%;
+			}
+		</style>
+	</head>
+	<body style="background: #ffffff" onload="setTimeout("xu()",1000)">
+		<div class='swipe' style="height:auto;margin-bottom: 0px">
+			<ul id='slider4' >
+				<li style='display:block' >
+					<img src="../image/51cuxiao.jpg"  alt="" />
+				</li>
+				<li style='display:none;'>
+					<img src="../image/zhu-jiang.jpg"   alt="" />
+				</li>
+				<li style='display:none'></li>
+			</ul>
+		</div>
+		<div style="width: 100%;margin-top: 0px;background:#FEFEFE " >
+			<div class="aui-flex-col " style="padding-top: 5px">
+				<div style="width: 20%;" align="center">
+					<img src="../image/zhu-tui.jpg" style="height:60px" alt="" />
+				</div>
+				<div style="width: 20%;" align="center">
+					<img src="../image/zhu-jiang.jpg" style="height: 60px" alt="" />
+				</div>
+				<div style="width: 20%;" align="center">
+					<img src="../image/zhu-dun.jpg" style="height: 60px" alt="" />
+				</div>
+				<div style="width: 20%;" align="center">
+					<img src="../image/zhu-che.jpg" style="height:60px" alt="" />
+				</div>
+				<div style="width: 20%;" align="center">
+					<img src="../image/zhu-bei.jpg" style="height: 60px" alt="" />
+				</div>
+			</div>
+		</div>
+		<div  style="padding: 3px;">
+			<marquee scrollAmount=2 width=100%  align = "middle" behavior="scroll">
+				<a  href="www.baidu.com" height=39 onmouseover=stop() onmouseout=start()> 新浪首页sdfsdfsdf</a>
+			</marquee>
+		</div>
+		<div class="aui-content" style="margin-bottom: 0px">
+			<ul class="aui-grid-sixteen">
+				<li class="aui-col-xs-3 aui-text-center" onclick="openCommon('goods','goods_new','每日新品')">
+					<img src="../image/zhu-1.jpg" alt="" style="height: 50px" />
+					<p style="font-size: 14px">
+						天天新品
+					</p>
+				</li>
+				<li class="aui-col-xs-3 aui-text-center" onclick="openCommon('goods','goods_hot','热销产品')">
+					<img src="../image/zhu-2.jpg" alt="" style="height: 50px" />
+					<p style="font-size: 14px">
+						热销产品
+					</p>
+				</li>
+				<li class="aui-col-xs-3 aui-text-center" onclick="openCommon('goods','goods_zero','零润专区')">
+					<img src="../image/zhu-3.jpg" alt="" style="height: 50px" />
+					<p style="font-size: 14px">
+						零润专区
+					</p>
+				</li>
+				<li class="aui-col-xs-3 aui-text-center" onclick="openParentCommon('cate',1)">
+					<img src="../image/zhu-4.jpg" alt="" style="height: 50px" />
+					<p style="font-size: 14px">
+						全部分类
+					</p>
+				</li>
+			</ul>
+			<ul class="aui-grid-sixteen">
+				<li class="aui-col-xs-3 aui-text-center" onclick="openCommon('service','store_open','一元开店')">
+					<img src="../image/zhu-5.png" alt="" style="height: 46px; margin-top: 4px;" />
+					<p style="font-size: 14px">
+						一元开店
+					</p>
+				</li>
+				<li class="aui-col-xs-3 aui-text-center" onclick="openCommon('service','person_new','新手入门')">
+					<img src="../image/zhu-6.jpg" alt="" style="height: 50px" />
+					<p style="font-size: 14px">
+						新手入门
+					</p>
+				</li>
+				<li class="aui-col-xs-3 aui-text-center" onclick="openCommon('service','app_download','恋恋APP')">
+					<img src="../image/zhu-7.jpg" alt="" style="height: 50px" />
+					<p style="font-size: 14px">
+						恋恋APP
+					</p>
+				</li>
+				<li class="aui-col-xs-3 aui-text-center" onclick="openCommon('service','online_service','在线客服')">
+					<img src="../image/zhu-8.jpg" alt="" style="height: 50px" />
+					<p style="font-size: 14px">
+						在线客服
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div style="width: 100%">
+			<img id="mfq" src="../image/51cuxiao.jpg" style="width: 100%" alt="" />
+		</div>
+		<div align="center">
+			<img src="../image/csh.jpg" style="width: 100%" />
+		</div>
+		<div class="aui-flex-col aui-flex-center aui-border-tb" id="csh">
+			<div class="aui-flex-item-4 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/csh1.png">
+			</div>
+			<div class="aui-flex-item-4 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/csh2.png">
+			</div>
+			<div class="aui-flex-item-4 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/csh3.png">
+			</div>
+		</div>
+		<div align="center" style="background: #EAEAEA;padding-top: 5px">
+			<img src="../image/rmsc.jpg" style="width: 100%" />
+		</div>
+		<div class="aui-flex-col aui-flex-center aui-border-tb" id="rmsc">
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/rmsc1.png" style="margin-top: 3px">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/rmsc2.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/rmsc3.png" style="margin-top: 3px">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/rmsc4.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle" >
+				<img width="100%" src="../image/rmsc5.png" style="margin-top: -3px">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/rmsc6.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle" >
+				<img width="100%" src="../image/rmsc7.png" style="margin-top: -3px">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/rmsc8.png">
+			</div>
+		</div>
+		<div align="center" style="padding-top: 3px">
+			<img src="../image/ttxp.jpg" style="width: 100%"/>
+		</div>
+		<div class='swipe' style="height:auto;margin-bottom: 0px">
+			<ul id='slider3'>
+				<li style='display:block;width: 100%' >
+					<div class="aui-flex-col  ">
+						<div class="aui-flex-item-4 aui-flex-row ">
+							<img width="100%" src="../image/hwhd_01.png">
+						</div>
+						<div class="aui-flex-item-4 aui-flex-row ">
+							<img width="100%" src="../image/hwhd_02.png">
+						</div>
+						<div class="aui-flex-item-4 aui-flex-row ">
+							<img width="100%" src="../image/hwhd_03.png">
+						</div>
+					</div>
+				</li>
+				<li style='display:none;'>
+					<div class="aui-flex-col ">
+						<div class="aui-flex-item-4 aui-flex-row ">
+							<img width="100%" src="../image/hwhd_04.png">
+						</div>
+						<div class="aui-flex-item-4 aui-flex-row ">
+							<img width="100%" src="../image/hwhd_01.png">
+						</div>
+						<div class="aui-flex-item-4 aui-flex-row ">
+							<img width="100%" src="../image/hwhd_02.png">
+						</div>
+					</div>
+				</li>
+				<li style='display:none'>
+					<div class="aui-flex-col ">
+						<div class="aui-flex-item-4 aui-flex-row ">
+							<img width="100%" src="../image/hwhd_03.png">
+						</div>
+						<div class="aui-flex-item-4 aui-flex-row ">
+							<img width="100%" src="../image/hwhd_04.png">
+						</div>
+						<div class="aui-flex-item-4 aui-flex-row ">
+							<img width="100%" src="../image/hwhd_01.png">
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div align="center" style="background: #EAEAEA;padding-top: 5px">
+			<img src="../image/dpd.jpg" style="width: 100%"/>
+		</div>
+		<div class="aui-flex-col aui-flex-center aui-border-tb" id="dpd">
+			<div class="aui-flex-item-4 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/dpd1.png">
+			</div>
+			<div class="aui-flex-item-4 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/dpd2.png">
+			</div>
+			<div class="aui-flex-item-4 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/dpd3.png">
+			</div>
+		</div>
+		<!--<div align="center" style="background: #EAEAEA;padding-top: 5px">
+		<span style="vertical-align:12px;color: #a6a6a6">———&nbsp;&nbsp;</span><img src="../image/zhu-gouwu.jpg" style="border-radius: 20px;height: 30px" alt="" /><span style="font-size: 20px;vertical-align: 8px">&nbsp;&nbsp;品牌鞋靴</span><span style="vertical-align: 12px;color: #a6a6a6">&nbsp;&nbsp;———</span>
+		</div>
+		<div class="aui-flex-col aui-flex-center aui-border-b">
+		<div class="aui-flex-item-4 aui-flex-row aui-flex-middle" style="padding: 5px">
+		<img width="100%" src="../image/demo1.png" style="border-radius: 50px">
+		</div>
+		<div class="aui-flex-item-4 aui-flex-row aui-flex-middle" style="padding: 5px">
+		<img width="100%" src="../image/demo1.png" style="border-radius: 50px">
+		</div>
+		<div class="aui-flex-item-4 aui-flex-row aui-flex-middle" style="padding: 5px">
+		<img width="100%" src="../image/demo1.png" style="border-radius: 50px">
+		</div>
+		<div class="aui-flex-item-4 aui-flex-col aui-flex-middle" >
+		<div class="aui-flex-item-4 aui-flex-col aui-border-l">
+		<img  src="../image/demo1.png" style="width: 100%">
+		</div>
+		<div class="aui-flex-item-8 aui-flex-col aui-border-l">
+		<span >问问问问</span>
+		</div>
+		</div>
+		<div class="aui-flex-item-4 aui-flex-col aui-flex-middle" >
+		<div class="aui-flex-item-4 aui-flex-col aui-border-l">
+		<img  src="../image/demo1.png" style="width: 100%">
+		</div>
+		<div class="aui-flex-item-8 aui-flex-col aui-border-l">
+		<span >问问问问</span>
+		</div>
+		</div>
+		<div class="aui-flex-item-4 aui-flex-col aui-flex-middle" >
+		<div class="aui-flex-item-4 aui-flex-col aui-border-l">
+		<img  src="../image/demo1.png" style="width: 100%">
+		</div>
+		<div class="aui-flex-item-8 aui-flex-col aui-border-l">
+		<span >问问问问</span>
+		</div>
+		</div>
+		<div style="height: 8px;width: 100%"></div>
+		</div>
+		<div class='swipe' style="height:123px;margin-bottom: 0px">
+		<ul id='slider4'>
+		<li style='display:block;width: 100%' >
+		<img  src="../image/demo1.png" style="height: 123px">
+		</li>
+		<li style='display:none;'>
+		<img  src="../image/demo1.png" style="height: 123px">
+		</li>
+		</ul>
+		</div>-->
+		<!--<div align="center" style="background: #EAEAEA;padding-top: 5px">
+		<span style="vertical-align:12px;color: #a6a6a6">———&nbsp;&nbsp;</span><img src="../image/zhu-gouwu.jpg" style="border-radius: 20px;height: 30px" alt="" /><span style="font-size: 20px;vertical-align: 8px">&nbsp;&nbsp;户外运动</span><span style="vertical-align: 12px;color: #a6a6a6">&nbsp;&nbsp;———</span>
+		</div>
+		<div style="width: 100%">
+		<img src="../image/ad1.jpg" style="width: 100%" alt="" />
+		</div>
+		<div class="aui-flex-col aui-flex-center aui-border-tb">
+		<div class="aui-flex-item-6 aui-flex-row aui-flex-middle">
+		<div class="aui-flex-item-12 aui-border-b">
+		<div class="aui-flex-col">
+		<img width="100%" src="../image/flex_09.jpg">
+		</div>
+		</div>
+		<div class="aui-flex-item-12 aui-border-b">
+		<div class="aui-flex-col">
+		<img width="100%" src="../image/flex_11.jpg">
+		</div>
+		</div>
+		</div>
+		<div class="aui-flex-item-6 aui-flex-col aui-border-l">
+		<div class="aui-flex-item-12 aui-border-b">
+		<div class="aui-flex-col">
+		<img width="100%" src="../image/flex_10.jpg">
+		</div>
+		</div>
+		<div class="aui-flex-item-12 aui-border-b">
+		<div class="aui-flex-col">
+		<img width="100%" src="../image/flex_12.jpg">
+		</div>
+		</div>
+		</div>
+		</div>-->
+		<div align="center" style="background: #EAEAEA;padding-top: 5px">
+			<img width="100%" src="../image/nrg.jpg">
+		</div>
+		<div class="aui-flex-col aui-flex-center aui-border-tb" id="nrg">
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/nrg1.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/nrg2.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/nrg3.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/nrg4.png">
+			</div>
+		</div>
+		<div align="center" style="background: #EAEAEA;padding-top: 5px">
+			<img width="100%" src="../image/nvrg.jpg">
+		</div>
+		<div class="aui-flex-col aui-flex-center aui-border-tb" id="nvrg">
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/nvrg1.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/nvrg2.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/nvrg3.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/nvrg4.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/nvrg5.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/nvrg6.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/nvrg7.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/nvrg8.png">
+			</div>
+		</div>
+		<div align="center" style="background: #EAEAEA;padding-top: 5px">
+			<img width="100%" src="../image/rtsj.jpg">
+		</div>
+		<div class="aui-flex-col aui-flex-center aui-border-tb" id="rtsj">
+			<div class="aui-flex-item-4 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/tx1.png">
+			</div>
+			<div class="aui-flex-item-4 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/tx2.png">
+			</div>
+			<div class="aui-flex-item-4 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/tx3.png">
+			</div>
+		</div>
+		<!--<div class="aui-flex-col aui-flex-center aui-border-tb">
+		<div class="aui-flex-item-6 aui-flex-row aui-flex-middle">
+		<div class="aui-flex-item-12 aui-flex-row aui-flex-middle aui-border-b">
+		<div class="aui-flex-col">
+		<img width="100%" src="../image/flex_13.jpg">
+		</div>
+		</div>
+		</div>
+		<div class="aui-flex-item-6 aui-flex-col aui-border-l">
+		<div class="aui-flex-item-6 aui-flex-row aui-flex-middle">
+		<img width="100%" src="../image/flex_14.jpg">
+		</div>
+		<div class="aui-flex-item-6 aui-flex-row aui-flex-middle aui-border-l">
+		<img width="100%" src="../image/flex_14.jpg">
+		</div>
+		<div class="aui-flex-item-6 aui-flex-row aui-flex-middle">
+		<img width="100%" src="../image/flex_14.jpg">
+		</div>
+		<div class="aui-flex-item-6 aui-flex-row aui-flex-middle aui-border-l">
+		<img width="100%" src="../image/flex_14.jpg">
+		</div>
+		</div>
+		</div>-->
+		<div align="center" style="background: #EAEAEA;padding-top: 5px">
+			<img width="100%" src="../image/hwyd.jpg">
+		</div>
+		<div class="aui-flex-col aui-flex-center aui-border-tb" id="hwyd">
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/hwhd_01.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/hwhd_02.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/hwhd_03.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/hwhd_04.png">
+			</div>
+		</div>
+		<div align="center" style="background: #EAEAEA;padding-top: 5px">
+			<img width="100%" src="../image/pjxb.jpg">
+		</div>
+		<div class="aui-flex-col aui-flex-center aui-border-tb" id="pjxb">
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/pjxb_01.png" style="margin-top: 4px">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/pjxb_02.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/pjxb_03.png">
+			</div>
+			<div class="aui-flex-item-3 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/pjxb_04.png">
+			</div>
+		</div>
+		<!--<div class="aui-flex-col aui-flex-center aui-border-tb">
+		<div class="aui-flex-item-6 aui-flex-row aui-flex-middle">
+		<div class="aui-flex-item-12 aui-border-b">
+		<div class="aui-flex-col">
+		<img width="100%" src="../image/flex_09.jpg">
+		</div>
+		</div>
+		<div class="aui-flex-item-12 aui-border-b">
+		<div class="aui-flex-col">
+		<img width="100%" src="../image/flex_11.jpg">
+		</div>
+		</div>
+		</div>
+		<div class="aui-flex-item-6 aui-flex-col aui-border-l">
+		<div class="aui-flex-item-12 aui-border-b">
+		<div class="aui-flex-col">
+		<img width="100%" src="../image/flex_10.jpg">
+		</div>
+		</div>
+		<div class="aui-flex-item-12 aui-border-b">
+		<div class="aui-flex-col">
+		<img width="100%" src="../image/flex_12.jpg">
+		</div>
+		</div>
+		</div>
+		</div>-->
+		<div align="center" style="background: #EAEAEA;padding-top: 5px">
+			<img width="100%" src="../image/zbyy.png">
+		</div>
+		<div class="aui-flex-col aui-flex-center aui-border-tb" id="zbyy">
+			<div class="aui-flex-item-6 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/zy1.png">
+			</div>
+			<div class="aui-flex-item-6 aui-flex-row aui-flex-middle">
+				<img width="100%" src="../image/zy2.png">
+			</div>
+		</div>
+		<div class="aui-flex-col  " style="margin-top: 8px">
+			<div class="aui-flex-item-5 aui-flex-col ">
+				<div class="aui-flex-item-8 ">
+					<img src="../image/xinpinshangshi.jpg" alt="" style="height:30px;margin-left: 8px " />
+				</div>
+				<div class="aui-flex-item-4 ">
+					<span style="border: 1px solid #FA3602;border-radius: 2px;padding: 4px 6px;color:#FA3602;font-size: 11px;vertical-align: -2px ">&nbsp;推荐</span>
+				</div>
+			</div>
+			<div class="aui-flex-item-7  " style="padding: 3px;">
+				<marquee scrollAmount=2 width=100%  align = "middle" behavior="scroll">
+					<a  href="www.baidu.com" height=39 onmouseover=stop() onmouseout=start()> 新浪首页sdfsdfsdf</a>
+				</marquee>
+			</div>
+		</div>
+		<div class="aui-content box">
+			<div class="aui-line-x"></div>
+			<div class="box-title">
+				促销活动 <span style="float: right"> <img src="../image/zhu-you.jpg" style="border-radius: 40px;height: 20px" alt="" /><span style="font-size: 12px;vertical-align: 6px">更多活动</span></span>
+			</div>
+			<ul class="aui-list-view aui-grid-view">
+				<li class="aui-list-view-cell aui-img aui-col-xs-4" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						<p>
+							<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						</p>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-4" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo2.png">
+					<div class="aui-img-body aui-text-left">
+						<p>
+							<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						</p>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-4" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo3.png">
+					<div class="aui-img-body aui-text-left">
+						<p>
+							<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						</p>
+					</div>
+				</li>
+			</ul>
+			<div class="aui-line-x"></div>
+		</div>
+		<div class="aui-content ad">
+			<img src="../image/d5.png" />
+		</div>
+		<div class="aui-content box">
+			<div class="aui-line-x"></div>
+			<div class="box-title">
+				热门商品
+			</div>
+			<ul class="aui-list-view aui-grid-view">
+				<li class="aui-list-view-cell aui-img aui-col-xs-4" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						<p>
+							<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						</p>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-4" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo5.png">
+					<div class="aui-img-body aui-text-left">
+						<p>
+							<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						</p>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-4" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo2.png">
+					<div class="aui-img-body aui-text-left">
+						<p>
+							<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+						</p>
+					</div>
+				</li>
+			</ul>
+			<div class="aui-line-x"></div>
+		</div>
+		<div class="aui-content box">
+			<div class="aui-line-x"></div>
+			<div class="box-title">
+				热门商品
+			</div>
+			<ul class="aui-list-view aui-grid-view">
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						商品名称商品名称商品名称商品名称
+						<div style="width: 100%">
+							<div style="width: 50%;float: left">
+								<p>
+									<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+								</p>
+								<p class="goods-info">
+									共售出<span class="aui-text-danger">88</span>件
+								</p>
+							</div>
+							<div style="width: 50%;float: right">
+								<img align="right" style="height:32px" src="../image/zhu-gouwu.jpg" alt="" />
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						商品名称商品名称商品名称商品名称
+						<div style="width: 100%">
+							<div style="width: 50%;float: left">
+								<p>
+									<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+								</p>
+								<p class="goods-info">
+									共售出<span class="aui-text-danger">88</span>件
+								</p>
+							</div>
+							<div style="width: 50%;float: right">
+								<img align="right" style="height:32px" src="../image/zhu-gouwu.jpg" alt="" />
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						商品名称商品名称商品名称商品名称
+						<div style="width: 100%">
+							<div style="width: 50%;float: left">
+								<p>
+									<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+								</p>
+								<p class="goods-info">
+									共售出<span class="aui-text-danger">88</span>件
+								</p>
+							</div>
+							<div style="width: 50%;float: right">
+								<img align="right" style="height:32px" src="../image/zhu-gouwu.jpg" alt="" />
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="aui-list-view-cell aui-img aui-col-xs-6" tapmode onclick="openCommon('goods','goods_show',1)">
+					<img class="aui-img-object" src="../image/demo1.png">
+					<div class="aui-img-body aui-text-left">
+						商品名称商品名称商品名称商品名称
+						<div style="width: 100%">
+							<div style="width: 50%;float: left">
+								<p>
+									<span class="goods-price aui-text-danger">¥<strong>88.88</strong>元</span>
+								</p>
+								<p class="goods-info">
+									共售出<span class="aui-text-danger">88</span>件
+								</p>
+							</div>
+							<div style="width: 50%;float: right">
+								<img align="right" style="height:32px" src="../image/zhu-gouwu.jpg" alt="" />
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div style="position: fixed;top: 220px;width: 100%" id="tiaofu">
+			<img src="../image/51cuxiao.jpg" style="height: auto;width: 100%" alt="" />
+		</div>
+		<div style="position: fixed;bottom: 10px;right: 10px">
+			<a href="#top"><img src="../image/icon5.png" style="height: 50px" alt="" /></a>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript" src="../script/common.js"></script>
+	<script type="text/javascript" src="../script/touchslider.js"></script>
+	<script src="../script/mui.min.js"></script>
+	<script src="../script/jquery.min.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+			api.parseTapmode();
+			loadSlider();
+			loadpic();
+		}
+		function xu() {
+			$("#tiaofu").css("display", "none");
+		}
+
+		function loadSlider() {
+			var UIScrollPicture = api.require('UIScrollPicture');
+			UIScrollPicture.open({
+				rect : {
+					x : 0,
+					y : 0,
+					w : api.winWidth,
+					h : 200
+				},
+				data : {
+					paths : ['widget://image/lunbo1.jpg', 'widget://image/lunbo2.jpg', 'widget://image/lunbo3.jpg']
+				},
+				styles : {
+					caption : {
+						height : 35,
+						color : '#E0FFFF',
+						size : 13,
+						bgColor : '#696969',
+						position : 'bottom'
+					},
+					indicator : {
+						align : 'center',
+						color : '#FFFFFF',
+						activeColor : '#DA70D6'
+					}
+				},
+				placeholderImg : 'widget://image/ad1.jpg',
+				contentMode : 'scaleToFill',
+				interval : 3,
+				loop : true,
+				fixedOn : api.frameName,
+				fixed : false
+			}, function(ret, err) {
+				if (ret) {
+					//alert(JSON.stringify(ret));
+				} else {
+					alert(JSON.stringify(err));
+				}
+			});
+		}
+
+		function loadpic() {
+			var url = serverurl + "/getBanerList?BannerCateId=1&bannerId=0&key=" + key;
+			//alert(url1)
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				var html = "";
+				for (var i = 0; i < data.list.length; i++) {
+					if (i == 0) {
+						html += "<li style='display:block' >";
+					} else {
+						html += "<li style='display:none;'>";
+					}
+					html += "<img src='" + machineurl + data.list[i].BannerImageURL"'  alt="" /></li>";
+				}
+				document.getElementById("slider4").innerHTML = html;
+			});
+			url = serverurl + "/getBanerList?BannerCateId=18&bannerId=70&key=" + key;
+			//alert(url1)
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				var html = "";
+				if (data.list != "" && data.list != undefined) {
+					document.getElementById("mfq").src = machineurl + data.list[0].BannerImageURL;
+				}
+			});
+			url = serverurl + "/getBanerList?BannerCateId=5&bannerId=60&key=" + key;
+			//alert(url1)
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				var html = "";
+				for (var i = 0; i < data.list.length; i++) {
+					html += "<div class=\"aui-flex-item-4 aui-flex-row aui-flex-middle\"> ";
+					html += "<a href=\"" + data.list[i].url + "\"><img width=\"100%\" src=\"" + machineurl + data.list[i].BannerImageURL + "\"> </a></div>";
+				}
+				document.getElementById("csh").innerHTML = html;
+			});
+			url = serverurl + "/getBanerList?BannerCateId=17&bannerId=54&key=" + key;
+			//alert(url1)
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				var html = "";
+				for (var i = 0; i < data.list.length; i++) {
+					html += "<div class=\"aui-flex-item-3 aui-flex-row aui-flex-middle\"> ";
+					html += "<a href=\"" + data.list[i].url + "\"><img width=\"100%\" src=\"" + machineurl + data.list[i].BannerImageURL + "\"> </a></div>";
+				}
+				document.getElementById("rmsc").innerHTML = html;
+			});
+			url = serverurl + "/getBanerList?BannerCateId=10&bannerId=15&key=" + key;
+			//alert(url1)
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				var html = "";
+				for (var i = 0; i < data.list.length; i++) {
+					html += "<div class=\"aui-flex-item-4 aui-flex-row aui-flex-middle\"> ";
+					html += "<a href=\"" + data.list[i].url + "\"><img width=\"100%\" src=\"" + machineurl + data.list[i].BannerImageURL + "\"> </a></div>";
+				}
+				document.getElementById("dpd").innerHTML = html;
+			});
+			url = serverurl + "/getBanerList?BannerCateId=12&bannerId=25&key=" + key;
+			//alert(url1)
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				var html = "";
+				for (var i = 0; i < data.list.length; i++) {
+					html += "<div class=\"aui-flex-item-3 aui-flex-row aui-flex-middle\"> ";
+					html += "<a href=\"" + data.list[i].url + "\"><img width=\"100%\" src=\"" + machineurl + data.list[i].BannerImageURL + "\"> </a></div>";
+				}
+				document.getElementById("nrg").innerHTML = html;
+			});
+			url = serverurl + "/getBanerList?BannerCateId=13&bannerId=31&key=" + key;
+			//alert(url1)
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				var html = "";
+				for (var i = 0; i < data.list.length; i++) {
+					html += "<div class=\"aui-flex-item-3 aui-flex-row aui-flex-middle\"> ";
+					html += "<a href=\"" + data.list[i].url + "\"><img width=\"100%\" src=\"" + machineurl + data.list[i].BannerImageURL + "\"> </a></div>";
+				}
+				document.getElementById("nvrg").innerHTML = html;
+			});
+			url = serverurl + "/getBanerList?BannerCateId=14&bannerId=36&key=" + key;
+			//alert(url1)
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				var html = "";
+				for (var i = 0; i < data.list.length; i++) {
+					html += "<div class=\"aui-flex-item-4 aui-flex-row aui-flex-middle\"> ";
+					html += "<a href=\"" + data.list[i].url + "\"><img width=\"100%\" src=\"" + machineurl + data.list[i].BannerImageURL + "\"> </a></div>";
+				}
+				document.getElementById("rtsj").innerHTML = html;
+			});
+			url = serverurl + "/getBanerList?BannerCateId=11&bannerId=19&key=" + key;
+			//alert(url1)
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				var html = "";
+				for (var i = 0; i < data.list.length; i++) {
+					html += "<div class=\"aui-flex-item-3 aui-flex-row aui-flex-middle\"> ";
+					html += "<a href=\"" + data.list[i].url + "\"><img width=\"100%\" src=\"" + machineurl + data.list[i].BannerImageURL + "\"> </a></div>";
+				}
+				document.getElementById("hwyd").innerHTML = html;
+			});
+			url = serverurl + "/getBanerList?BannerCateId=15&bannerId=42&key=" + key;
+			//alert(url1)
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				var html = "";
+				for (var i = 0; i < data.list.length; i++) {
+					html += "<div class=\"aui-flex-item-3 aui-flex-row aui-flex-middle\"> ";
+					html += "<a href=\"" + data.list[i].url + "\"><img width=\"100%\" src=\"" + machineurl + data.list[i].BannerImageURL + "\"> </a></div>";
+				}
+				document.getElementById("pjxb").innerHTML = html;
+			});
+			url = serverurl + "/getBanerList?BannerCateId=16&bannerId=47&key=" + key;
+			//alert(url1)
+			api.ajax({
+				url : url,
+				mothod : 'get',
+				cache : false,
+				timeout : 30,
+				dataType : 'json'
+			}, function(data) {
+				var html = "";
+				for (var i = 0; i < data.list.length; i++) {
+					html += "<div class=\"aui-flex-item-6 aui-flex-row aui-flex-middle\"> ";
+					html += "<a href=\"" + data.list[i].url + "\"><img width=\"100%\" src=\"" + machineurl + data.list[i].BannerImageURL + "\"> </a></div>";
+				}
+				document.getElementById("zbyy").innerHTML = html;
+			});
+		}
+	</script>
+	<script type="text/javascript">
+		console = window.console || {
+			dir : new Function(),
+			log : new Function()
+		};
+		var t3 = new TouchSlider('slider3', {
+			duration : 1000,
+			direction : 0,
+			interval : 3000,
+			fullsize : true
+		});
+		var t4 = new TouchSlider('slider4', {
+			duration : 1000,
+			direction : 0,
+			interval : 3000,
+			fullsize : true
+		});
+	</script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+		var slider = mui("#slider");
+		slider.slider({
+			interval : 1000
+		});
+	</script>
+</html>

@@ -22,7 +22,7 @@ namespace hm.Web.users
                 BLL.dept pBll = new BLL.dept();
                 string placeSql = "";
                 string roleSql = "roleId<>1";
-                if (Request.Cookies["isAdmin"].Value != "1")
+                if (Common.Cookie.GetValue(StatusHelpercs.Cookie_Admin_IsAdmin) != "1")
                 {
                     placeSql = " deptId in (" + pBll.GetAllChild(int.Parse(Request.Cookies["deptId"].Value)) + ") ";
                     roleSql = "roleId>2";
@@ -111,17 +111,13 @@ namespace hm.Web.users
             //    model.isAdmin = 1;
             //}
             model.score = 0;
-
+            model.avatar_big = StatusHelpercs.Default_User_Avatar;
+            model.avatar_small = StatusHelpercs.Default_User_Avatar;
 			
 			bll.Add(model);
-			Maticsoft.Common.MessageBox.ShowAndRedirect(this,"保存成功！","list.aspx");
+			Maticsoft.Common.MessageBox.ShowAndRedirect(this,"保存成功！","Adminlist.aspx");
 
 		}
 
-
-        public void btnCancle_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("list.aspx");
-        }
     }
 }

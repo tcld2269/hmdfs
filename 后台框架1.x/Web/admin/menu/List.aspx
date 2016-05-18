@@ -145,9 +145,9 @@
             var menuorder=$("#menu_order").val();
             var menuurl=$("#menu_url").val();
             var parentId=$("#parentId").val();
-            if(menuname=="" || menuorder=="" || menuurl=="" || parentId=="0")
+            if(menuname=="" || menuorder=="" || menuurl=="")
             {
-                alert("请输入完整！");
+                layer.msg("请输入完整！");
                 return;
             }
             
@@ -184,7 +184,7 @@
                 var menuid=$("#menu_id").val();
                 if(menuid=="")
                 {
-                    alert("请输入完整！");
+                    layer.msg("请输入完整！");
                     return;
                 }
                 var pars={menuid:menuid};
